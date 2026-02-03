@@ -1,0 +1,43 @@
+# System files
+.DS_Store
+.Trash/
+.CFUserTextEncoding
+Applications/
+Desktop/
+Documents/
+Downloads/
+Library/
+Movies/
+Music/
+Pictures/
+Public/
+OneDrive
+
+# Config files
+.zsh_history
+.zsh_sessions/
+.zshrc
+.zcompdump
+.env
+.env.example
+.cups/
+
+# Claude files
+.claude/
+.claude.json*
+.blackbox/
+.aios-core/
+.local/
+
+# Node/Build
+node_modules/
+dist/
+build/
+
+# Other
+bin/
+*.pdf
+"Lendário scripts aula de agencia de Ia/"
+"Sistema & Configurações/"
+"Receitas Saudável /"
+"Marketing-Digital-com-o-Impulso-da-Inteligencia-Artificial (1).pdf"
