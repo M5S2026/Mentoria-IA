@@ -23,8 +23,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS - Preload para carregamento mais rápido -->
+    <link rel="preload" href="../css/style.css" as="style">
     <link rel="stylesheet" href="../css/style.css">
+
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <title>Cursos em IA | ChatGPT, Negócios, Criadores | Silvia Assay</title>
 </head>
@@ -107,7 +111,7 @@
             <div class="product-detail" id="chatgpt">
                 <div class="product-detail-grid">
                     <div class="product-detail-image">
-                        <img src="../images/chatgpt-course.jpg" alt="ChatGPT Mastery Course">
+                        <img src="../images/chatgpt-course.jpg" alt="ChatGPT Mastery Course" width="400" height="400" loading="lazy">
                     </div>
                     <div class="product-detail-content">
                         <span class="product-level">Nível: Básico → Intermediário</span>
@@ -161,7 +165,7 @@
             <div class="product-detail" id="negocio">
                 <div class="product-detail-grid featured">
                     <div class="product-detail-image">
-                        <img src="../images/negocio-course.jpg" alt="IA para Negócios Course">
+                        <img src="../images/negocio-course.jpg" alt="IA para Negócios Course" width="600" height="375" loading="lazy">
                         <div class="badge-featured">MAIS POPULAR</div>
                     </div>
                     <div class="product-detail-content">
@@ -220,7 +224,7 @@
             <div class="product-detail" id="criadores">
                 <div class="product-detail-grid">
                     <div class="product-detail-image">
-                        <img src="../images/criadores-course.jpg" alt="IA para Criadores Course">
+                        <img src="../images/criadores-course.jpg" alt="IA para Criadores Course" width="400" height="400" loading="lazy">
                     </div>
                     <div class="product-detail-content">
                         <span class="product-level">Nível: Básico → Avançado</span>
@@ -541,7 +545,7 @@
     </script>
 
     <!-- JavaScript -->
-    <script src="../js/script.js"></script>
+    <script src="../js/script.js" defer></script>
 
     <!-- Estilos Específicos da Página -->
     <style>

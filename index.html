@@ -34,8 +34,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
+    <!-- CSS - Preload para carregamento mais rápido -->
+    <link rel="preload" href="css/style.css" as="style">
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- Preload imagem hero (LCP) -->
+    <link rel="preload" href="images/hero-silvia.jpg" as="image">
+
+    <!-- DNS Prefetch para recursos externos -->
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
     <title>Mentoria em IA | Silvia Assay - Transforme Sua Carreira</title>
 </head>
@@ -94,7 +101,7 @@
                 </div>
             </div>
             <div class="hero-image">
-                <img src="images/hero-silvia.jpg" alt="Silvia Assay - Especialista em IA" class="hero-img">
+                <img src="images/hero-silvia.jpg" alt="Silvia Assay - Especialista em IA" class="hero-img" width="600" height="600" fetchpriority="high">
             </div>
         </div>
     </section>
@@ -149,7 +156,7 @@
                     <a href="pages/mentoria.html" class="btn btn-primary btn-lg">Saber Mais sobre a Mentoria</a>
                 </div>
                 <div class="mentoria-image">
-                    <img src="images/mentoria-preview.jpg" alt="Mentoria Silvia Assay">
+                    <img src="images/mentoria-preview.jpg" alt="Mentoria Silvia Assay" width="500" height="486" loading="lazy">
                 </div>
             </div>
 
@@ -458,7 +465,7 @@
         });
     </script>
 
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
+    <!-- JavaScript - defer para não bloquear renderização -->
+    <script src="js/script.js" defer></script>
 </body>
 </html>
