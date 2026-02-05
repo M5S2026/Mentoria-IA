@@ -41,3 +41,13 @@ bin/
 "Sistema & Configurações/"
 "Receitas Saudável /"
 "Marketing-Digital-com-o-Impulso-da-Inteligencia-Artificial (1).pdf"
+
+# Large folders (not suitable for git)
+Mídia/
+"Aprendizado & Pesquisa/"
+.config/
+.npm/
+.vscode/
+
+# Local Netlify folder
+.netlify
