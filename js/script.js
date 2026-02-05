@@ -170,21 +170,43 @@ function showFormErrors(form, errors) {
     return true;
 }
 
-// Handle all form submissions
-document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', (e) => {
+// Handle all form submissions (Netlify Forms)
+document.querySelectorAll('form[data-netlify="true"]').forEach(form => {
+    form.addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const errors = validateForm(form);
-        if (showFormErrors(form, errors)) {
-            // Form is valid - here you would submit to your backend
-            console.log('Form submitted successfully');
+        if (!showFormErrors(form, errors)) {
+            return;
+        }
 
-            // Track event
-            trackEvent('Form', 'submission', form.id || 'contact-form');
+        // Disable submit button
+        const submitBtn = form.querySelector('button[type="submit"]');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Enviando...';
 
-            // Optional: Show success message
-            showSuccessMessage(form);
+        try {
+            // Submit to Netlify Forms
+            const formData = new FormData(form);
+            const response = await fetch('/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(formData).toString()
+            });
+
+            if (response.ok) {
+                // Track event
+                trackEvent('Form', 'submission', form.getAttribute('name') || 'form');
+                showSuccessMessage(form);
+            } else {
+                throw new Error('Erro no envio');
+            }
+        } catch (error) {
+            showErrorMessage(form, 'Erro ao enviar. Tente novamente ou envie email diretamente.');
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
         }
     });
 });
@@ -193,30 +215,53 @@ document.querySelectorAll('form').forEach(form => {
  * Show success message after form submission
  */
 function showSuccessMessage(form) {
+    // Remove previous messages
+    removeFormMessages(form);
+
     const successDiv = document.createElement('div');
-    successDiv.className = 'success-message';
-    successDiv.textContent = 'Obrigado! Seus dados foram recebidos. Em breve entraremos em contato.';
+    successDiv.className = 'form-success';
 
-    // Style the success message
-    successDiv.style.cssText = `
-        padding: 1rem;
-        margin-bottom: 1rem;
-        background-color: #d4edda;
-        border: 1px solid #c3e6cb;
-        color: #155724;
-        border-radius: 0.5rem;
-        animation: slideDown 300ms ease-in-out;
-    `;
+    // Custom message based on form type
+    const formName = form.getAttribute('name');
+    if (formName === 'newsletter') {
+        successDiv.textContent = 'Inscrito com sucesso! Fique de olho no seu email.';
+    } else {
+        successDiv.textContent = 'Mensagem enviada! Responderemos em breve.';
+    }
 
-    form.insertBefore(successDiv, form.firstChild);
-
-    // Reset form
+    form.appendChild(successDiv);
     form.reset();
 
     // Remove success message after 5 seconds
     setTimeout(() => {
         successDiv.remove();
     }, 5000);
+}
+
+/**
+ * Show error message after form submission failure
+ */
+function showErrorMessage(form, message) {
+    removeFormMessages(form);
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error';
+    errorDiv.textContent = message;
+
+    form.appendChild(errorDiv);
+
+    // Remove error message after 5 seconds
+    setTimeout(() => {
+        errorDiv.remove();
+    }, 5000);
+}
+
+/**
+ * Remove previous form messages
+ */
+function removeFormMessages(form) {
+    const prevMessages = form.querySelectorAll('.form-success, .form-error');
+    prevMessages.forEach(msg => msg.remove());
 }
 
 // =====================================

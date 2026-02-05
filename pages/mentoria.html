@@ -523,9 +523,20 @@
                         <li><a href="#">Termos de Serviço</a></li>
                     </ul>
                 </div>
-                <div class="footer-section">
+                <div class="footer-section footer-contact">
                     <h4>Contato</h4>
                     <p>Email: <a href="mailto:silviaassay@gmail.com">silviaassay@gmail.com</a></p>
+
+                    <form name="contato" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form">
+                        <input type="hidden" name="form-name" value="contato">
+                        <p class="hidden" style="display:none;">
+                            <label>Não preencha: <input name="bot-field"></label>
+                        </p>
+                        <input type="text" name="nome" placeholder="Seu nome" required aria-label="Seu nome">
+                        <input type="email" name="email" placeholder="Seu email" required aria-label="Seu email">
+                        <textarea name="mensagem" placeholder="Sua mensagem" rows="3" required aria-label="Sua mensagem"></textarea>
+                        <button type="submit" class="btn btn-outline btn-sm">Enviar Mensagem</button>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom">
