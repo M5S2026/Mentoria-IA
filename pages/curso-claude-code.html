@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Claude Code na Pratica - Crie seu primeiro app em 7 dias sem saber programar. Curso com Silvia Assay.">
+    <meta name="author" content="Silvia Assay">
+    <link rel="canonical" href="https://silviaassay.com/pages/curso-claude-code.html">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Claude Code na Pratica | Crie Apps com IA | Silvia Assay</title>
+
+    <style>
+        /* Landing Page Styles */
+        .lp-hero { padding: var(--spacing-4xl) 0 var(--spacing-2xl); text-align: center; }
+        .lp-hero .badge { display: inline-block; background: var(--glass-bg-accent); color: var(--color-accent); padding: var(--spacing-sm) var(--spacing-lg); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: 600; margin-bottom: var(--spacing-lg); border: 1px solid rgba(233,69,96,0.3); }
+        .lp-hero h1 { font-size: var(--font-size-4xl); max-width: 800px; margin: 0 auto var(--spacing-lg); }
+        .lp-hero .sub { font-size: var(--font-size-lg); color: var(--color-text-light); max-width: 600px; margin: 0 auto var(--spacing-2xl); }
+
+        /* Problema */
+        .lp-problem { padding: var(--spacing-3xl) 0; }
+        .lp-problem h2 { text-align: center; margin-bottom: var(--spacing-2xl); }
+        .pain-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-lg); max-width: 900px; margin: 0 auto; }
+        .pain-item { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-xl); transition: all var(--transition-base); }
+        .pain-item:hover { border-color: rgba(233,69,96,0.3); box-shadow: var(--shadow-accent); }
+        .pain-item .icon { font-size: 2rem; margin-bottom: var(--spacing-md); }
+        .pain-item p { color: var(--color-text-muted); font-size: var(--font-size-sm); margin: 0; }
+
+        .solution-box { background: var(--glass-bg-accent); border: 1px solid rgba(233,69,96,0.3); border-radius: var(--radius-2xl); padding: var(--spacing-2xl); max-width: 800px; margin: var(--spacing-2xl) auto 0; text-align: center; }
+        .solution-box h3 { color: var(--color-accent); margin-bottom: var(--spacing-md); }
+        .solution-box p { color: var(--color-text-light); }
+        .solution-list { list-style: none; text-align: left; max-width: 500px; margin: var(--spacing-lg) auto 0; }
+        .solution-list li { padding: var(--spacing-sm) 0; color: var(--color-text-light); font-size: var(--font-size-sm); }
+        .solution-list li::before { content: '\2713 '; color: var(--color-accent); font-weight: bold; margin-right: var(--spacing-sm); }
+
+        /* Publico */
+        .lp-audience { padding: var(--spacing-3xl) 0; }
+        .lp-audience h2 { text-align: center; margin-bottom: var(--spacing-2xl); }
+        .audience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); max-width: 800px; margin: 0 auto; }
+        .audience-item { display: flex; align-items: flex-start; gap: var(--spacing-md); padding: var(--spacing-md); background: var(--glass-bg); border-radius: var(--radius-lg); border: 1px solid var(--color-border); }
+        .audience-item .check { color: var(--color-success); font-weight: bold; font-size: var(--font-size-lg); flex-shrink: 0; }
+        .audience-item .cross { color: var(--color-accent); font-weight: bold; font-size: var(--font-size-lg); flex-shrink: 0; }
+        .audience-item p { margin: 0; color: var(--color-text-light); font-size: var(--font-size-sm); }
+
+        /* Modulos */
+        .lp-modules { padding: var(--spacing-3xl) 0; }
+        .lp-modules h2 { text-align: center; margin-bottom: var(--spacing-2xl); }
+        .modules-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--spacing-lg); max-width: 900px; margin: 0 auto; }
+        .module-card { background: var(--glass-bg); backdrop-filter: blur(20px); border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--spacing-xl); transition: all var(--transition-base); }
+        .module-card:hover { border-color: rgba(233,69,96,0.3); transform: translateY(-4px); box-shadow: var(--shadow-accent); }
+        .module-card .day { color: var(--color-accent); font-weight: 700; font-size: var(--font-size-sm); text-transform: uppercase; letter-spacing: 2px; margin-bottom: var(--spacing-sm); }
+        .module-card h3 { font-size: var(--font-size-lg); margin-bottom: var(--spacing-md); }
+        .module-card ul { list-style: none; }
+        .module-card li { padding: var(--spacing-xs) 0; color: var(--color-text-muted); font-size: var(--font-size-sm); }
+        .module-card li::before { content: '\2022 '; color: var(--color-accent); }
+
+        /* Sobre mentora */
+        .lp-mentora { padding: var(--spacing-3xl) 0; }
+        .mentora-card { background: var(--glass-bg); border: 1px solid var(--color-border); border-radius: var(--radius-2xl); padding: var(--spacing-2xl); max-width: 700px; margin: 0 auto; text-align: center; }
+        .mentora-card h2 { margin-bottom: var(--spacing-lg); }
+        .mentora-card .bio { color: var(--color-text-light); margin-bottom: var(--spacing-lg); }
+        .mentora-projects { list-style: none; text-align: left; margin: var(--spacing-lg) 0; }
+        .mentora-projects li { padding: var(--spacing-sm) 0; color: var(--color-text-muted); font-size: var(--font-size-sm); border-bottom: 1px solid var(--color-border); }
+        .mentora-projects li::before { content: '\2022 '; color: var(--color-accent); }
+        .mentora-projects li:last-child { border-bottom: none; }
+        .mentora-quote { font-style: italic; color: var(--color-text-light); padding: var(--spacing-lg); background: var(--glass-bg-accent); border-radius: var(--radius-lg); border-left: 3px solid var(--color-accent); margin-top: var(--spacing-lg); }
+
+        /* Preco */
+        .lp-pricing { padding: var(--spacing-3xl) 0; }
+        .pricing-box { background: var(--glass-bg); border: 2px solid var(--color-accent); border-radius: var(--radius-2xl); padding: var(--spacing-2xl); max-width: 600px; margin: 0 auto; text-align: center; box-shadow: var(--shadow-accent-strong); }
+        .pricing-box h2 { margin-bottom: var(--spacing-lg); }
+        .pricing-table { margin: var(--spacing-lg) 0; }
+        .pricing-row { display: flex; justify-content: space-between; padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-border); font-size: var(--font-size-sm); }
+        .pricing-row .item { color: var(--color-text-light); }
+        .pricing-row .val { color: var(--color-text-muted); }
+        .pricing-total { display: flex; justify-content: space-between; padding: var(--spacing-md) 0; border-top: 2px solid var(--color-accent); margin-top: var(--spacing-md); font-weight: 700; }
+        .pricing-total .item { color: var(--color-text); font-size: var(--font-size-lg); }
+        .pricing-total .val { color: var(--color-text-muted); text-decoration: line-through; font-size: var(--font-size-lg); }
+        .launch-price { margin: var(--spacing-xl) 0; }
+        .launch-price .amount { font-size: var(--font-size-4xl); font-weight: 800; color: var(--color-accent); }
+        .launch-price .installment { color: var(--color-text-muted); font-size: var(--font-size-sm); margin-top: var(--spacing-sm); }
+        .scarcity { display: inline-block; background: var(--glass-bg-accent); color: var(--color-accent); padding: var(--spacing-sm) var(--spacing-lg); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: 600; margin: var(--spacing-md) 0; }
+
+        /* Garantia */
+        .guarantee-box { background: rgba(0,255,136,0.05); border: 1px solid rgba(0,255,136,0.3); border-radius: var(--radius-xl); padding: var(--spacing-xl); max-width: 600px; margin: var(--spacing-2xl) auto; text-align: center; }
+        .guarantee-box h3 { color: var(--color-success); margin-bottom: var(--spacing-md); }
+        .guarantee-box p { color: var(--color-text-light); margin: 0; }
+
+        /* FAQ landing */
+        .lp-faq { padding: var(--spacing-3xl) 0; }
+
+        @media (max-width: 768px) {
+            .lp-hero h1 { font-size: var(--font-size-2xl); }
+            .audience-grid { grid-template-columns: 1fr; }
+            .modules-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../index.html">SA</a></div>
+                <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#modulos">Modulos</a></li>
+                    <li><a href="#preco">Preco</a></li>
+                    <li><a href="#faq-curso">FAQ</a></li>
+                    <li><a href="#preco" class="btn btn-primary">Quero Minha Vaga</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="lp-hero">
+        <div class="container">
+            <span class="badge">Curso Online - 7 Dias</span>
+            <h1>Crie Aplicativos Reais <span class="glow-text">Sem Saber Programar</span> - Usando Apenas o Claude Code</h1>
+            <p class="sub">Em 7 dias, voce vai sair do zero e construir seu primeiro app funcional, mesmo que nunca tenha escrito uma linha de codigo na vida.</p>
+            <div class="cta-group">
+                <a href="#preco" class="btn btn-primary btn-lg">Quero Minha Vaga</a>
+                <a href="#modulos" class="btn btn-secondary btn-lg">Ver Conteudo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problema -->
+    <section class="lp-problem">
+        <div class="container">
+            <h2>Voce ja sentiu que a tecnologia esta avancando rapido demais?</h2>
+            <div class="pain-grid">
+                <div class="pain-item">
+                    <div class="icon">&#128566;</div>
+                    <p>Tentou aprender programacao tradicional e desistiu porque era muito complexo</p>
+                </div>
+                <div class="pain-item">
+                    <div class="icon">&#128148;</div>
+                    <p>Usou ferramentas no-code que prometiam tudo, mas entregavam pouco</p>
+                </div>
+                <div class="pain-item">
+                    <div class="icon">&#128176;</div>
+                    <p>Pagou caro para um desenvolvedor criar algo simples para o seu negocio</p>
+                </div>
+                <div class="pain-item">
+                    <div class="icon">&#128564;</div>
+                    <p>Ficou horas no ChatGPT sem conseguir transformar ideias em algo concreto</p>
+                </div>
+            </div>
+
+            <div class="solution-box">
+                <h3>A solucao: Claude Code na Pratica</h3>
+                <p>O primeiro curso em portugues que te ensina a criar aplicacoes profissionais usando Claude Code - a ferramenta mais poderosa de desenvolvimento assistido por IA.</p>
+                <ul class="solution-list">
+                    <li>Construir apps reais que resolvem problemas do seu negocio</li>
+                    <li>Automatizar tarefas que tomam horas do seu dia</li>
+                    <li>Criar ferramentas que voce pode vender como servico</li>
+                    <li>Desenvolver um portfolio de projetos funcionais em 7 dias</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Para quem -->
+    <section class="lp-audience">
+        <div class="container">
+            <h2>Para quem e este curso?</h2>
+            <div class="audience-grid">
+                <div class="audience-item">
+                    <span class="check">&#10003;</span>
+                    <p>Empreendedores digitais que querem automatizar processos</p>
+                </div>
+                <div class="audience-item">
+                    <span class="check">&#10003;</span>
+                    <p>Profissionais de marketing que precisam criar ferramentas rapidas</p>
+                </div>
+                <div class="audience-item">
+                    <span class="check">&#10003;</span>
+                    <p>Freelancers que querem adicionar "desenvolvimento de apps" ao portfolio</p>
+                </div>
+                <div class="audience-item">
+                    <span class="check">&#10003;</span>
+                    <p>Qualquer pessoa curiosa sobre IA pratica (nao precisa saber programar)</p>
+                </div>
+                <div class="audience-item">
+                    <span class="cross">&#10007;</span>
+                    <p>NAO e para quem quer aprender programacao tradicional</p>
+                </div>
+                <div class="audience-item">
+                    <span class="cross">&#10007;</span>
+                    <p>NAO e para quem busca teoria sem acao</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modulos -->
+    <section class="lp-modules" id="modulos">
+        <div class="container">
+            <h2>O que voce vai aprender em <span class="glow-text">7 dias</span></h2>
+            <div class="modules-grid">
+                <div class="module-card">
+                    <div class="day">Dia 1-2</div>
+                    <h3>Fundamentos e Setup</h3>
+                    <ul>
+                        <li>Instalacao completa do ambiente (passo a passo)</li>
+                        <li>Como "conversar" com o Claude Code</li>
+                        <li>Seu primeiro comando e automacao</li>
+                        <li>A arte do prompt para codigo</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="day">Dia 3-4</div>
+                    <h3>Seu Primeiro App Real</h3>
+                    <ul>
+                        <li>Planejamento do projeto (template incluso)</li>
+                        <li>Desenvolvimento guiado passo a passo</li>
+                        <li>Graficos, dados e recursos avancados</li>
+                        <li>Deploy - colocando no ar</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="day">Dia 5-6</div>
+                    <h3>Apps que Geram Receita</h3>
+                    <ul>
+                        <li>Calculadoras e ferramentas para captura de leads</li>
+                        <li>Dashboards de dados para clientes</li>
+                        <li>Automacoes que economizam horas por semana</li>
+                    </ul>
+                </div>
+                <div class="module-card">
+                    <div class="day">Dia 7</div>
+                    <h3>Portfolio e Monetizacao</h3>
+                    <ul>
+                        <li>Como precificar e vender seus apps</li>
+                        <li>Criando seu portfolio profissional</li>
+                        <li>Proximos passos: projetos avancados</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="section-subtitle" style="margin-top: var(--spacing-2xl)">14 aulas | ~4h25 de conteudo | 4 modulos estruturados</p>
+        </div>
+    </section>
+
+    <!-- Sobre a Mentora -->
+    <section class="lp-mentora">
+        <div class="container">
+            <div class="mentora-card">
+                <h2>Sobre a Mentora</h2>
+                <p class="bio">Silvia Assay estuda Marketing Digital desde 2020 e Inteligencia Artificial aplicada a negocios desde 2024.</p>
+                <ul class="mentora-projects">
+                    <li>Sistema completo de avaliacao comportamental DISC com gamificacao</li>
+                    <li>Ferramentas de automacao para extracao de SOPs</li>
+                    <li>Agentes de IA personalizados usando frameworks avancados (AIOS)</li>
+                    <li>Aplicacoes completas com Design Systems profissionais</li>
+                </ul>
+                <div class="mentora-quote">
+                    "Eu nao sou programadora de formacao. Aprendi a criar aplicativos usando IA e agora ensino voce a fazer o mesmo."
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Preco -->
+    <section class="lp-pricing" id="preco">
+        <div class="container">
+            <div class="pricing-box">
+                <h2>Investimento</h2>
+                <div class="pricing-table">
+                    <div class="pricing-row"><span class="item">Curso completo em video (7 modulos)</span><span class="val">R$ 997</span></div>
+                    <div class="pricing-row"><span class="item">Templates de prompts otimizados</span><span class="val">R$ 297</span></div>
+                    <div class="pricing-row"><span class="item">Checklist de desenvolvimento</span><span class="val">R$ 97</span></div>
+                    <div class="pricing-row"><span class="item">Acesso a comunidade exclusiva</span><span class="val">R$ 197</span></div>
+                    <div class="pricing-row"><span class="item">3 aulas ao vivo de Q&A</span><span class="val">R$ 497</span></div>
+                    <div class="pricing-row"><span class="item">Bonus: Biblioteca 20+ prompts</span><span class="val">R$ 197</span></div>
+                    <div class="pricing-row"><span class="item">Bonus: Template portfolio profissional</span><span class="val">R$ 97</span></div>
+                    <div class="pricing-total"><span class="item">VALOR TOTAL</span><span class="val">R$ 2.379</span></div>
+                </div>
+
+                <div class="launch-price">
+                    <p style="color: var(--color-accent); font-weight: 600; margin-bottom: var(--spacing-sm);">PRECO DE LANCAMENTO</p>
+                    <div class="amount">R$ 497</div>
+                    <p class="installment">ou 12x de R$ 49,27</p>
+                </div>
+
+                <span class="scarcity">Apenas 10 vagas nesta condicao especial</span>
+
+                <div style="margin-top: var(--spacing-xl);">
+                    <a href="#" class="btn btn-primary btn-lg" style="width: 100%;">QUERO MINHA VAGA AGORA</a>
+                </div>
+            </div>
+
+            <div class="guarantee-box">
+                <h3>Garantia Incondicional de 7 Dias</h3>
+                <p>Se em 7 dias voce nao tiver criado seu primeiro app funcional, devolvemos 100% do seu investimento. Sem perguntas, sem burocracia.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="lp-faq faq" id="faq-curso">
+        <div class="container">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Preciso saber programar?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Nao. O curso foi criado para iniciantes. Voce vai aprender do zero.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Preciso de um computador potente?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Nao. Qualquer computador com internet funciona. O Claude Code roda na nuvem.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Quanto tempo preciso dedicar por dia?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Recomendamos 1-2 horas por dia para seguir o ritmo de 7 dias. Mas voce tem acesso vitalicio e pode fazer no seu tempo.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>E se eu ja souber programar?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Melhor ainda! Voce vai aprender a usar o Claude Code para acelerar seu desenvolvimento em 10x.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>O acesso e vitalicio?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer" hidden>
+                        <p>Sim. Voce compra uma vez e tem acesso para sempre, incluindo futuras atualizacoes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="final-cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Pronto para criar seu primeiro app com IA?</h2>
+                <p>Nao espere mais. As vagas sao limitadas e o preco de lancamento e por tempo limitado.</p>
+                <div class="cta-buttons">
+                    <a href="#preco" class="btn btn-primary btn-lg">QUERO MINHA VAGA AGORA</a>
+                </div>
+                <p class="cta-disclaimer">Garantia 7 Dias | Acesso Vitalicio | Suporte Dedicado</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+                <p>Claude Code na Pratica | silviaassay.com</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/script.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Calculadora de Orçamento Inteligente - Calcule o investimento do seu projeto digital com Silvia Assay">
+<meta name="author" content="Silvia Assay">
+<title>Calculadora de Orçamento | Silvia Assay</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- Chart.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<!-- html2pdf.js para exportação real -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link rel="stylesheet" href="../css/style.css">
+<style>
+  /* Calculadora - Estilos específicos */
+  .calc-page { min-height: 100vh; padding-top: 80px; }
+
+  .calc-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+  }
+  .calc-header p { color: var(--color-secondary); font-size: var(--font-size-sm); font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-bottom: var(--spacing-md); }
+  .calc-header h1 { font-size: var(--font-size-3xl); margin-bottom: var(--spacing-sm); }
+  .calc-header .subtitle { color: var(--color-light-text); max-width: 600px; margin: 0 auto; }
+
+  /* Progress */
+  .calc-progress { display: flex; align-items: center; justify-content: center; gap: var(--spacing-md); margin-bottom: var(--spacing-2xl); }
+  .calc-progress .step-dot { width: 12px; height: 12px; border-radius: 50%; background: var(--color-border); transition: all var(--transition-base); }
+  .calc-progress .step-dot.active { background: var(--color-secondary); box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); }
+  .calc-progress .step-dot.done { background: var(--color-accent); box-shadow: 0 0 15px rgba(0, 255, 136, 0.6); }
+  .calc-progress .step-line { width: 60px; height: 2px; background: var(--color-border); }
+  .calc-progress .step-line.active { background: var(--color-secondary); }
+  .calc-progress .step-label { font-size: var(--font-size-sm); color: var(--color-light-text); }
+
+  /* Cards de projeto */
+  .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--spacing-lg); max-width: 900px; margin: 0 auto; }
+  .project-card {
+    background: var(--color-light-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-xl);
+    cursor: pointer;
+    transition: all var(--transition-base);
+    text-align: center;
+  }
+  .project-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-neon); border-color: var(--color-secondary); }
+  .project-card.selected { border-color: var(--color-secondary); background: rgba(0, 212, 255, 0.05); box-shadow: var(--shadow-neon); }
+  .project-card .card-icon { font-size: 3rem; margin-bottom: var(--spacing-md); }
+  .project-card h3 { font-size: var(--font-size-lg); margin-bottom: var(--spacing-sm); }
+  .project-card p { font-size: var(--font-size-sm); color: var(--color-light-text); margin-bottom: var(--spacing-md); }
+  .project-card .price-tag { display: inline-block; background: rgba(0, 212, 255, 0.1); color: var(--color-secondary); padding: var(--spacing-xs) var(--spacing-md); border-radius: var(--radius-full); font-size: var(--font-size-sm); font-weight: 600; }
+
+  /* Seção de personalização */
+  .calc-section { display: none; max-width: 800px; margin: 0 auto; }
+  .calc-section.active { display: block; animation: fadeInUp 0.5s ease-out; }
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+  .selected-badge { text-align: center; margin-bottom: var(--spacing-xl); }
+  .selected-badge span { display: inline-block; background: var(--color-light-bg); border: 1px solid var(--color-secondary); padding: var(--spacing-sm) var(--spacing-lg); border-radius: var(--radius-full); font-weight: 600; color: var(--color-secondary); }
+
+  .calc-card { background: var(--color-light-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: var(--spacing-xl); margin-bottom: var(--spacing-lg); }
+  .calc-card h3 { font-size: var(--font-size-lg); margin-bottom: var(--spacing-lg); color: var(--color-secondary); }
+
+  /* Sliders */
+  .slider-group { margin-bottom: var(--spacing-xl); }
+  .slider-label { display: flex; justify-content: space-between; margin-bottom: var(--spacing-sm); }
+  .slider-label span:first-child { font-weight: 600; font-size: var(--font-size-sm); color: var(--color-dark-text); }
+  .slider-label .slider-value { color: var(--color-secondary); font-weight: 700; }
+  input[type="range"] { -webkit-appearance: none; width: 100%; height: 6px; border-radius: 3px; background: var(--color-border); outline: none; }
+  input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 22px; height: 22px; border-radius: 50%; background: var(--color-secondary); cursor: pointer; box-shadow: 0 0 15px rgba(0, 212, 255, 0.5); }
+
+  /* Features checkboxes */
+  .features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-md); }
+  .feature-item {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    cursor: pointer;
+    display: flex; align-items: center; gap: var(--spacing-md);
+    transition: all var(--transition-base);
+  }
+  .feature-item:has(input:checked) { border-color: var(--color-secondary); background: rgba(0, 212, 255, 0.05); }
+  .feature-item input[type="checkbox"] { accent-color: var(--color-secondary); width: 18px; height: 18px; }
+  .feature-item .feature-name { font-weight: 600; font-size: var(--font-size-sm); color: var(--color-dark-text); }
+  .feature-item .feature-price { font-size: var(--font-size-sm); color: var(--color-secondary); }
+
+  /* Live Price */
+  .live-price-box { background: var(--color-light-bg); border: 1px solid var(--color-secondary); border-radius: var(--radius-lg); padding: var(--spacing-xl); text-align: center; margin-bottom: var(--spacing-lg); }
+  .live-price-box .label { color: var(--color-light-text); font-size: var(--font-size-sm); margin-bottom: var(--spacing-sm); }
+  .live-price-box .price { font-family: var(--font-primary); font-size: var(--font-size-4xl); font-weight: 800; color: var(--color-secondary); text-shadow: 0 0 30px rgba(0, 212, 255, 0.6); }
+  .live-price-box .note { font-size: var(--font-size-sm); color: var(--color-accent); margin-top: var(--spacing-sm); margin-bottom: 0; }
+
+  /* Botão de navegação */
+  .calc-nav { text-align: center; margin-top: var(--spacing-lg); }
+  .calc-back { background: none; border: none; color: var(--color-light-text); cursor: pointer; font-size: var(--font-size-sm); padding: var(--spacing-sm); margin-bottom: var(--spacing-md); display: inline-block; }
+  .calc-back:hover { color: var(--color-secondary); }
+
+  /* Resultado */
+  .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--spacing-lg); max-width: 900px; margin: 0 auto; }
+  .breakdown-item { display: flex; justify-content: space-between; padding: var(--spacing-sm) 0; border-bottom: 1px solid var(--color-border); font-size: var(--font-size-sm); }
+  .breakdown-item .label { color: var(--color-light-text); }
+  .breakdown-item .value { font-weight: 600; color: var(--color-dark-text); }
+  .breakdown-item .value.discount { color: var(--color-accent); }
+  .breakdown-total { display: flex; justify-content: space-between; padding-top: var(--spacing-md); margin-top: var(--spacing-md); border-top: 2px solid var(--color-secondary); }
+  .breakdown-total .label { font-weight: 700; font-size: var(--font-size-lg); color: var(--color-dark-text); }
+  .breakdown-total .value { font-weight: 800; font-size: var(--font-size-xl); color: var(--color-secondary); }
+
+  /* Timeline */
+  .timeline-item { position: relative; padding-left: var(--spacing-xl); margin-bottom: var(--spacing-lg); }
+  .timeline-item::before { content: ''; position: absolute; left: 0; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--color-secondary); box-shadow: 0 0 10px rgba(0, 212, 255, 0.5); }
+  .timeline-item::after { content: ''; position: absolute; left: 6px; top: 20px; bottom: -16px; width: 2px; background: rgba(0, 212, 255, 0.2); }
+  .timeline-item:last-child::after { display: none; }
+  .timeline-item .phase-name { font-weight: 700; font-size: var(--font-size-sm); color: var(--color-dark-text); }
+  .timeline-item .phase-detail { font-size: var(--font-size-sm); color: var(--color-light-text); }
+
+  /* Chart container */
+  .chart-container { position: relative; max-height: 280px; margin-bottom: var(--spacing-lg); }
+
+  /* Actions */
+  .action-card .calc-card { text-align: center; }
+  .action-card .btn { margin-bottom: var(--spacing-md); width: 100%; }
+  .calc-form input { width: 100%; padding: var(--spacing-md); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: rgba(0,0,0,0.3); color: var(--color-dark-text); font-size: var(--font-size-sm); margin-bottom: var(--spacing-sm); font-family: var(--font-secondary); }
+  .calc-form input:focus { outline: none; border-color: var(--color-secondary); box-shadow: 0 0 10px rgba(0, 212, 255, 0.3); }
+  .calc-form input::placeholder { color: rgba(255,255,255,0.4); }
+
+  .success-msg { display: none; text-align: center; padding: var(--spacing-xl); }
+  .success-msg.show { display: block; }
+  .success-msg .icon { font-size: 3rem; margin-bottom: var(--spacing-md); }
+  .success-msg p { color: var(--color-secondary); font-weight: 700; }
+  .success-msg .detail { color: var(--color-light-text); font-weight: 400; font-size: var(--font-size-sm); }
+
+  /* PDF export area */
+  #pdfContent { background: #0a0a1a; padding: var(--spacing-xl); border-radius: var(--radius-lg); }
+
+  @media (max-width: 768px) {
+    .project-grid { grid-template-columns: 1fr; }
+    .features-grid { grid-template-columns: 1fr; }
+    .result-grid { grid-template-columns: 1fr; }
+    .calc-header h1 { font-size: var(--font-size-2xl); }
+  }
+</style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-wrapper">
+        <div class="logo">
+          <a href="../index.html">SA</a>
+        </div>
+        <div class="nav-controls">
+          <button class="theme-toggle" id="theme-toggle" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+            <span class="theme-icon">&#127769;</span>
+          </button>
+          <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Abrir menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="../index.html#produtos">Produtos</a></li>
+          <li><a href="../index.html#mentoria">Mentoria</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="../index.html#faq">FAQ</a></li>
+          <li><a href="../index.html#contato" class="btn btn-primary">Comece Agora</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="calc-page">
+    <div class="container">
+
+      <!-- Progress Indicator -->
+      <div class="calc-progress">
+        <div class="step-dot active" id="dot1"></div>
+        <div class="step-line" id="line1"></div>
+        <div class="step-dot" id="dot2"></div>
+        <div class="step-line" id="line2"></div>
+        <div class="step-dot" id="dot3"></div>
+        <span class="step-label" id="stepLabel">Etapa 1 de 3</span>
+      </div>
+
+      <!-- STEP 1: Seleção do Projeto -->
+      <section id="step1" class="calc-section active">
+        <div class="calc-header">
+          <p>Calculadora de Orcamento</p>
+          <h1>Qual tipo de projeto voce precisa?</h1>
+          <p class="subtitle">Selecione a categoria que melhor descreve seu projeto para comecar o orcamento.</p>
+        </div>
+
+        <div class="project-grid" id="projectCards">
+          <div class="project-card" onclick="selectProject('site')" data-type="site">
+            <div class="card-icon">&#127760;</div>
+            <h3>Website</h3>
+            <p>Sites institucionais, landing pages, blogs e portais</p>
+            <span class="price-tag">A partir de R$ 2.000</span>
+          </div>
+          <div class="project-card" onclick="selectProject('app')" data-type="app">
+            <div class="card-icon">&#128241;</div>
+            <h3>App Mobile</h3>
+            <p>Aplicativos para iOS e Android</p>
+            <span class="price-tag">A partir de R$ 5.000</span>
+          </div>
+          <div class="project-card" onclick="selectProject('automacao')" data-type="automacao">
+            <div class="card-icon">&#9881;&#65039;</div>
+            <h3>Automacao</h3>
+            <p>Workflows, integracoes e bots automatizados</p>
+            <span class="price-tag">A partir de R$ 3.000</span>
+          </div>
+          <div class="project-card" onclick="selectProject('dashboard')" data-type="dashboard">
+            <div class="card-icon">&#128202;</div>
+            <h3>Dashboard</h3>
+            <p>Paineis de dados, relatorios e analytics</p>
+            <span class="price-tag">A partir de R$ 4.000</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- STEP 2: Personalização -->
+      <section id="step2" class="calc-section">
+        <button class="calc-back" onclick="goToStep(1)">&#8592; Voltar</button>
+        <div class="calc-header">
+          <h2>Personalize seu orcamento</h2>
+          <p class="subtitle">Ajuste os parametros para calcular o valor do seu projeto.</p>
+        </div>
+
+        <div class="selected-badge">
+          <span id="selectedBadge"></span>
+        </div>
+
+        <!-- Sliders -->
+        <div class="calc-card">
+          <h3>Configuracoes do Projeto</h3>
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>Numero de Paginas/Telas</span>
+              <span class="slider-value" id="pagesValue">5</span>
+            </div>
+            <input type="range" id="pagesSlider" min="1" max="20" value="5" oninput="updateCalc()">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>Nivel de Complexidade</span>
+              <span class="slider-value" id="complexValue">3 - Medio</span>
+            </div>
+            <input type="range" id="complexSlider" min="1" max="5" value="3" oninput="updateCalc()">
+          </div>
+          <div class="slider-group">
+            <div class="slider-label">
+              <span>Prazo (semanas)</span>
+              <span class="slider-value" id="deadlineValue">6</span>
+            </div>
+            <input type="range" id="deadlineSlider" min="1" max="12" value="6" oninput="updateCalc()">
+          </div>
+        </div>
+
+        <!-- Features -->
+        <div class="calc-card">
+          <h3>Funcionalidades Extras</h3>
+          <div class="features-grid" id="featuresList">
+            <label class="feature-item">
+              <input type="checkbox" value="500" onchange="updateCalc()">
+              <div><div class="feature-name">Responsivo</div><div class="feature-price">+R$ 500</div></div>
+            </label>
+            <label class="feature-item">
+              <input type="checkbox" value="800" onchange="updateCalc()">
+              <div><div class="feature-name">SEO Avancado</div><div class="feature-price">+R$ 800</div></div>
+            </label>
+            <label class="feature-item">
+              <input type="checkbox" value="600" onchange="updateCalc()">
+              <div><div class="feature-name">Analytics</div><div class="feature-price">+R$ 600</div></div>
+            </label>
+            <label class="feature-item">
+              <input type="checkbox" value="1500" onchange="updateCalc()">
+              <div><div class="feature-name">Integracoes API</div><div class="feature-price">+R$ 1.500</div></div>
+            </label>
+            <label class="feature-item">
+              <input type="checkbox" value="1200" onchange="updateCalc()">
+              <div><div class="feature-name">Login / Auth</div><div class="feature-price">+R$ 1.200</div></div>
+            </label>
+            <label class="feature-item">
+              <input type="checkbox" value="1000" onchange="updateCalc()">
+              <div><div class="feature-name">Painel Admin</div><div class="feature-price">+R$ 1.000</div></div>
+            </label>
+          </div>
+        </div>
+
+        <!-- Live Price -->
+        <div class="live-price-box">
+          <p class="label">Valor Estimado</p>
+          <p class="price" id="livePrice">R$ 0</p>
+          <p class="note" id="priceNote"></p>
+        </div>
+
+        <div class="calc-nav">
+          <button onclick="goToStep(3)" class="btn btn-primary btn-lg">Ver Orcamento Detalhado &#8594;</button>
+        </div>
+      </section>
+
+      <!-- STEP 3: Resultado -->
+      <section id="step3" class="calc-section">
+        <button class="calc-back" onclick="goToStep(2)">&#8592; Voltar</button>
+        <div class="calc-header">
+          <h2>Seu orcamento esta pronto</h2>
+          <p class="subtitle">Veja o detalhamento completo do investimento.</p>
+        </div>
+
+        <div id="pdfContent">
+          <div class="result-grid">
+            <!-- Breakdown + Timeline -->
+            <div>
+              <div class="calc-card">
+                <h3>Detalhamento</h3>
+                <div id="breakdown"></div>
+                <div class="breakdown-total">
+                  <span class="label">TOTAL</span>
+                  <span class="value" id="totalPrice"></span>
+                </div>
+              </div>
+              <div class="calc-card">
+                <h3>Timeline Estimada</h3>
+                <div id="timeline"></div>
+              </div>
+            </div>
+
+            <!-- Chart + Actions -->
+            <div class="action-card">
+              <div class="calc-card">
+                <h3>Distribuicao de Custos</h3>
+                <div class="chart-container">
+                  <canvas id="costChart"></canvas>
+                </div>
+              </div>
+              <div class="calc-card">
+                <button onclick="exportPDF()" class="btn btn-primary">Exportar PDF</button>
+                <div id="contactForm" class="calc-form">
+                  <input type="text" id="clientName" placeholder="Seu nome">
+                  <input type="email" id="clientEmail" placeholder="Seu email">
+                  <button onclick="requestQuote()" class="btn btn-secondary" style="width:100%">Solicitar Orcamento Formal</button>
+                </div>
+                <div id="successMsg" class="success-msg">
+                  <div class="icon">&#9989;</div>
+                  <p>Solicitacao enviada!</p>
+                  <p class="detail">Entraremos em contato em ate 24h.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+        <p>Calculadora de Orcamento Inteligente | silviaassay.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/script.js" defer></script>
+  <script>
+let selectedProject = null;
+let chartInstance = null;
+
+const projectData = {
+  site:      { name: 'Website',    icon: '\u{1F310}', base: 2000 },
+  app:       { name: 'App Mobile', icon: '\u{1F4F1}', base: 5000 },
+  automacao: { name: 'Automacao',  icon: '\u2699\uFE0F', base: 3000 },
+  dashboard: { name: 'Dashboard',  icon: '\u{1F4CA}', base: 4000 }
+};
+
+const complexLabels = ['1 - Simples', '2 - Basico', '3 - Medio', '4 - Avancado', '5 - Complexo'];
+const complexMultipliers = [1.0, 1.3, 1.6, 2.0, 2.5];
+
+function selectProject(type) {
+  selectedProject = type;
+  document.querySelectorAll('.project-card').forEach(c => c.classList.remove('selected'));
+  document.querySelector('[data-type="' + type + '"]').classList.add('selected');
+  setTimeout(() => goToStep(2), 300);
+}
+
+function goToStep(step) {
+  document.querySelectorAll('.calc-section').forEach(s => s.classList.remove('active'));
+  document.getElementById('step' + step).classList.add('active');
+
+  // Update progress dots
+  for (let i = 1; i <= 3; i++) {
+    const dot = document.getElementById('dot' + i);
+    dot.classList.remove('active', 'done');
+    if (i < step) dot.classList.add('done');
+    else if (i === step) dot.classList.add('active');
+  }
+  for (let i = 1; i <= 2; i++) {
+    const line = document.getElementById('line' + i);
+    line.classList.toggle('active', i < step);
+  }
+  document.getElementById('stepLabel').textContent = 'Etapa ' + step + ' de 3';
+
+  if (step === 2) {
+    const p = projectData[selectedProject];
+    document.getElementById('selectedBadge').textContent = p.icon + ' ' + p.name + ' \u00B7 Base: R$ ' + p.base.toLocaleString('pt-BR');
+    updateCalc();
+  }
+  if (step === 3) renderResult();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function getCalcValues() {
+  const pages = parseInt(document.getElementById('pagesSlider').value);
+  const complex = parseInt(document.getElementById('complexSlider').value);
+  const deadline = parseInt(document.getElementById('deadlineSlider').value);
+  const features = [...document.querySelectorAll('#featuresList input:checked')].map(i => parseInt(i.value));
+  return { pages, complex, deadline, features };
+}
+
+function calculateTotal() {
+  if (!selectedProject) return { base: 0, pagesCost: 0, complexCost: 0, featuresCost: 0, deadlineMod: 0, total: 0 };
+  const { pages, complex, deadline, features } = getCalcValues();
+  const p = projectData[selectedProject];
+
+  let base = p.base;
+  let pagesCost = (pages - 1) * 300;
+  let complexCost = base * (complexMultipliers[complex - 1] - 1);
+  let featuresCost = features.reduce((a, b) => a + b, 0);
+  let subtotal = base + pagesCost + complexCost + featuresCost;
+
+  let deadlineMod = 0;
+  if (deadline < 4) deadlineMod = subtotal * 0.3;
+  else if (deadline > 8) deadlineMod = subtotal * -0.1;
+
+  return { base, pagesCost, complexCost, featuresCost, deadlineMod, total: Math.round(subtotal + deadlineMod) };
+}
+
+function updateCalc() {
+  const { pages, complex, deadline } = getCalcValues();
+  document.getElementById('pagesValue').textContent = pages;
+  document.getElementById('complexValue').textContent = complexLabels[complex - 1];
+  document.getElementById('deadlineValue').textContent = deadline;
+
+  const calc = calculateTotal();
+  document.getElementById('livePrice').textContent = 'R$ ' + calc.total.toLocaleString('pt-BR');
+
+  let note = '';
+  if (deadline < 4) note = 'Prazo urgente: +30%';
+  else if (deadline > 8) note = 'Prazo estendido: -10% de desconto';
+  document.getElementById('priceNote').textContent = note;
+}
+
+function renderResult() {
+  const calc = calculateTotal();
+  const p = projectData[selectedProject];
+  const { pages, complex, deadline } = getCalcValues();
+
+  const items = [
+    { label: 'Base ' + p.name, value: calc.base },
+    { label: pages + ' paginas/telas', value: calc.pagesCost },
+    { label: 'Complexidade (' + complexLabels[complex - 1] + ')', value: Math.round(calc.complexCost) },
+  ];
+  if (calc.featuresCost > 0) items.push({ label: 'Funcionalidades extras', value: calc.featuresCost });
+  if (calc.deadlineMod !== 0) items.push({ label: calc.deadlineMod > 0 ? 'Taxa de urgencia' : 'Desconto prazo estendido', value: Math.round(calc.deadlineMod) });
+
+  document.getElementById('breakdown').innerHTML = items.map(function(i) {
+    return '<div class="breakdown-item"><span class="label">' + i.label + '</span><span class="value' + (i.value < 0 ? ' discount' : '') + '">' + (i.value < 0 ? '- ' : '') + 'R$ ' + Math.abs(i.value).toLocaleString('pt-BR') + '</span></div>';
+  }).join('');
+  document.getElementById('totalPrice').textContent = 'R$ ' + calc.total.toLocaleString('pt-BR');
+
+  // Timeline
+  const weeks = deadline;
+  const phases = [
+    { name: 'Planejamento', weeks: Math.max(1, Math.round(weeks * 0.15)), desc: 'Escopo, wireframes e aprovacao' },
+    { name: 'Desenvolvimento', weeks: Math.max(1, Math.round(weeks * 0.5)), desc: 'Codificacao e integracoes' },
+    { name: 'Testes', weeks: Math.max(1, Math.round(weeks * 0.2)), desc: 'QA, ajustes e otimizacao' },
+    { name: 'Entrega', weeks: Math.max(1, Math.round(weeks * 0.15)), desc: 'Deploy e documentacao' },
+  ];
+  document.getElementById('timeline').innerHTML = phases.map(function(ph) {
+    return '<div class="timeline-item"><div class="phase-name">' + ph.name + '</div><div class="phase-detail">' + ph.weeks + ' semana' + (ph.weeks > 1 ? 's' : '') + ' \u00B7 ' + ph.desc + '</div></div>';
+  }).join('');
+
+  // Chart
+  if (chartInstance) chartInstance.destroy();
+  const chartData = items.filter(function(i) { return i.value > 0; });
+  chartInstance = new Chart(document.getElementById('costChart'), {
+    type: 'doughnut',
+    data: {
+      labels: chartData.map(function(i) { return i.label; }),
+      datasets: [{
+        data: chartData.map(function(i) { return i.value; }),
+        backgroundColor: ['#00d4ff', '#00ff88', '#0088ff', '#ffaa00', '#ff0055', '#8b5cf6'],
+        borderWidth: 0,
+        borderRadius: 4,
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: 'rgba(255,255,255,0.6)', font: { size: 11, family: 'Montserrat' }, padding: 12, usePointStyle: true, pointStyleWidth: 8 }
+        }
+      },
+      cutout: '65%',
+    }
+  });
+}
+
+function exportPDF() {
+  var element = document.getElementById('pdfContent');
+  var opt = {
+    margin: 10,
+    filename: 'orcamento-silvia-assay.pdf',
+    image: { type: 'jpeg', quality: 0.98 },
+    html2canvas: { scale: 2, backgroundColor: '#0a0a1a' },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+  };
+  html2pdf().set(opt).from(element).save();
+}
+
+function requestQuote() {
+  var name = document.getElementById('clientName').value;
+  var email = document.getElementById('clientEmail').value;
+  if (!name || !email) { alert('Preencha nome e email!'); return; }
+  document.getElementById('contactForm').style.display = 'none';
+  document.getElementById('successMsg').classList.add('show');
+}
+  </script>
+</body>
+</html>
