@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Planejamento do projeto | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-2.html">Modulo 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a><span class="separator">/</span>
+                    <a href="modulo-2.html">Modulo 2</a><span class="separator">/</span>
+                    <span>Aula 1</span>
+                </div>
+                <h1>Planejamento do projeto</h1>
+                <div class="lesson-body">
+                    <h2>Antes de construir, planeje</h2>
+                    <p>O maior erro de quem comeca a usar IA para criar apps e pular direto para o desenvolvimento sem planejar. Mesmo com o Claude Code fazendo o trabalho pesado, voce precisa saber <strong>o que</strong> quer construir antes de pedir para ele construir.</p>
+
+                    <h2>O Template de Brief do Projeto</h2>
+                    <p>Use este template sempre que comecar um novo projeto:</p>
+                    <pre><code>=== BRIEF DO PROJETO ===
+
+Nome do Projeto: [nome simples e descritivo]
+Objetivo: [o que este app resolve?]
+Publico-alvo: [quem vai usar?]
+
+Funcionalidades essenciais (MVP):
+1. [funcionalidade principal]
+2. [funcionalidade 2]
+3. [funcionalidade 3]
+
+Funcionalidades extras (v2):
+1. [nice-to-have 1]
+2. [nice-to-have 2]
+
+Design:
+- Estilo: [moderno, minimalista, colorido, corporativo]
+- Cores: [cor principal, cor de destaque]
+- Referencia: [site ou app que voce gosta o visual]
+
+Dados:
+- [que tipo de dados o app manipula?]
+- [de onde vem os dados? usuario digita? importa CSV?]
+
+Plataforma: [web, mobile, desktop]</code></pre>
+
+                    <h2>Exemplo real: Rastreador de Financas Pessoais</h2>
+                    <p>Vamos planejar o app que vamos construir nas proximas aulas:</p>
+                    <pre><code>=== BRIEF DO PROJETO ===
+
+Nome: Minhas Financas
+Objetivo: Ajudar usuarios a controlar receitas e despesas mensais
+Publico-alvo: Qualquer pessoa que quer organizar suas financas
+
+Funcionalidades essenciais (MVP):
+1. Adicionar receitas e despesas com categoria, valor e data
+2. Ver resumo mensal (total de receitas, despesas, saldo)
+3. Grafico de pizza mostrando gastos por categoria
+
+Funcionalidades extras (v2):
+1. Exportar dados para CSV
+2. Grafico de evolucao mensal (linha)
+3. Modo escuro/claro
+
+Design:
+- Estilo: Moderno, limpo, dark mode
+- Cores: fundo #0a0a1a, destaque verde #00ff88 para receitas,
+  vermelho #e94560 para despesas
+- Referencia: apps de banco como Nubank
+
+Dados:
+- Usuario digita manualmente
+- Salvos no localStorage do navegador
+
+Plataforma: Web (responsivo para mobile)</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Dica de ouro:</strong>
+                        <p>Comece SEMPRE pelo MVP (Minimum Viable Product). Crie a versao mais simples que funciona primeiro, teste, e so depois adicione funcionalidades extras. Isso evita projetos abandonados e garante que voce tenha algo funcional rapidamente.</p>
+                    </div>
+
+                    <h2>Quebrando o projeto em etapas</h2>
+                    <p>Com o brief pronto, divida o desenvolvimento em passos pequenos:</p>
+                    <ol>
+                        <li><strong>Estrutura basica:</strong> HTML com o layout principal (header, formulario, lista, resumo)</li>
+                        <li><strong>Estilo visual:</strong> CSS com o tema escuro e cores definidas</li>
+                        <li><strong>Funcionalidade de adicionar:</strong> Formulario que adiciona transacoes na lista</li>
+                        <li><strong>Calculo do resumo:</strong> Somar receitas, despesas e calcular saldo</li>
+                        <li><strong>Persistencia:</strong> Salvar dados no localStorage</li>
+                        <li><strong>Graficos:</strong> Adicionar grafico de pizza com Chart.js</li>
+                    </ol>
+
+                    <h2>O prompt inicial</h2>
+                    <p>Com o planejamento pronto, voce pode enviar o brief inteiro como prompt para o Claude Code. Na proxima aula, vamos fazer exatamente isso e construir o app passo a passo.</p>
+
+                    <h2>Exercicio</h2>
+                    <p>Preencha o template de Brief para um projeto que <strong>voce</strong> gostaria de criar. Pode ser qualquer coisa: uma calculadora, um organizador de tarefas, um portfolio, um quiz. Tenha o brief pronto para a proxima aula - vamos usa-lo!</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="2-1" class="mark-complete">Marcar como Concluida</button>
+                <div class="lesson-nav">
+                    <a href="aula-1-4.html">&larr; A arte do prompt</a>
+                    <a href="aula-2-2.html">Desenvolvimento guiado &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p></div></div></footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

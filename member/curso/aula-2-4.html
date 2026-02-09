@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Deploy gratuito | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-2.html">Modulo 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a><span class="separator">/</span>
+                    <a href="modulo-2.html">Modulo 2</a><span class="separator">/</span>
+                    <span>Aula 4</span>
+                </div>
+                <h1>Deploy - colocando no ar gratuitamente</h1>
+                <div class="lesson-body">
+                    <h2>Seu app merece estar na internet</h2>
+                    <p>Voce criou um app funcional e bonito. Agora vamos coloca-lo online para que qualquer pessoa possa acessar. E o melhor: <strong>totalmente gratis</strong>.</p>
+
+                    <h2>Opcao 1: Netlify (Recomendado)</h2>
+                    <p>O Netlify e a forma mais facil de publicar sites estaticos. Nao precisa saber git, nao precisa de servidor.</p>
+
+                    <h3>Passo a passo:</h3>
+                    <ol>
+                        <li>Acesse <strong>app.netlify.com</strong> e crie uma conta gratuita (pode usar conta Google ou GitHub)</li>
+                        <li>No dashboard, voce vera uma area escrita "Want to deploy a new site without connecting to Git? Drag and drop your site output folder here"</li>
+                        <li>Abra o Finder (Mac) ou Explorador de Arquivos (Windows) e encontre a pasta do seu projeto</li>
+                        <li><strong>Arraste a pasta inteira</strong> para a area de upload do Netlify</li>
+                        <li>Aguarde alguns segundos - seu site esta no ar!</li>
+                        <li>O Netlify gera uma URL automatica tipo: <code>random-name-12345.netlify.app</code></li>
+                    </ol>
+
+                    <div class="tip-box">
+                        <strong>Dica:</strong>
+                        <p>Voce pode mudar o nome do site! Va em Site Settings &gt; Domain Management &gt; Custom domains e mude o subdominio para algo como <code>minhas-financas-silvia.netlify.app</code>.</p>
+                    </div>
+
+                    <h2>Opcao 2: GitHub Pages</h2>
+                    <p>Se voce tem uma conta no GitHub (ou quer criar uma):</p>
+                    <ol>
+                        <li>Crie um novo repositorio no GitHub</li>
+                        <li>Faca upload dos seus arquivos</li>
+                        <li>Va em Settings &gt; Pages</li>
+                        <li>Selecione "Deploy from a branch" e escolha "main"</li>
+                        <li>Seu site estara em <code>seuusuario.github.io/nome-do-repo</code></li>
+                    </ol>
+
+                    <h2>Opcao 3: Vercel</h2>
+                    <p>Similar ao Netlify, acesse <strong>vercel.com</strong>, crie conta e faca upload da pasta.</p>
+
+                    <h2>Configurando um dominio personalizado</h2>
+                    <p>Se voce quiser um dominio como <code>minhasfinancas.com.br</code>:</p>
+                    <ol>
+                        <li>Compre o dominio em servicos como Registro.br, Namecheap ou GoDaddy</li>
+                        <li>No Netlify, va em Domain Settings e adicione seu dominio</li>
+                        <li>Configure os DNS conforme as instrucoes do Netlify</li>
+                        <li>O Netlify configura SSL (HTTPS) automaticamente</li>
+                    </ol>
+
+                    <h2>Atualizando apos o deploy</h2>
+                    <p>Quando fizer mudancas no app:</p>
+                    <ul>
+                        <li><strong>Netlify:</strong> Va no dashboard, clique em "Deploys", arraste a pasta atualizada</li>
+                        <li><strong>GitHub Pages:</strong> Faca push das mudancas para o repositorio</li>
+                        <li><strong>Vercel:</strong> Similar ao Netlify, faca upload novamente</li>
+                    </ul>
+
+                    <h2>Compartilhando seu app</h2>
+                    <p>Agora que seu app esta online, voce pode:</p>
+                    <ul>
+                        <li>Enviar o link para amigos e familia testarem</li>
+                        <li>Postar no LinkedIn como projeto pessoal</li>
+                        <li>Adicionar ao seu portfolio (vamos criar um no Modulo 4)</li>
+                        <li>Mostrar para potenciais clientes como exemplo do seu trabalho</li>
+                    </ul>
+
+                    <h2>Exercicio</h2>
+                    <p>Publique seu app "Minhas Financas" no Netlify seguindo os passos acima. Compartilhe o link conosco na comunidade do curso! No proximo modulo, vamos aprender a criar apps que geram receita.</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="2-4" class="mark-complete">Marcar como Concluida</button>
+                <div class="lesson-nav">
+                    <a href="aula-2-3.html">&larr; Graficos e recursos avancados</a>
+                    <a href="aula-3-1.html">Calculadoras e ferramentas de leads &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p></div></div></footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Automacoes que economizam horas | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container"><div class="nav-wrapper">
+            <div class="logo"><a href="../../index.html">SA</a></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/member/">Dashboard</a></li>
+                <li><a href="modulo-3.html">Modulo 3</a></li>
+            </ul>
+        </div></div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a><span class="separator">/</span>
+                    <a href="modulo-3.html">Modulo 3</a><span class="separator">/</span><span>Aula 3</span>
+                </div>
+                <h1>Automacoes que economizam horas por semana</h1>
+                <div class="lesson-body">
+                    <h2>Ferramentas que eliminam trabalho repetitivo</h2>
+                    <p>Toda empresa tem tarefas que alguem faz manualmente e que poderiam ser automatizadas. Geradores de relatorios, templates de email, emissores de nota - cada uma dessas ferramentas vale dinheiro.</p>
+
+                    <h2>Projeto: Gerador de Faturas/Orcamentos</h2>
+                    <p>Vamos construir uma ferramenta que qualquer freelancer ou pequena empresa pode usar:</p>
+                    <pre><code>Crie um gerador de orcamentos/faturas profissional em HTML.
+
+Campos do formulario:
+- Dados da empresa: nome, CNPJ, endereco, telefone, email
+- Dados do cliente: nome, CNPJ/CPF, endereco, email
+- Itens do orcamento: descricao, quantidade, valor unitario
+  (botao para adicionar mais itens)
+- Desconto (% ou R$)
+- Condicoes de pagamento (dropdown: a vista, 30 dias, parcelado)
+- Validade do orcamento
+- Observacoes (textarea)
+
+Calculos automaticos:
+- Subtotal por item (quantidade x valor)
+- Total geral
+- Desconto aplicado
+- Valor final
+
+Funcionalidades:
+- Preview em tempo real do orcamento formatado
+- Botao "Gerar PDF" usando html2pdf.js
+- Botao "Salvar como Rascunho" (localStorage)
+- Lista de rascunhos salvos com opcao de carregar
+- Numeracao automatica de orcamentos (ORC-001, ORC-002...)
+
+O PDF gerado deve ter layout profissional: logo no topo,
+dados do remetente e destinatario lado a lado, tabela de itens
+estilizada, totais destacados, footer com condicoes.
+
+Design: limpo, profissional, fundo branco para o preview do
+orcamento, interface dark mode ao redor.</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Valor de mercado:</strong>
+                        <p>Um gerador de orcamentos personalizado com a marca da empresa custa R$ 800-2.500 no mercado. Voce constroi em poucas horas com Claude Code. Freelancers e MEIs adoram essa ferramenta.</p>
+                    </div>
+
+                    <h2>Outros tipos de automacoes</h2>
+
+                    <h3>Gerador de contratos</h3>
+                    <pre><code>Crie um gerador de contratos de prestacao de servicos.
+O usuario preenche: nome do prestador, nome do contratante,
+tipo de servico, valor, prazo, forma de pagamento.
+O sistema gera um contrato completo com clausulas padrao
+editaveis. Exportar para PDF.</code></pre>
+
+                    <h3>Planejador de conteudo</h3>
+                    <pre><code>Crie um planejador de conteudo para redes sociais.
+Calendario mensal visual (grid), onde o usuario pode:
+- Adicionar posts em datas especificas
+- Escolher plataforma (Instagram, LinkedIn, Twitter)
+- Definir tipo (imagem, carrossel, video, texto)
+- Escrever a legenda
+- Marcar como rascunho, agendado ou publicado
+Salvar tudo no localStorage. Exportar o plano em PDF.</code></pre>
+
+                    <h3>Gerador de relatorios</h3>
+                    <pre><code>Crie um gerador de relatorios mensais. O usuario importa
+dados de um CSV, o sistema gera graficos automaticamente e
+monta um relatorio em PDF com: capa, sumario executivo,
+graficos detalhados e conclusoes editaveis.</code></pre>
+
+                    <h2>Identificando oportunidades</h2>
+                    <p>Para encontrar automacoes que vendem, pergunte a pequenos empresarios:</p>
+                    <ul>
+                        <li>"Qual tarefa repetitiva toma mais tempo da sua semana?"</li>
+                        <li>"Voce usa alguma planilha que gostaria que fosse mais facil?"</li>
+                        <li>"Tem algum processo que voce faz manualmente que poderia ser automatizado?"</li>
+                    </ul>
+                    <p>Cada resposta e uma oportunidade de projeto.</p>
+
+                    <h2>Exercicio</h2>
+                    <p>Construa o gerador de orcamentos completo seguindo o prompt acima. Depois, pense em uma automacao especifica para um negocio que voce conhece e crie com o Claude Code.</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="3-3" class="mark-complete">Marcar como Concluida</button>
+                <div class="lesson-nav">
+                    <a href="aula-3-2.html">&larr; Dashboards de dados</a>
+                    <a href="aula-4-1.html">Como precificar e vender &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p></div></div></footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

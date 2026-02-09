@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Graficos, dados e recursos avancados | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-2.html">Modulo 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a><span class="separator">/</span>
+                    <a href="modulo-2.html">Modulo 2</a><span class="separator">/</span>
+                    <span>Aula 3</span>
+                </div>
+                <h1>Graficos, dados e recursos avancados</h1>
+                <div class="lesson-body">
+                    <h2>Elevando o nivel do seu app</h2>
+                    <p>Nosso app "Minhas Financas" ja funciona, mas vamos adicionar recursos que fazem um app parecer profissional: graficos interativos, exportacao de dados e mais.</p>
+
+                    <h2>Adicionando graficos com Chart.js</h2>
+                    <p>Chart.js e a biblioteca mais popular para graficos em paginas web. O Claude Code sabe usa-la perfeitamente. Envie este prompt:</p>
+                    <pre><code>Adicione graficos ao app Minhas Financas usando Chart.js (inclua
+via CDN). Crie uma secao de "Analise" abaixo da lista com:
+
+1. Grafico de PIZZA: distribuicao de despesas por categoria
+   - Cores diferentes para cada categoria
+   - Mostrar porcentagem ao passar o mouse
+
+2. Grafico de BARRAS: receitas vs despesas dos ultimos 6 meses
+   - Barras verdes para receitas, vermelhas para despesas
+   - Eixo X com nomes dos meses
+
+3. Grafico de LINHA: evolucao do saldo ao longo do tempo
+   - Linha verde quando positivo, vermelha quando negativo
+
+Os graficos devem atualizar automaticamente quando uma transacao
+e adicionada ou removida.</code></pre>
+
+                    <h2>Exportar dados para CSV</h2>
+                    <pre><code>Adicione um botao "Exportar CSV" que gera um arquivo CSV com
+todas as transacoes. O CSV deve ter colunas: Data, Tipo,
+Categoria, Descricao, Valor. O arquivo deve baixar automaticamente
+quando o usuario clicar.</code></pre>
+
+                    <h2>Exportar relatorio em PDF</h2>
+                    <pre><code>Adicione um botao "Gerar Relatorio PDF" que cria um PDF com:
+- Titulo: "Relatorio Financeiro - [mes/ano]"
+- Resumo com totais
+- Tabela de transacoes do mes
+- Grafico de pizza com distribuicao de gastos
+Use a biblioteca html2pdf.js via CDN.</code></pre>
+
+                    <h2>Modo claro/escuro</h2>
+                    <pre><code>Adicione um toggle no header para alternar entre modo escuro e
+modo claro. Salve a preferencia no localStorage. O modo claro
+deve ter fundo branco (#f5f5f5), cards com sombra suave e texto
+escuro. Transicao suave entre os modos.</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Sobre bibliotecas externas:</strong>
+                        <p>Quando voce menciona bibliotecas como Chart.js ou html2pdf.js, o Claude Code automaticamente inclui via CDN (link externo). Voce nao precisa instalar nada. Apenas mencione o nome da biblioteca e ele cuida do resto.</p>
+                    </div>
+
+                    <h2>Validacao de formulario</h2>
+                    <pre><code>Melhore a validacao do formulario:
+- Valor nao pode ser zero ou negativo
+- Descricao deve ter pelo menos 3 caracteres
+- Mostrar mensagens de erro em vermelho abaixo de cada campo
+- Destacar campos invalidos com borda vermelha
+- Limpar erros quando o usuario comeca a digitar</code></pre>
+
+                    <h2>Design responsivo aprimorado</h2>
+                    <pre><code>Melhore o layout mobile:
+- Graficos empilhados verticalmente no mobile
+- Formulario com campos em coluna unica
+- Lista de transacoes com swipe para deletar (opcional)
+- Resumo com cards 2x2 no mobile ao inves de 4 em linha
+- Fonte um pouco maior no mobile para melhor leitura</code></pre>
+
+                    <h2>Resultado esperado</h2>
+                    <p>Ao final desta aula, seu app deve ter:</p>
+                    <ul>
+                        <li>3 graficos interativos que atualizam em tempo real</li>
+                        <li>Exportacao para CSV e PDF</li>
+                        <li>Modo claro/escuro</li>
+                        <li>Validacao robusta de formulario</li>
+                        <li>Design responsivo profissional</li>
+                    </ul>
+                    <p>Isso e um app completo que voce poderia mostrar em um portfolio ou ate adaptar para um cliente!</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="2-3" class="mark-complete">Marcar como Concluida</button>
+                <div class="lesson-nav">
+                    <a href="aula-2-2.html">&larr; Desenvolvimento guiado</a>
+                    <a href="aula-2-4.html">Deploy gratuito &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p></div></div></footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

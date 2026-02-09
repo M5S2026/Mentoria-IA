@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Desenvolvimento guiado | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-2.html">Modulo 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a><span class="separator">/</span>
+                    <a href="modulo-2.html">Modulo 2</a><span class="separator">/</span>
+                    <span>Aula 2</span>
+                </div>
+                <h1>Desenvolvimento guiado - construindo o app</h1>
+                <div class="lesson-body">
+                    <h2>Hora de construir o "Minhas Financas"</h2>
+                    <p>Com o brief pronto da aula anterior, vamos construir nosso app de financas pessoais passo a passo usando o Claude Code.</p>
+
+                    <h2>Passo 1: Criar a pasta e iniciar</h2>
+                    <pre><code>mkdir minhas-financas
+cd minhas-financas
+claude</code></pre>
+
+                    <h2>Passo 2: Enviar o prompt inicial</h2>
+                    <p>Envie este prompt completo para o Claude Code:</p>
+                    <pre><code>Crie um app de financas pessoais chamado "Minhas Financas" em um
+unico arquivo HTML.
+
+Funcionalidades:
+- Formulario para adicionar transacao: tipo (receita/despesa),
+  descricao, categoria (dropdown com opcoes), valor (R$), data
+- Lista de transacoes com opcao de deletar
+- Resumo: total receitas, total despesas, saldo atual
+- Dados salvos no localStorage
+
+Categorias: Alimentacao, Transporte, Moradia, Lazer, Saude,
+Educacao, Salario, Freelance, Outros
+
+Design:
+- Tema escuro, fundo #0a0a1a
+- Cards com efeito glass (rgba branco com backdrop-filter blur)
+- Receitas em verde (#00ff88), despesas em vermelho (#e94560)
+- Font: system-ui ou sans-serif
+- Totalmente responsivo
+- Layout: resumo no topo, formulario abaixo, lista de transacoes</code></pre>
+
+                    <p>O Claude Code vai criar um arquivo <code>index.html</code> completo. Aceite a criacao e abra no navegador para ver o resultado.</p>
+
+                    <h2>Passo 3: Revisar e iterar</h2>
+                    <p>Abra o app no navegador. Teste adicionar algumas transacoes. Provavelmente voce vai querer ajustes. Aqui estao exemplos de iteracoes comuns:</p>
+
+                    <pre><code>O formulario esta bom, mas quero que a data venha preenchida com
+a data de hoje por padrao.</code></pre>
+
+                    <pre><code>Adicione uma animacao suave quando uma nova transacao e adicionada
+na lista. Use fadeIn.</code></pre>
+
+                    <pre><code>O botao de deletar esta muito pequeno no mobile. Aumente o tamanho
+e coloque um icone de lixeira em vez de texto.</code></pre>
+
+                    <pre><code>Ordene as transacoes por data, da mais recente para a mais antiga.</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Fluxo de iteracao:</strong>
+                        <p>1. Teste no navegador &rarr; 2. Anote o que quer mudar &rarr; 3. Descreva a mudanca no Claude Code &rarr; 4. Aceite e teste novamente. Repita ate ficar satisfeito.</p>
+                    </div>
+
+                    <h2>Passo 4: Adicionar filtros</h2>
+                    <pre><code>Adicione filtros acima da lista de transacoes:
+- Filtrar por tipo: Todos, Receitas, Despesas
+- Filtrar por categoria (dropdown)
+- Filtrar por mes/ano
+Os filtros devem funcionar em combinacao.</code></pre>
+
+                    <h2>Passo 5: Melhorar o resumo</h2>
+                    <pre><code>No card de resumo, adicione:
+- Icones nos cards (use emojis: receita, despesa, saldo)
+- Animacao de contagem nos valores quando a pagina carrega
+- Uma barra de progresso mostrando a porcentagem de gastos
+  em relacao as receitas</code></pre>
+
+                    <h2>Entendendo o que foi gerado</h2>
+                    <p>Observe a estrutura do codigo que o Claude Code criou:</p>
+                    <ul>
+                        <li><strong>No topo:</strong> HTML com a estrutura (formulario, divs para resumo e lista)</li>
+                        <li><strong>No meio:</strong> CSS com todo o estilo visual (cores, layout, responsivo)</li>
+                        <li><strong>No final:</strong> JavaScript com a logica (adicionar, deletar, salvar, calcular)</li>
+                    </ul>
+                    <p>Tudo em um unico arquivo HTML - isso facilita o compartilhamento e deploy.</p>
+
+                    <h2>Exercicio</h2>
+                    <p>Siga todos os passos acima e construa o app "Minhas Financas". Depois, adicione pelo menos 2 funcionalidades extras que voce achar util (ex: editar transacao, exportar dados, modo claro).</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="2-2" class="mark-complete">Marcar como Concluida</button>
+                <div class="lesson-nav">
+                    <a href="aula-2-1.html">&larr; Planejamento do projeto</a>
+                    <a href="aula-2-3.html">Graficos e recursos avancados &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p></div></div></footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

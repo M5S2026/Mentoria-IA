@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Criando seu portfolio profissional | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container"><div class="nav-wrapper">
+            <div class="logo"><a href="../../index.html">SA</a></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/member/">Dashboard</a></li>
+                <li><a href="modulo-4.html">Modulo 4</a></li>
+            </ul>
+        </div></div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a><span class="separator">/</span>
+                    <a href="modulo-4.html">Modulo 4</a><span class="separator">/</span><span>Aula 2</span>
+                </div>
+                <h1>Criando seu portfolio profissional</h1>
+                <div class="lesson-body">
+                    <h2>Seu portfolio e seu melhor vendedor</h2>
+                    <p>Um portfolio online e a forma mais eficaz de mostrar o que voce sabe fazer. Quando um potencial cliente visita seu portfolio e ve projetos reais funcionando, a confianca dispara. Vamos criar o seu usando Claude Code.</p>
+
+                    <h2>O que incluir no portfolio</h2>
+                    <ul>
+                        <li><strong>Hero:</strong> Seu nome, titulo ("Desenvolvimento de Apps e Ferramentas com IA") e uma frase de impacto</li>
+                        <li><strong>Sobre:</strong> Breve bio focada em resultados, nao em curriculo</li>
+                        <li><strong>Projetos:</strong> Galeria dos apps que voce criou com screenshots e links funcionais</li>
+                        <li><strong>Servicos:</strong> O que voce oferece (landing pages, dashboards, automacoes, calculadoras)</li>
+                        <li><strong>Depoimentos:</strong> Feedback de clientes (mesmo que sejam dos primeiros projetos gratuitos)</li>
+                        <li><strong>Contato:</strong> Formulario, email, WhatsApp, redes sociais</li>
+                    </ul>
+
+                    <h2>Prompt para criar o portfolio</h2>
+                    <pre><code>Crie um portfolio profissional em HTML para um desenvolvedor de
+apps e ferramentas web com IA.
+
+Secoes:
+1. HERO: Nome "[SEU NOME]", titulo "Crio Apps e Ferramentas Web
+   com Inteligencia Artificial", subtitulo "Transformo ideias em
+   aplicacoes funcionais em dias, nao meses.", botao "Ver Projetos"
+   e botao "Fale Comigo"
+
+2. SOBRE: Texto breve, metricas (X projetos entregues, X clientes
+   satisfeitos), foto placeholder
+
+3. PROJETOS: Grid de 4-6 cards com:
+   - Screenshot placeholder (usar placeholder.com 400x250)
+   - Nome do projeto
+   - Descricao curta
+   - Tags (HTML, CSS, JS, Chart.js, etc)
+   - Botao "Ver Projeto" (link externo)
+
+4. SERVICOS: 4 cards - Landing Pages, Dashboards, Calculadoras,
+   Automacoes. Cada um com icone, descricao e faixa de preco
+
+5. DEPOIMENTOS: 3 cards com foto placeholder, nome, cargo, texto
+
+6. CONTATO: Formulario com nome, email, tipo de projeto (dropdown),
+   orcamento estimado (dropdown), mensagem. Use Netlify Forms.
+
+Design: tema escuro profissional, cor de destaque que voce preferir,
+efeito glass nos cards, animacoes suaves ao scroll, totalmente
+responsivo. Fonte moderna (system-ui).</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Dica sobre projetos iniciais:</strong>
+                        <p>Se voce ainda nao tem clientes reais, use os projetos que criou neste curso! O app de financas, a calculadora de ROI, o dashboard de vendas - todos sao projetos validos para mostrar. Ninguem precisa saber que foram projetos do curso.</p>
+                    </div>
+
+                    <h2>Personalizando com sua marca</h2>
+                    <p>Apos o Claude Code gerar o portfolio base, personalize:</p>
+                    <pre><code>Substitua os textos placeholder pelos meus dados reais:
+- Nome: [seu nome]
+- Email: [seu email]
+- Projetos: [liste seus projetos reais com links]
+- Escolha uma paleta de cores que me represente: [preferencias]</code></pre>
+
+                    <h2>Publicando e divulgando</h2>
+                    <ol>
+                        <li>Publique no Netlify (arraste a pasta)</li>
+                        <li>Configure um dominio personalizado (seunome.com ou seunome.dev)</li>
+                        <li>Adicione o link no seu LinkedIn, Instagram e assinatura de email</li>
+                        <li>Compartilhe cada novo projeto como um post no LinkedIn</li>
+                    </ol>
+
+                    <h2>Exercicio</h2>
+                    <p>Crie seu portfolio usando o prompt acima (personalize com seus dados). Publique no Netlify e compartilhe o link na comunidade do curso.</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="4-2" class="mark-complete">Marcar como Concluida</button>
+                <div class="lesson-nav">
+                    <a href="aula-4-1.html">&larr; Como precificar e vender</a>
+                    <a href="aula-4-3.html">Proximos passos &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p></div></div></footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

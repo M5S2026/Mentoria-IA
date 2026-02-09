@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Dashboards de dados | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container"><div class="nav-wrapper">
+            <div class="logo"><a href="../../index.html">SA</a></div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/member/">Dashboard</a></li>
+                <li><a href="modulo-3.html">Modulo 3</a></li>
+            </ul>
+        </div></div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a><span class="separator">/</span>
+                    <a href="modulo-3.html">Modulo 3</a><span class="separator">/</span><span>Aula 2</span>
+                </div>
+                <h1>Dashboards de dados para clientes</h1>
+                <div class="lesson-body">
+                    <h2>O que e um dashboard e por que empresas precisam</h2>
+                    <p>Um dashboard e um painel visual que mostra dados de forma clara com graficos e metricas. Toda empresa tem dados espalhados em planilhas - um dashboard organiza tudo em uma unica tela bonita e funcional.</p>
+                    <p>Voce pode cobrar de <strong>R$ 1.500 a R$ 4.000</strong> por um dashboard personalizado.</p>
+
+                    <h2>Tipos de dashboards mais procurados</h2>
+                    <ul>
+                        <li><strong>Dashboard de vendas:</strong> Faturamento, ticket medio, metas, comparativo mensal</li>
+                        <li><strong>Dashboard de marketing:</strong> Leads, conversoes, custo por aquisicao, ROI por canal</li>
+                        <li><strong>Dashboard financeiro:</strong> Receitas, despesas, fluxo de caixa, projecoes</li>
+                        <li><strong>Dashboard de redes sociais:</strong> Seguidores, engajamento, alcance, melhores posts</li>
+                    </ul>
+
+                    <h2>Construindo um dashboard de vendas</h2>
+                    <pre><code>Crie um dashboard de vendas em um unico arquivo HTML.
+
+Use dados ficticios de 12 meses (jan-dez 2025) para uma loja
+de roupas online.
+
+Cards no topo (KPIs):
+- Receita Total (R$ 487.350)
+- Ticket Medio (R$ 189)
+- Total de Vendas (2.580)
+- Meta Atingida (94%)
+
+Graficos (Chart.js):
+1. Linha: Evolucao mensal de vendas (receita por mes)
+2. Barras: Meta vs Realizado por mes (lado a lado)
+3. Pizza: Vendas por categoria (Camisetas 35%, Calcas 25%,
+   Vestidos 20%, Acessorios 12%, Calcados 8%)
+4. Barras horizontais: Top 5 produtos mais vendidos
+
+Filtros:
+- Dropdown para selecionar periodo (trimestre)
+- Os graficos devem atualizar ao mudar o filtro
+
+Design: tema escuro, cards com efeito glass, cor principal #e94560,
+secundaria #00d4ff. Logo "FashionStore" no header. Responsivo.</code></pre>
+
+                    <h2>Importando dados de CSV</h2>
+                    <pre><code>Adicione um botao "Importar Dados CSV" que:
+- Abre um seletor de arquivo
+- Le um arquivo CSV com colunas: data, produto, categoria, valor, quantidade
+- Atualiza todos os graficos e KPIs com os dados importados
+- Mostre uma mensagem de sucesso com quantas linhas foram importadas</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Como vender dashboards:</strong>
+                        <p>Aborde pequenas e medias empresas no LinkedIn ou Instagram. Mostre um exemplo funcionando (com dados ficticios) e ofereca: "Posso criar algo assim personalizado para o seu negocio". Muitos donos de empresa nunca viram seus dados de forma visual - o impacto e enorme.</p>
+                    </div>
+
+                    <h2>Personalizando para o cliente</h2>
+                    <p>Quando um cliente contratar, voce so precisa:</p>
+                    <ol>
+                        <li>Pedir quais metricas sao importantes para ele</li>
+                        <li>Receber uma planilha Excel/CSV com os dados</li>
+                        <li>Ajustar o prompt com as cores e logo do cliente</li>
+                        <li>Gerar o dashboard com Claude Code</li>
+                        <li>Publicar no Netlify e entregar o link</li>
+                    </ol>
+                    <p>Tempo estimado: 2-4 horas. Valor cobrado: R$ 1.500-4.000. Margem excelente.</p>
+
+                    <h2>Exercicio</h2>
+                    <p>Crie um dashboard de redes sociais com dados ficticios de Instagram (seguidores, curtidas, comentarios, alcance por post). Use pelo menos 3 tipos de graficos diferentes.</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="3-2" class="mark-complete">Marcar como Concluida</button>
+                <div class="lesson-nav">
+                    <a href="aula-3-1.html">&larr; Calculadoras e leads</a>
+                    <a href="aula-3-3.html">Automacoes &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer"><div class="container"><div class="footer-bottom"><p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p></div></div></footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/member.css">
+    <title>Dashboard - Area do Aluno | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="/member/" class="active">Meus Cursos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <!-- Top Bar -->
+            <div class="member-topbar">
+                <div class="user-info">
+                    <div class="user-avatar">A</div>
+                    <div>
+                        <div class="user-name" id="user-name">Aluno</div>
+                        <div class="user-email" id="user-email"></div>
+                    </div>
+                </div>
+                <button class="btn-logout" onclick="handleLogout()">Sair</button>
+            </div>
+
+            <!-- Progress -->
+            <div class="progress-section">
+                <h3 style="margin-bottom: var(--spacing-md);">Claude Code na Pratica</h3>
+                <div class="progress-track">
+                    <div class="progress-fill" id="progress-bar"></div>
+                </div>
+                <span class="progress-label" id="progress-text">0/14 aulas concluidas (0%)</span>
+            </div>
+
+            <!-- Modules -->
+            <div class="modules-dashboard">
+                <a href="curso/modulo-1.html" class="module-dash-card">
+                    <div class="module-number">Modulo 1 - Dias 1-2</div>
+                    <h3>Fundamentos e Setup</h3>
+                    <p class="module-desc">Instale o ambiente, aprenda a conversar com o Claude Code e domine a arte do prompt.</p>
+                    <div class="lesson-count">4 aulas</div>
+                </a>
+                <a href="curso/modulo-2.html" class="module-dash-card">
+                    <div class="module-number">Modulo 2 - Dias 3-4</div>
+                    <h3>Seu Primeiro App Real</h3>
+                    <p class="module-desc">Planeje, desenvolva e coloque no ar seu primeiro aplicativo funcional.</p>
+                    <div class="lesson-count">4 aulas</div>
+                </a>
+                <a href="curso/modulo-3.html" class="module-dash-card">
+                    <div class="module-number">Modulo 3 - Dias 5-6</div>
+                    <h3>Apps que Geram Receita</h3>
+                    <p class="module-desc">Crie calculadoras, dashboards e automacoes que geram valor para clientes.</p>
+                    <div class="lesson-count">3 aulas</div>
+                </a>
+                <a href="curso/modulo-4.html" class="module-dash-card">
+                    <div class="module-number">Modulo 4 - Dia 7</div>
+                    <h3>Portfolio e Monetizacao</h3>
+                    <p class="module-desc">Precifique seus apps, crie seu portfolio profissional e comece a vender.</p>
+                    <div class="lesson-count">3 aulas</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/member.js"></script>
+</body>
+</html>

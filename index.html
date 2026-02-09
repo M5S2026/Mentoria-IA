@@ -41,6 +41,9 @@
     <!-- DNS Prefetch para recursos externos -->
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
 
+    <!-- Netlify Identity Widget -->
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <title>Mentoria em IA | Silvia Assay - Transforme Sua Carreira</title>
 </head>
 <body>
@@ -68,6 +71,7 @@
                     <li><a href="pages/calculadora.html">Calculadora</a></li>
                     <li><a href="pages/sobre.html">Sobre</a></li>
                     <li><a href="#faq">FAQ</a></li>
+                    <li><a href="pages/login.html" class="btn btn-outline btn-sm">Area do Aluno</a></li>
                     <li><a href="#contato" class="btn btn-primary">Comece Agora</a></li>
                 </ul>
             </div>
@@ -456,6 +460,19 @@
         gtag('config', 'G-H3Q2WL3KBG', {
             'anonymize_ip': true
         });
+    </script>
+
+    <!-- Netlify Identity redirect -->
+    <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on('init', user => {
+                if (!user) {
+                    window.netlifyIdentity.on('login', () => {
+                        document.location.href = '/member/';
+                    });
+                }
+            });
+        }
     </script>
 
     <!-- JavaScript - defer para não bloquear renderização -->

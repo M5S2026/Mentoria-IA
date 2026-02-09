@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+  functions = "netlify/functions"
+
+# Protect member area - users with paid-user role can access
+[[redirects]]
+  from = "/member/*"
+  to = "/member/:splat"
+  status = 200
+  conditions = {Role = ["paid-user"]}
+  force = true
+
+# Users without role get redirected to login
+[[redirects]]
+  from = "/member/*"
+  to = "/pages/login.html"
+  status = 302

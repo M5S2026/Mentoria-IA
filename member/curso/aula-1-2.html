@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Instalacao passo a passo | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-1.html">Modulo 1</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-1.html">Modulo 1</a>
+                    <span class="separator">/</span>
+                    <span>Aula 2</span>
+                </div>
+
+                <h1>Instalacao passo a passo</h1>
+
+                <div class="lesson-body">
+                    <h2>Pre-requisitos</h2>
+                    <p>Antes de instalar o Claude Code, voce precisa de duas coisas no seu computador:</p>
+                    <ul>
+                        <li><strong>Node.js</strong> (versao 18 ou superior) - o motor que roda o Claude Code</li>
+                        <li><strong>VS Code</strong> (ou qualquer editor de texto) - onde voce vai ver os arquivos criados</li>
+                    </ul>
+
+                    <h2>Passo 1: Instalar o Node.js</h2>
+                    <p>O Node.js e o ambiente que permite rodar o Claude Code. Vamos instalar:</p>
+
+                    <h3>No Mac</h3>
+                    <p>Abra o Terminal (busque "Terminal" no Spotlight com Cmd+Espaco) e rode:</p>
+                    <pre><code># Se voce tem Homebrew instalado:
+brew install node
+
+# Se nao tem Homebrew, instale primeiro:
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+brew install node</code></pre>
+
+                    <h3>No Windows</h3>
+                    <p>Baixe o instalador em <strong>nodejs.org</strong>, clique no botao LTS (versao estavel), execute o instalador e siga os passos padrao (Next, Next, Install).</p>
+
+                    <h3>No Linux</h3>
+                    <pre><code># Ubuntu/Debian
+sudo apt update
+sudo apt install nodejs npm
+
+# Ou use o nvm (recomendado):
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+nvm install --lts</code></pre>
+
+                    <h3>Verificar a instalacao</h3>
+                    <p>Apos instalar, verifique se deu certo:</p>
+                    <pre><code>node --version
+# Deve mostrar algo como: v20.x.x ou v22.x.x
+
+npm --version
+# Deve mostrar algo como: 10.x.x</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Dica:</strong>
+                        <p>Se o comando nao for reconhecido, feche e abra o terminal novamente. As vezes as variaveis de ambiente precisam ser recarregadas.</p>
+                    </div>
+
+                    <h2>Passo 2: Instalar o VS Code</h2>
+                    <p>Baixe o VS Code em <strong>code.visualstudio.com</strong>. E gratuito e funciona em Mac, Windows e Linux. Instale normalmente.</p>
+
+                    <p>Apos instalar, abra o VS Code e familiarize-se com o terminal integrado: use o atalho <code>Ctrl+`</code> (ou <code>Cmd+`</code> no Mac) para abrir o terminal dentro do VS Code. Esse sera seu ambiente de trabalho principal.</p>
+
+                    <h2>Passo 3: Instalar o Claude Code</h2>
+                    <p>Agora o passo principal. No terminal, rode:</p>
+                    <pre><code>npm install -g @anthropic-ai/claude-code</code></pre>
+
+                    <p>Esse comando instala o Claude Code globalmente no seu computador. Aguarde alguns segundos ate finalizar.</p>
+
+                    <h3>Verificar a instalacao</h3>
+                    <pre><code>claude --version
+# Deve mostrar a versao instalada</code></pre>
+
+                    <h2>Passo 4: Configurar a chave da API</h2>
+                    <p>O Claude Code precisa de uma chave de API da Anthropic para funcionar. Siga estes passos:</p>
+
+                    <ol>
+                        <li>Acesse <strong>console.anthropic.com</strong></li>
+                        <li>Crie uma conta (se ainda nao tem)</li>
+                        <li>Va em "API Keys" no menu lateral</li>
+                        <li>Clique em "Create Key"</li>
+                        <li>Copie a chave gerada (comeca com <code>sk-ant-...</code>)</li>
+                    </ol>
+
+                    <p>Agora configure a chave no seu terminal:</p>
+                    <pre><code># Mac/Linux - adicione ao seu ~/.zshrc ou ~/.bashrc:
+export ANTHROPIC_API_KEY="sk-ant-sua-chave-aqui"
+
+# Depois recarregue:
+source ~/.zshrc
+
+# Windows (PowerShell):
+$env:ANTHROPIC_API_KEY="sk-ant-sua-chave-aqui"</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Importante sobre custos:</strong>
+                        <p>O Claude Code usa a API da Anthropic que tem custo por uso. Para este curso, o gasto tipico e de US$ 5-15 no total. A Anthropic oferece creditos iniciais gratuitos para novos usuarios. Voce pode definir limites de gasto no painel.</p>
+                    </div>
+
+                    <h2>Passo 5: Testar tudo</h2>
+                    <p>Vamos verificar se tudo esta funcionando. Crie uma pasta para o curso e inicie o Claude Code:</p>
+                    <pre><code># Crie uma pasta para seus projetos
+mkdir ~/meus-projetos-claude
+cd ~/meus-projetos-claude
+
+# Inicie o Claude Code
+claude</code></pre>
+
+                    <p>Se tudo estiver certo, voce vera uma interface de conversa no terminal. Digite "Ola, estou pronto para comecar!" e pressione Enter. Se o Claude responder, parabens - esta tudo configurado!</p>
+
+                    <p>Para sair, digite <code>/exit</code> ou pressione <code>Ctrl+C</code>.</p>
+
+                    <h2>Resumo da instalacao</h2>
+                    <ul>
+                        <li>Node.js instalado e verificado (<code>node --version</code>)</li>
+                        <li>VS Code instalado com terminal integrado</li>
+                        <li>Claude Code instalado via <code>npm install -g @anthropic-ai/claude-code</code></li>
+                        <li>Chave de API configurada como variavel de ambiente</li>
+                        <li>Teste realizado com sucesso</li>
+                    </ul>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="1-2" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+
+                <div class="lesson-nav">
+                    <a href="aula-1-1.html">&larr; O que e o Claude Code</a>
+                    <a href="aula-1-3.html">Seu primeiro comando &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/member.js"></script>
+</body>
+</html>

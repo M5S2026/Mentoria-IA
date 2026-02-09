@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="../css/style.css">
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <title>Claude Code na Pratica | Crie Apps com IA | Silvia Assay</title>
 
     <style>
@@ -115,6 +116,7 @@
                     <li><a href="#modulos">Modulos</a></li>
                     <li><a href="#preco">Preco</a></li>
                     <li><a href="#faq-curso">FAQ</a></li>
+                    <li><a href="login.html" class="btn btn-outline btn-sm">Area do Aluno</a></li>
                     <li><a href="#preco" class="btn btn-primary">Quero Minha Vaga</a></li>
                 </ul>
             </div>
@@ -294,8 +296,12 @@
 
                 <span class="scarcity">Apenas 10 vagas nesta condicao especial</span>
 
-                <div style="margin-top: var(--spacing-xl);">
-                    <a href="#" class="btn btn-primary btn-lg" style="width: 100%;">QUERO MINHA VAGA AGORA</a>
+                <div style="margin-top: var(--spacing-xl); display: flex; flex-direction: column; gap: var(--spacing-md);">
+                    <div data-stripe-key="YOUR_STRIPE_PUBLISHABLE_KEY">
+                        <button id="stripe-btn" class="btn btn-primary btn-lg" style="width: 100%;">Pagar com Cartao (Stripe)</button>
+                    </div>
+                    <div id="paypal-button-container" style="min-height: 48px;"></div>
+                    <p style="text-align: center; color: var(--color-text-muted); font-size: var(--font-size-xs); margin: 0;">Pagamento seguro via Stripe ou PayPal. Aceitamos cartoes internacionais.</p>
                 </div>
             </div>
 
@@ -384,6 +390,11 @@
         </div>
     </footer>
 
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- PayPal SDK - Replace YOUR_PAYPAL_CLIENT_ID with real client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=BRL"></script>
+    <script src="../js/payments.js"></script>
     <script src="../js/script.js" defer></script>
 </body>
 </html>

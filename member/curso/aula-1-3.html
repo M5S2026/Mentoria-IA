@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Seu primeiro comando | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-1.html">Modulo 1</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-1.html">Modulo 1</a>
+                    <span class="separator">/</span>
+                    <span>Aula 3</span>
+                </div>
+
+                <h1>Seu primeiro comando</h1>
+
+                <div class="lesson-body">
+                    <h2>Hora de colocar a mao na massa</h2>
+                    <p>Agora que tudo esta instalado, vamos criar algo real. Nesta aula voce vai interagir com o Claude Code pela primeira vez e criar sua primeira pagina web.</p>
+
+                    <h2>Iniciando o Claude Code</h2>
+                    <p>Abra o terminal no VS Code (<code>Ctrl+`</code>) e navegue ate sua pasta de projetos:</p>
+                    <pre><code># Navegue para sua pasta de projetos
+cd ~/meus-projetos-claude
+
+# Crie uma pasta para este exercicio
+mkdir meu-primeiro-site
+cd meu-primeiro-site
+
+# Inicie o Claude Code
+claude</code></pre>
+
+                    <p>Voce vera o prompt do Claude Code esperando sua instrucao. Agora vamos conversar com ele.</p>
+
+                    <h2>Exercicio: Criando uma pagina "Hello World"</h2>
+                    <p>Digite o seguinte no Claude Code:</p>
+                    <pre><code>Crie uma pagina HTML simples com o titulo "Meu Primeiro Site" e
+um paragrafo dizendo "Ola mundo! Eu criei isso com IA."
+Use um fundo azul escuro e texto branco. Centralize tudo na tela.</code></pre>
+
+                    <p>O Claude Code vai processar seu pedido e mostrar o que ele pretende criar. Voce vera algo como:</p>
+                    <pre><code>Vou criar o arquivo index.html com o conteudo solicitado.
+
+[Claude mostra o codigo que sera criado]
+
+Posso criar este arquivo? (s/n)</code></pre>
+
+                    <h2>O sistema de permissoes</h2>
+                    <p>Essa pergunta e muito importante. O Claude Code <strong>sempre pede permissao</strong> antes de criar ou modificar qualquer arquivo. Isso e uma medida de seguranca - voce tem controle total sobre o que acontece no seu computador.</p>
+
+                    <p>As opcoes que voce vera:</p>
+                    <ul>
+                        <li><strong>Yes (s)</strong> - Aceita a criacao/modificacao</li>
+                        <li><strong>No (n)</strong> - Rejeita e pode pedir algo diferente</li>
+                        <li><strong>Always allow</strong> - Aceita automaticamente para este tipo de acao (use com cuidado)</li>
+                    </ul>
+
+                    <p>Digite <strong>s</strong> (ou Yes) para aceitar. O arquivo sera criado!</p>
+
+                    <h2>Visualizando o resultado</h2>
+                    <p>Agora vamos ver o que foi criado. Voce tem algumas opcoes:</p>
+
+                    <h3>Opcao 1: Abrir direto no navegador</h3>
+                    <pre><code># Mac
+open index.html
+
+# Windows
+start index.html
+
+# Linux
+xdg-open index.html</code></pre>
+
+                    <h3>Opcao 2: Usar o VS Code Live Server</h3>
+                    <p>Instale a extensao "Live Server" no VS Code, clique com botao direito no arquivo <code>index.html</code> e selecione "Open with Live Server". Isso abre o site no navegador e atualiza automaticamente quando voce faz mudancas.</p>
+
+                    <h2>Fazendo modificacoes</h2>
+                    <p>O poder real do Claude Code esta nas iteracoes. Ainda na conversa, peca mudancas:</p>
+
+                    <pre><code>Adicione um botao vermelho abaixo do texto que diz "Clique aqui".
+Quando clicar, mude o texto do paragrafo para "Voce clicou! Isso
+foi feito com JavaScript."</code></pre>
+
+                    <p>O Claude Code vai modificar o arquivo existente, adicionando o botao e o JavaScript necessario. Novamente, ele vai pedir permissao antes de salvar.</p>
+
+                    <p>Continue experimentando:</p>
+                    <pre><code>Agora adicione uma imagem de placeholder no topo da pagina.
+Use um servico como placeholder.com com tamanho 300x200.</code></pre>
+
+                    <pre><code>Adicione um footer com o texto "Feito com Claude Code - 2026"
+e centralize.</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Dica importante:</strong>
+                        <p>Nao tenha medo de experimentar! Se algo der errado, voce pode pedir ao Claude Code para desfazer ("desfaca a ultima mudanca") ou simplesmente descrever o que quer de forma diferente. Cada erro e uma oportunidade de aprender a comunicar melhor.</p>
+                    </div>
+
+                    <h2>Entendendo o que foi criado</h2>
+                    <p>Mesmo que voce nao precise saber programar, e util entender a estrutura basica:</p>
+                    <ul>
+                        <li><strong>HTML</strong> - Define o conteudo (textos, botoes, imagens)</li>
+                        <li><strong>CSS</strong> - Define a aparencia (cores, tamanhos, posicoes)</li>
+                        <li><strong>JavaScript</strong> - Define o comportamento (o que acontece ao clicar)</li>
+                    </ul>
+                    <p>O Claude Code cuida dos tres para voce. Mas saber o nome de cada um ajuda a dar instrucoes mais precisas.</p>
+
+                    <h2>Exercicio final</h2>
+                    <p>Antes de ir para a proxima aula, tente criar por conta propria:</p>
+                    <ol>
+                        <li>Uma pagina com seu nome como titulo</li>
+                        <li>Uma lista de 3 coisas que voce gosta</li>
+                        <li>Um botao que muda a cor do fundo ao clicar</li>
+                    </ol>
+                    <p>Use o Claude Code para fazer tudo. Descreva o que quer em portugues e veja a magica acontecer.</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="1-3" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+
+                <div class="lesson-nav">
+                    <a href="aula-1-2.html">&larr; Instalacao passo a passo</a>
+                    <a href="aula-1-4.html">A arte do prompt &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/member.js"></script>
+</body>
+</html>

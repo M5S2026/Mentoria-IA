@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>A arte do prompt para codigo | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-1.html">Modulo 1</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-1.html">Modulo 1</a>
+                    <span class="separator">/</span>
+                    <span>Aula 4</span>
+                </div>
+
+                <h1>A arte do prompt para codigo</h1>
+
+                <div class="lesson-body">
+                    <h2>O segredo esta nas instrucoes</h2>
+                    <p>A qualidade do que o Claude Code cria depende diretamente da qualidade das suas instrucoes. Um prompt vago gera um resultado generico. Um prompt especifico gera um resultado profissional.</p>
+
+                    <h2>Prompt ruim vs Prompt bom</h2>
+                    <p>Veja a diferenca:</p>
+
+                    <h3>Prompt ruim:</h3>
+                    <pre><code>Faca um site bonito.</code></pre>
+                    <p>Problema: "bonito" e subjetivo. O Claude nao sabe suas preferencias de cores, layout ou conteudo.</p>
+
+                    <h3>Prompt bom:</h3>
+                    <pre><code>Crie uma landing page para uma consultoria de marketing digital.
+- Fundo escuro (#0a0a1a) com texto branco
+- Cor de destaque: vermelho (#e94560)
+- Secoes: Hero com titulo e CTA, Servicos (3 cards), Depoimentos, Contato
+- Design moderno com efeito glass (backdrop-filter blur)
+- Responsivo para mobile
+- Formulario de contato com nome, email e mensagem</code></pre>
+                    <p>Resultado: O Claude Code cria exatamente o que voce precisa porque tem todas as informacoes.</p>
+
+                    <h2>O Framework CRISP</h2>
+                    <p>Use este framework para estruturar seus prompts:</p>
+
+                    <ul>
+                        <li><strong>C - Contexto:</strong> Qual o objetivo? Para quem e? ("Uma ferramenta para donos de restaurantes calcularem custos")</li>
+                        <li><strong>R - Requisitos:</strong> O que precisa ter? ("Campos para ingredientes, quantidade, preco unitario. Total automatico.")</li>
+                        <li><strong>I - Input/Output:</strong> O que entra e o que sai? ("Usuario digita dados, sistema calcula custo total e margem de lucro")</li>
+                        <li><strong>S - Style:</strong> Como deve parecer? ("Design limpo, cores neutras, fonte moderna, responsivo")</li>
+                        <li><strong>P - Prioridades:</strong> O que e mais importante? ("Foco na usabilidade mobile, calculo preciso e exportar para PDF")</li>
+                    </ul>
+
+                    <h2>Exemplos praticos por tipo de projeto</h2>
+
+                    <h3>Para criar uma landing page:</h3>
+                    <pre><code>Crie uma landing page para um curso online de fotografia.
+
+Contexto: Curso de R$ 297, publico-alvo sao iniciantes em fotografia.
+
+Secoes necessarias:
+1. Hero: titulo impactante, subtitulo, botao "Quero me inscrever"
+2. Problema: 3 cards com dores do publico (equipamento caro, fotos ruins, falta de pratica)
+3. Solucao: O que o curso oferece (6 modulos, 30 aulas, certificado)
+4. Depoimentos: 3 depoimentos de alunos ficticios
+5. Preco: Box com preco, opcao de parcelamento, botao de compra
+6. FAQ: 5 perguntas frequentes com accordion
+7. Footer: links e redes sociais
+
+Design: fundo escuro, tipografia moderna, imagens placeholder,
+totalmente responsivo. Cor principal: dourado (#d4af37).</code></pre>
+
+                    <h3>Para criar uma calculadora:</h3>
+                    <pre><code>Crie uma calculadora de ROI para campanhas de marketing.
+
+Campos de entrada:
+- Investimento mensal em ads (R$)
+- Custo por lead (R$)
+- Taxa de conversao (%)
+- Ticket medio (R$)
+
+Calculos automaticos:
+- Numero de leads gerados
+- Numero de vendas
+- Receita total
+- ROI em porcentagem
+- Lucro liquido
+
+Inclua um grafico de barras comparando investimento vs receita.
+Botao para exportar resultado em PDF.
+Design profissional, fundo escuro, cor de destaque verde.</code></pre>
+
+                    <h3>Para criar um dashboard:</h3>
+                    <pre><code>Crie um dashboard de vendas mensais.
+
+Dados: use dados ficticios de 12 meses (janeiro a dezembro).
+
+Graficos:
+- Linha: evolucao de vendas mensais
+- Pizza: distribuicao por categoria (Eletronicos, Roupas, Alimentos, Outros)
+- Barras: comparacao metas vs realizado
+
+Cards no topo: Receita Total, Ticket Medio, Numero de Vendas, Meta Atingida (%).
+
+Use Chart.js para os graficos. Design responsivo, tema escuro.</code></pre>
+
+                    <div class="tip-box">
+                        <strong>Regra de ouro:</strong>
+                        <p>Quanto mais especifico voce for sobre cores, layout, funcionalidades e dados, melhor sera o resultado. Se voce nao especificar, o Claude Code vai tomar decisoes por voce - e elas podem nao ser o que voce queria.</p>
+                    </div>
+
+                    <h2>Erros comuns de iniciantes</h2>
+                    <ol>
+                        <li><strong>Pedir tudo de uma vez:</strong> Comece com a estrutura basica, depois va adicionando funcionalidades uma por uma</li>
+                        <li><strong>Nao revisar o resultado:</strong> Sempre abra o arquivo no navegador e teste antes de pedir mais mudancas</li>
+                        <li><strong>Descrever de forma ambigua:</strong> "Coloque um menu" - onde? Horizontal? Vertical? Com quais links?</li>
+                        <li><strong>Nao dar contexto:</strong> "Faca um formulario" - para que? Quais campos? O que acontece ao enviar?</li>
+                        <li><strong>Ter medo de iterar:</strong> Nao precisa acertar de primeira. Refine ate ficar perfeito</li>
+                    </ol>
+
+                    <h2>Tecnicas avancadas de prompt</h2>
+                    <ul>
+                        <li><strong>Referencia visual:</strong> "Estilo similar ao site da Apple - minimalista, muito espaco em branco, tipografia grande"</li>
+                        <li><strong>Especifique tecnologias:</strong> "Use Chart.js para graficos", "Use CSS Grid para layout"</li>
+                        <li><strong>Peca em etapas:</strong> Primeiro a estrutura HTML, depois o estilo, depois a interatividade</li>
+                        <li><strong>De exemplos de dados:</strong> "Use estes dados: Janeiro R$ 5.000, Fevereiro R$ 7.200..."</li>
+                    </ul>
+
+                    <h2>Exercicio</h2>
+                    <p>Usando o framework CRISP, escreva um prompt para criar uma ferramenta de lista de tarefas (todo list) com as seguintes funcionalidades:</p>
+                    <ul>
+                        <li>Adicionar e remover tarefas</li>
+                        <li>Marcar como concluida</li>
+                        <li>Filtrar por status (todas, pendentes, concluidas)</li>
+                        <li>Salvar no localStorage</li>
+                        <li>Design bonito com tema escuro</li>
+                    </ul>
+                    <p>Escreva o prompt, envie no Claude Code e veja o resultado. Na proxima aula, vamos usar essas tecnicas para planejar um projeto completo.</p>
+                </div>
+
+                <button id="mark-complete-btn" data-lesson="1-4" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+
+                <div class="lesson-nav">
+                    <a href="aula-1-3.html">&larr; Seu primeiro comando</a>
+                    <a href="aula-2-1.html">Planejamento do projeto &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/member.js"></script>
+</body>
+</html>

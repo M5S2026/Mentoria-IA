@@ -1,0 +1,7 @@
+{
+  "name": "silviaassay-site",
+  "private": true,
+  "dependencies": {
+    "stripe": "^17.0.0"
+  }
+}
