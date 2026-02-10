@@ -45,39 +45,8 @@ async function handleStripeCheckout() {
   }
 }
 
-// PayPal - Initialize buttons if container exists
-function initPayPal() {
-  const container = document.getElementById('paypal-button-container');
-  if (!container || typeof paypal === 'undefined') return;
-
-  paypal.Buttons({
-    style: {
-      layout: 'horizontal',
-      color: 'black',
-      shape: 'pill',
-      label: 'pay',
-      height: 48
-    },
-    createOrder: function(data, actions) {
-      return actions.order.create({
-        purchase_units: [{
-          amount: { value: '497.00', currency_code: 'BRL' },
-          description: 'Claude Code na Pratica - Curso Completo'
-        }]
-      });
-    },
-    onApprove: function(data, actions) {
-      return actions.order.capture().then(function(details) {
-        window.location.href = '/pages/login.html?payment=paypal-success&email=' +
-          encodeURIComponent(details.payer.email_address);
-      });
-    },
-    onError: function(err) {
-      console.error('PayPal Error:', err);
-      alert('Erro no pagamento PayPal. Tente novamente.');
-    }
-  }).render('#paypal-button-container');
-}
+// PayPal - via PayPal.me link (no SDK needed)
+// Link direto: https://paypal.me/silviaassay899/497BRL
 
 // Init on DOM ready
 document.addEventListener('DOMContentLoaded', () => {
@@ -85,5 +54,5 @@ document.addEventListener('DOMContentLoaded', () => {
   if (stripeBtn) {
     stripeBtn.addEventListener('click', handleStripeCheckout);
   }
-  initPayPal();
+  // PayPal uses direct PayPal.me link (no JS init needed)
 });
