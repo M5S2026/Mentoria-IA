@@ -17,17 +17,21 @@ OneDrive
 .zsh_history
 .zsh_sessions/
 .zshrc
+.zshenv
+.zprofile
 .zcompdump
 .env
 .env.example
 .cups/
 
-# Claude files
+# Claude/AI/Editor files
 .claude/
 .claude.json*
 .blackbox/
 .aios-core/
 .local/
+.antigravity/
+.gemini/
 
 # Node/Build
 node_modules/
@@ -37,14 +41,14 @@ build/
 # Other
 bin/
 *.pdf
-"Lendário scripts aula de agencia de Ia/"
-"Sistema & Configurações/"
-"Receitas Saudável /"
+Lendário\ scripts\ aula\ de\ agencia\ de\ Ia/
+Sistema\ &\ Configurações/
+Receitas\ Saudável\ /
 "Marketing-Digital-com-o-Impulso-da-Inteligencia-Artificial (1).pdf"
 
 # Large folders (not suitable for git)
 Mídia/
-"Aprendizado & Pesquisa/"
+Aprendizado\ &\ Pesquisa/
 .config/
 .npm/
 .vscode/
