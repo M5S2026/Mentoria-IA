@@ -1,6 +1,7 @@
 [build]
-  publish = "."
+  publish = "dist"
   functions = "netlify/functions"
+  command = "mkdir -p dist && rsync -a --include='index.html' --include='favicon*' --include='css/***' --include='js/***' --include='pages/***' --include='member/***' --include='images/***' --exclude='*' . dist/"
 
 # Protect member area - users with paid-user role can access
 [[redirects]]
@@ -15,3 +16,4 @@
   from = "/member/*"
   to = "/pages/login.html"
   status = 302
+  force = true
