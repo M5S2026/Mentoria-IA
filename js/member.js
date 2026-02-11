@@ -1,8 +1,55 @@
 /**
  * MEMBER AREA - Auth gate, progress tracking, navigation
+ * Supports multiple courses with independent progress tracking
  */
 
-const PROGRESS_KEY = 'claude-code-progress';
+// Course configurations
+const COURSES = {
+  'curso': {
+    key: 'claude-code-progress',
+    total: 14,
+    barId: 'progress-bar',
+    textId: 'progress-text'
+  },
+  'chatgpt-mastery': {
+    key: 'chatgpt-mastery-progress',
+    total: 15,
+    barId: 'progress-bar-chatgpt',
+    textId: 'progress-text-chatgpt'
+  },
+  'ia-negocios': {
+    key: 'ia-negocios-progress',
+    total: 16,
+    barId: 'progress-bar-negocios',
+    textId: 'progress-text-negocios'
+  },
+  'ia-criadores': {
+    key: 'ia-criadores-progress',
+    total: 20,
+    barId: 'progress-bar-criadores',
+    textId: 'progress-text-criadores'
+  }
+};
+
+// Detect current course from URL
+function detectCourse() {
+  const path = window.location.pathname;
+  if (path.includes('/chatgpt-mastery/')) return 'chatgpt-mastery';
+  if (path.includes('/ia-negocios/')) return 'ia-negocios';
+  if (path.includes('/ia-criadores/')) return 'ia-criadores';
+  if (path.includes('/curso/')) return 'curso';
+  return null;
+}
+
+function getProgressKey() {
+  const course = detectCourse();
+  return course ? COURSES[course].key : null;
+}
+
+function getTotalLessons() {
+  const course = detectCourse();
+  return course ? COURSES[course].total : 14;
+}
 
 // Auth check
 function checkAuth() {
@@ -18,12 +65,32 @@ function checkAuth() {
   });
 }
 
+// Dynamic greeting based on time of day
+function getGreeting() {
+  const hour = new Date().getHours();
+  if (hour < 12) return 'Bom dia';
+  if (hour < 18) return 'Boa tarde';
+  return 'Boa noite';
+}
+
 // Initialize member area
 function initMemberArea(user) {
-  // Show user info
+  const displayName = user.user_metadata?.full_name || user.email;
+
   const userName = document.getElementById('user-name');
   if (userName) {
-    userName.textContent = user.user_metadata?.full_name || user.email;
+    userName.textContent = displayName;
+  }
+
+  const greetingEl = document.getElementById('welcome-greeting');
+  if (greetingEl) {
+    greetingEl.innerHTML = getGreeting() + ', <span id="user-name">' + displayName + '</span>';
+  }
+
+  const avatar = document.getElementById('user-avatar');
+  if (avatar) {
+    const initial = displayName.charAt(0).toUpperCase();
+    avatar.textContent = initial;
   }
 
   const userEmail = document.getElementById('user-email');
@@ -31,13 +98,11 @@ function initMemberArea(user) {
     userEmail.textContent = user.email;
   }
 
-  // Show content
   const content = document.getElementById('member-content');
   if (content) {
     content.style.display = 'block';
   }
 
-  // Init progress
   updateProgressUI();
   initCheckboxes();
 }
@@ -52,12 +117,16 @@ function handleLogout() {
 }
 
 // Progress tracking
-function getProgress() {
-  return JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}');
+function getProgress(key) {
+  const progressKey = key || getProgressKey();
+  if (!progressKey) return {};
+  return JSON.parse(localStorage.getItem(progressKey) || '{}');
 }
 
-function saveProgress(progress) {
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+function saveProgress(progress, key) {
+  const progressKey = key || getProgressKey();
+  if (!progressKey) return;
+  localStorage.setItem(progressKey, JSON.stringify(progress));
 }
 
 function markComplete(lessonId) {
@@ -79,24 +148,49 @@ function toggleComplete(lessonId) {
 }
 
 function updateProgressUI() {
-  const progress = getProgress();
-  const totalLessons = 14;
-  const completed = Object.keys(progress).length;
-  const percent = Math.round((completed / totalLessons) * 100);
+  const isDashboard = window.location.pathname.replace(/\/$/, '').endsWith('/member') ||
+                      window.location.pathname.replace(/\/$/, '').endsWith('/member/index.html');
 
-  // Update progress bar
-  const bar = document.getElementById('progress-bar');
-  if (bar) {
-    bar.style.width = percent + '%';
-  }
+  if (isDashboard) {
+    // Update all course progress bars on dashboard
+    Object.keys(COURSES).forEach(courseId => {
+      const config = COURSES[courseId];
+      const progress = getProgress(config.key);
+      const completed = Object.keys(progress).length;
+      const percent = Math.round((completed / config.total) * 100);
 
-  // Update progress text
-  const text = document.getElementById('progress-text');
-  if (text) {
-    text.textContent = `${completed}/${totalLessons} aulas concluidas (${percent}%)`;
+      const bar = document.getElementById(config.barId);
+      if (bar) {
+        bar.style.width = percent + '%';
+      }
+
+      const text = document.getElementById(config.textId);
+      if (text) {
+        text.textContent = percent + '%';
+      }
+    });
+  } else {
+    // Single course page - update local progress
+    const course = detectCourse();
+    if (!course) return;
+    const config = COURSES[course];
+    const progress = getProgress(config.key);
+    const completed = Object.keys(progress).length;
+    const percent = Math.round((completed / config.total) * 100);
+
+    const bar = document.getElementById('progress-bar');
+    if (bar) {
+      bar.style.width = percent + '%';
+    }
+
+    const text = document.getElementById('progress-text');
+    if (text) {
+      text.textContent = `${completed}/${config.total} aulas concluidas (${percent}%)`;
+    }
   }
 
   // Update checkmarks on lesson lists
+  const progress = getProgress();
   document.querySelectorAll('[data-lesson]').forEach(el => {
     const lessonId = el.dataset.lesson;
     if (progress[lessonId]) {

@@ -27,53 +27,91 @@
 
     <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
         <div class="container" id="member-content" style="display:none;">
-            <!-- Top Bar -->
-            <div class="member-topbar">
-                <div class="user-info">
-                    <div class="user-avatar">A</div>
+
+            <!-- Welcome Header -->
+            <div class="welcome-header">
+                <div class="welcome-left">
+                    <div class="user-avatar" id="user-avatar">A</div>
                     <div>
-                        <div class="user-name" id="user-name">Aluno</div>
-                        <div class="user-email" id="user-email"></div>
+                        <h2 class="welcome-greeting" id="welcome-greeting">Ola, <span id="user-name">Aluno</span></h2>
+                        <p class="welcome-subtitle">Continue sua jornada em IA</p>
+                        <p class="user-email" id="user-email"></p>
                     </div>
                 </div>
                 <button class="btn-logout" onclick="handleLogout()">Sair</button>
             </div>
 
-            <!-- Progress -->
-            <div class="progress-section">
-                <h3 style="margin-bottom: var(--spacing-md);">Claude Code na Pratica</h3>
-                <div class="progress-track">
-                    <div class="progress-fill" id="progress-bar"></div>
-                </div>
-                <span class="progress-label" id="progress-text">0/14 aulas concluidas (0%)</span>
-            </div>
+            <!-- Course Cards Grid -->
+            <div class="courses-grid">
 
-            <!-- Modules -->
-            <div class="modules-dashboard">
-                <a href="curso/modulo-1.html" class="module-dash-card">
-                    <div class="module-number">Modulo 1 - Dias 1-2</div>
-                    <h3>Fundamentos e Setup</h3>
-                    <p class="module-desc">Instale o ambiente, aprenda a conversar com o Claude Code e domine a arte do prompt.</p>
-                    <div class="lesson-count">4 aulas</div>
-                </a>
-                <a href="curso/modulo-2.html" class="module-dash-card">
-                    <div class="module-number">Modulo 2 - Dias 3-4</div>
-                    <h3>Seu Primeiro App Real</h3>
-                    <p class="module-desc">Planeje, desenvolva e coloque no ar seu primeiro aplicativo funcional.</p>
-                    <div class="lesson-count">4 aulas</div>
-                </a>
-                <a href="curso/modulo-3.html" class="module-dash-card">
-                    <div class="module-number">Modulo 3 - Dias 5-6</div>
-                    <h3>Apps que Geram Receita</h3>
-                    <p class="module-desc">Crie calculadoras, dashboards e automacoes que geram valor para clientes.</p>
-                    <div class="lesson-count">3 aulas</div>
-                </a>
-                <a href="curso/modulo-4.html" class="module-dash-card">
-                    <div class="module-number">Modulo 4 - Dia 7</div>
-                    <h3>Portfolio e Monetizacao</h3>
-                    <p class="module-desc">Precifique seus apps, crie seu portfolio profissional e comece a vender.</p>
-                    <div class="lesson-count">3 aulas</div>
-                </a>
+                <!-- Card: Claude Code na Pratica -->
+                <div class="course-card course-card--claude">
+                    <div class="course-card__header">
+                        <span class="course-card__icon">&#9000;</span>
+                        <span class="course-card__badge">4 modulos &middot; 14 aulas</span>
+                    </div>
+                    <h3 class="course-card__title">Claude Code na Pratica</h3>
+                    <p class="course-card__desc">Domine o Claude Code e crie apps reais em 7 dias</p>
+                    <div class="course-card__progress">
+                        <div class="course-card__progress-track">
+                            <div class="course-card__progress-fill" id="progress-bar"></div>
+                        </div>
+                        <span class="course-card__progress-text" id="progress-text">0%</span>
+                    </div>
+                    <a href="curso/modulo-1.html" class="course-card__btn">Acessar</a>
+                </div>
+
+                <!-- Card: ChatGPT Mastery -->
+                <div class="course-card course-card--chatgpt">
+                    <div class="course-card__header">
+                        <span class="course-card__icon">&#128172;</span>
+                        <span class="course-card__badge">5 modulos &middot; 15 aulas</span>
+                    </div>
+                    <h3 class="course-card__title">ChatGPT Mastery</h3>
+                    <p class="course-card__desc">Prompts avancados e produtividade com ChatGPT</p>
+                    <div class="course-card__progress">
+                        <div class="course-card__progress-track">
+                            <div class="course-card__progress-fill" id="progress-bar-chatgpt"></div>
+                        </div>
+                        <span class="course-card__progress-text" id="progress-text-chatgpt">0%</span>
+                    </div>
+                    <a href="chatgpt-mastery/modulo-1.html" class="course-card__btn">Acessar</a>
+                </div>
+
+                <!-- Card: IA para Negocios -->
+                <div class="course-card course-card--negocios">
+                    <div class="course-card__header">
+                        <span class="course-card__icon">&#128188;</span>
+                        <span class="course-card__badge">8 modulos &middot; 16 aulas</span>
+                    </div>
+                    <h3 class="course-card__title">IA para Negocios</h3>
+                    <p class="course-card__desc">Implemente IA na sua empresa e meça resultados</p>
+                    <div class="course-card__progress">
+                        <div class="course-card__progress-track">
+                            <div class="course-card__progress-fill" id="progress-bar-negocios"></div>
+                        </div>
+                        <span class="course-card__progress-text" id="progress-text-negocios">0%</span>
+                    </div>
+                    <a href="ia-negocios/modulo-1.html" class="course-card__btn">Acessar</a>
+                </div>
+
+                <!-- Card: IA para Criadores -->
+                <div class="course-card course-card--criadores">
+                    <div class="course-card__header">
+                        <span class="course-card__icon">&#127912;</span>
+                        <span class="course-card__badge">10 modulos &middot; 20 aulas</span>
+                    </div>
+                    <h3 class="course-card__title">IA para Criadores de Conteudo</h3>
+                    <p class="course-card__desc">Texto, imagem, video e audio com inteligencia artificial</p>
+                    <div class="course-card__progress">
+                        <div class="course-card__progress-track">
+                            <div class="course-card__progress-fill" id="progress-bar-criadores"></div>
+                        </div>
+                        <span class="course-card__progress-text" id="progress-text-criadores">0%</span>
+                    </div>
+                    <a href="ia-criadores/modulo-1.html" class="course-card__btn">Acessar</a>
+                </div>
+
             </div>
         </div>
     </section>
