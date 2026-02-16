@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Automacao de tarefas repetitivas | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-3.html">Modulo 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-3.html">Modulo 3</a>
+                    <span class="separator">/</span>
+                    <span>Aula 3</span>
+                </div>
+                <h1>Automacao de tarefas repetitivas</h1>
+                <div class="lesson-body">
+                    <h2>Identificando tarefas automatizaveis</h2>
+                    <p>Antes de automatizar qualquer coisa, voce precisa identificar quais tarefas do seu dia a dia sao candidatas ideais para automacao com o ChatGPT. Nem toda tarefa repetitiva e automatizavel, mas muitas que consomem seu tempo podem ser drasticamente aceleradas.</p>
+                    <p><strong>Criterios para identificar tarefas automatizaveis:</strong></p>
+                    <ul>
+                        <li><strong>Repetitividade:</strong> Voce faz a mesma coisa varias vezes por semana ou mes</li>
+                        <li><strong>Baseada em texto:</strong> A tarefa envolve escrever, formatar, traduzir ou transformar texto</li>
+                        <li><strong>Padrao previsivel:</strong> A tarefa segue um padrao claro, mesmo que os dados mudem</li>
+                        <li><strong>Baixo risco:</strong> Um erro nao causa danos graves (ou voce pode revisar antes de finalizar)</li>
+                    </ul>
+                    <p><strong>Exemplos comuns de tarefas automatizaveis:</strong></p>
+                    <ul>
+                        <li>Escrever descricoes de produtos</li>
+                        <li>Criar respostas padrao para emails recorrentes</li>
+                        <li>Formatar dados de planilhas</li>
+                        <li>Gerar relatorios periodicos</li>
+                        <li>Criar checklists e SOPs (Procedimentos Operacionais Padrao)</li>
+                        <li>Traduzir conteudo regularmente</li>
+                        <li>Redigir posts para redes sociais</li>
+                    </ul>
+
+                    <h2>Criando SOPs com o ChatGPT</h2>
+                    <p>SOPs (Standard Operating Procedures) sao documentos que descrevem exatamente como executar uma tarefa. O ChatGPT e excelente para criar e manter esses documentos.</p>
+                    <p><strong>Gerando um SOP do zero:</strong></p>
+                    <code>Crie um SOP detalhado para o processo de [nome do processo]. O publico-alvo e [quem vai executar]. Inclua: objetivo do processo, pre-requisitos, passo a passo detalhado com screenshots descritivos, pontos de verificacao (checkpoints), o que fazer em caso de erro em cada etapa, tempo estimado e responsavel. Use numeracao clara e linguagem simples que qualquer pessoa da equipe possa seguir.</code>
+                    <p><strong>Convertendo conhecimento tacito em SOP:</strong></p>
+                    <code>Vou descrever como eu faco [tarefa] no meu dia a dia. Quero que voce transforme minha descricao informal em um SOP profissional e estruturado. Identifique etapas que eu possa estar pulando por ja saber de memoria e adicione-as. Aqui esta minha descricao:
+
+[Descreva o processo com suas palavras, sem se preocupar com formatacao]</code>
+                    <p>Essa abordagem e especialmente valiosa para documentar processos que so existem na cabeca de uma pessoa da equipe. Se essa pessoa sair, o conhecimento nao se perde.</p>
+
+                    <h2>Checklists inteligentes</h2>
+                    <p>Checklists sao ferramentas simples mas poderosas para garantir que nenhuma etapa seja esquecida. O ChatGPT pode criar checklists personalizadas para qualquer processo.</p>
+                    <p><strong>Checklist de lancamento de produto:</strong></p>
+                    <code>Crie uma checklist completa para o lancamento de [tipo de produto/servico]. Divida em fases: pre-lancamento (4 semanas antes), semana do lancamento, dia do lancamento e pos-lancamento (primeira semana). Cada item deve ter: a tarefa, o responsavel sugerido, a prioridade (alta/media/baixa) e uma estimativa de tempo. Inclua items que frequentemente sao esquecidos.</code>
+                    <p><strong>Checklist de revisao de qualidade:</strong></p>
+                    <code>Crie uma checklist de revisao de qualidade para [tipo de entrega: site, app, relatorio, campanha]. Organize por categorias: conteudo, design, funcionalidade, performance e compliance. Cada item deve ser uma pergunta sim/nao que o revisor deve responder. Inclua os criterios de aprovacao: quantos "sim" sao necessarios para aprovar.</code>
+
+                    <h2>Processamento em lote (batch processing)</h2>
+                    <p>Uma das formas mais poderosas de automatizar com o ChatGPT e o processamento em lote: aplicar a mesma transformacao a multiplos itens de uma vez.</p>
+                    <p><strong>Exemplo - Gerar descricoes para multiplos produtos:</strong></p>
+                    <code>Preciso de descricoes de produto para minha loja online. Para cada produto abaixo, crie: titulo otimizado para SEO (maximo 60 caracteres), descricao curta (2 frases), descricao completa (100 palavras) e 5 palavras-chave. Mantenha o tom [descreva o tom da sua marca].
+
+1. [Nome do produto 1] - [caracteristicas principais]
+2. [Nome do produto 2] - [caracteristicas principais]
+3. [Nome do produto 3] - [caracteristicas principais]
+[Continue a lista]</code>
+                    <p><strong>Exemplo - Transformar dados de formato:</strong></p>
+                    <code>Tenho os seguintes dados em formato de texto corrido. Transforme cada entrada em formato JSON com os campos: nome, email, telefone, empresa e cargo. Se algum campo estiver faltando, use null.
+
+Joao Silva, joao@email.com, Empresa ABC, Diretor Comercial
+Maria Santos, 11-99999-0000, maria@empresa.com, Startup XYZ
+[Cole seus dados]</code>
+
+                    <div class="tip-box">
+                        <strong>Dica importante:</strong> Ao processar grandes volumes de dados, divida em lotes menores (10-20 itens por vez) para garantir qualidade consistente. O ChatGPT tende a perder qualidade quando processa listas muito longas de uma so vez. Alem disso, sempre revise uma amostra dos resultados antes de usar todos. Verifique especialmente os primeiros e ultimos itens do lote.
+                    </div>
+
+                    <h2>Criando workflows reutilizaveis</h2>
+                    <p>Um workflow e uma sequencia de prompts que voce usa repetidamente para completar um processo. A ideia e criar uma "receita" que voce pode seguir toda vez que precisa realizar determinada tarefa.</p>
+                    <p><strong>Exemplo de workflow para conteudo semanal:</strong></p>
+                    <ol>
+                        <li><strong>Prompt 1 - Pesquisa de tendencias:</strong> "Quais sao os 5 topicos mais relevantes em [sua area] esta semana? Considere que meu publico se interessa por [temas]."</li>
+                        <li><strong>Prompt 2 - Selecao e angulo:</strong> "Dos topicos acima, escolha os 3 mais relevantes para meu publico de [descricao]. Para cada um, sugira um angulo unico que eu possa explorar."</li>
+                        <li><strong>Prompt 3 - Criacao de conteudo:</strong> "Crie o conteudo completo para o topico 1: [titulo]. Formato: post de LinkedIn com gancho, desenvolvimento e call-to-action. Maximo 300 palavras."</li>
+                        <li><strong>Prompt 4 - Adaptacao multicanal:</strong> "Adapte o conteudo acima para: tweet (280 caracteres), story do Instagram (3 telas) e email newsletter (500 palavras)."</li>
+                    </ol>
+                    <p>Salve seus workflows em um documento e reutilize-os semanalmente. Com o tempo, voce vai refinar cada prompt e o processo ficara cada vez mais rapido e eficiente.</p>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>Identifique tarefas automatizaveis pelos criterios: repetitividade, baseada em texto, padrao previsivel e baixo risco</li>
+                        <li>SOPs documentam processos de forma que qualquer pessoa pode seguir - o ChatGPT cria esses documentos rapidamente</li>
+                        <li>Checklists com categorias e criterios de aprovacao garantem qualidade consistente</li>
+                        <li>Processamento em lote aplica a mesma transformacao a multiplos itens de uma vez</li>
+                        <li>Divida lotes grandes em grupos menores para manter a qualidade</li>
+                        <li>Crie workflows reutilizaveis com sequencias de prompts para processos recorrentes</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="3-3" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="aula-3-2.html">&larr; Aula 3.2</a>
+                    <a href="modulo-4.html">Modulo 4 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

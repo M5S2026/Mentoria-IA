@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Criando imagens profissionais para conteudo | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-2.html">Modulo 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-2.html">Modulo 2</a>
+                    <span class="separator">/</span>
+                    <span>Aula 2</span>
+                </div>
+                <h1>Criando Imagens Profissionais para Conteudo</h1>
+                <div class="lesson-body">
+                    <h2>Imagens para redes sociais: dimensoes e melhores praticas</h2>
+                    <p>Cada plataforma social tem suas proprias especificacoes de imagem. Gerar imagens com IA sem considerar essas dimensoes resulta em conteudo cortado ou distorcido. Aqui estao as dimensoes essenciais:</p>
+                    <ul>
+                        <li><strong>Instagram Feed:</strong> 1080x1080px (quadrado) ou 1080x1350px (retrato, recomendado por ocupar mais espaco na tela).</li>
+                        <li><strong>Instagram Stories/Reels:</strong> 1080x1920px (9:16 vertical).</li>
+                        <li><strong>YouTube Thumbnail:</strong> 1280x720px (16:9 horizontal).</li>
+                        <li><strong>Facebook Post:</strong> 1200x630px.</li>
+                        <li><strong>Pinterest Pin:</strong> 1000x1500px (2:3 vertical).</li>
+                        <li><strong>LinkedIn Post:</strong> 1200x627px.</li>
+                    </ul>
+                    <p>Ao gerar imagens com IA, especifique a proporcao no prompt. No Midjourney, use parametros como <code>--ar 9:16</code> para Stories ou <code>--ar 16:9</code> para thumbnails.</p>
+
+                    <h2>Criando thumbnails que geram cliques</h2>
+                    <p>Uma thumbnail eficaz combina tres elementos: um rosto expressivo (quando possivel), texto legivel em tamanho pequeno e contraste visual forte. Veja como usar IA para cada elemento:</p>
+                    <p><strong>Prompt para fundo de thumbnail:</strong></p>
+                    <p><em>"Fundo abstrato com gradiente vibrante de azul para roxo, com particulas de luz bokeh, estilo clean e moderno, espaco amplo no centro para adicionar texto, alta resolucao 1280x720"</em></p>
+                    <p><strong>Prompt para cena de thumbnail:</strong></p>
+                    <p><em>"Close-up de uma pessoa surpresa olhando para a camera, fundo desfocado em cores vibrantes, iluminacao dramatica lateral, estilo YouTube thumbnail, alto contraste, expressao de espanto"</em></p>
+                    <p>Apos gerar o fundo ou cena com IA, adicione texto e elementos graficos no Canva para completar a thumbnail. A combinacao IA + Canva e o workflow mais eficiente para thumbnails profissionais.</p>
+
+                    <h2>Consistencia visual: criando uma identidade reconhecivel</h2>
+                    <p>Um dos maiores desafios ao usar IA para gerar imagens e manter consistencia visual entre diferentes pecas de conteudo. Aqui estao estrategias praticas:</p>
+                    <ul>
+                        <li><strong>Crie um "style prompt" padrao:</strong> Defina um conjunto de palavras-chave que representam sua estetica e adicione-as a todo prompt. Ex: "minimal, pastel tones, soft shadows, clean composition".</li>
+                        <li><strong>Use paleta de cores fixa:</strong> Especifique suas cores em cada prompt. Ex: "color palette: #FF6B6B, #4ECDC4, #2C3E50, white background".</li>
+                        <li><strong>Mantenha o mesmo estilo artistico:</strong> Se voce usa "flat illustration" para um post, mantenha esse estilo em todos os posts relacionados.</li>
+                        <li><strong>Crie templates de prompt:</strong> Tenha prompts-base para cada tipo de conteudo (carrossel, post unico, story) e altere apenas o conteudo especifico.</li>
+                    </ul>
+
+                    <h2>Workflow pratico: do prompt a publicacao</h2>
+                    <p>Siga este fluxo para criar imagens profissionais de forma consistente e eficiente:</p>
+                    <ol>
+                        <li><strong>Planeje:</strong> Defina o objetivo da imagem, a plataforma de destino e as dimensoes necessarias.</li>
+                        <li><strong>Gere:</strong> Use seu prompt padrao + detalhes especificos para gerar 4-6 variantes.</li>
+                        <li><strong>Selecione:</strong> Escolha as 1-2 melhores opcoes baseado em composicao, cores e adequacao ao objetivo.</li>
+                        <li><strong>Edite:</strong> Faca ajustes finais no Canva ou Photopea (gratuito): adicione texto, logo, filtros de marca.</li>
+                        <li><strong>Otimize:</strong> Comprima a imagem para web sem perder qualidade (TinyPNG ou Squoosh).</li>
+                        <li><strong>Publique:</strong> Exporte no formato correto (JPEG para fotos, PNG para graficos com transparencia).</li>
+                    </ol>
+
+                    <div class="tip-box">
+                        <strong>Dica Pro:</strong> Crie um "banco de imagens pessoal" organizado por tema e plataforma. Dedique 1-2 horas por semana para gerar imagens em lote. Assim, quando precisar publicar, voce ja tera material pronto. Isso e muito mais eficiente do que gerar imagens sob demanda a cada publicacao.
+                    </div>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>Cada plataforma social exige dimensoes especificas -- especifique a proporcao no prompt da IA.</li>
+                        <li>Thumbnails eficazes combinam rostos expressivos, texto legivel e alto contraste.</li>
+                        <li>A consistencia visual depende de style prompts padronizados e paleta de cores fixa.</li>
+                        <li>O workflow ideal e: planejar, gerar variantes, selecionar, editar no Canva, otimizar e publicar.</li>
+                        <li>Gerar imagens em lote semanalmente e mais eficiente do que criar sob demanda.</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="2-2" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="aula-2-1.html">&larr; Aula 1</a>
+                    <a href="modulo-3.html">Modulo 3 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

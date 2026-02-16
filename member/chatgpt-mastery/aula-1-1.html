@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>O que e o ChatGPT e como funciona | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-1.html">Modulo 1</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-1.html">Modulo 1</a>
+                    <span class="separator">/</span>
+                    <span>Aula 1</span>
+                </div>
+                <h1>O que e o ChatGPT e como funciona</h1>
+                <div class="lesson-body">
+                    <h2>O que e o ChatGPT?</h2>
+                    <p>O ChatGPT e um modelo de linguagem desenvolvido pela OpenAI que utiliza inteligencia artificial para gerar texto de forma natural e coerente. Lancado em novembro de 2022, ele rapidamente se tornou uma das ferramentas de IA mais populares do mundo, alcancando 100 milhoes de usuarios em apenas dois meses.</p>
+                    <p>O nome "ChatGPT" vem de duas partes: "Chat" (conversa) e "GPT" (Generative Pre-trained Transformer). Em termos simples, e um sistema que foi treinado com enormes quantidades de texto da internet para aprender padroes da linguagem humana e gerar respostas relevantes.</p>
+                    <p>Diferente de um mecanismo de busca como o Google, o ChatGPT nao pesquisa informacoes na internet em tempo real (embora versoes mais recentes tenham essa capacidade). Em vez disso, ele gera respostas com base nos padroes que aprendeu durante seu treinamento.</p>
+
+                    <h2>A arquitetura GPT explicada de forma simples</h2>
+                    <p>Para entender como o ChatGPT funciona, imagine uma pessoa que leu milhoes de livros, artigos, sites e conversas. Essa pessoa nao memoriza tudo palavra por palavra, mas desenvolve uma compreensao profunda de como a linguagem funciona, quais palavras costumam aparecer juntas e como ideias se conectam.</p>
+                    <p>A arquitetura Transformer, que e a base do GPT, funciona com um mecanismo chamado "atencao" (attention). Isso permite que o modelo considere o contexto completo de uma frase ao gerar cada palavra. Por exemplo, ao ler "o gato sentou no ___", o modelo analisa todas as palavras anteriores para prever que "tapete" ou "sofa" sao continuacoes provaveis.</p>
+                    <p>O processo de treinamento acontece em duas etapas principais:</p>
+                    <ol>
+                        <li><strong>Pre-treinamento:</strong> O modelo le bilhoes de paginas de texto e aprende padroes gerais da linguagem.</li>
+                        <li><strong>Fine-tuning com RLHF:</strong> Humanos avaliam as respostas do modelo e ensinam ele a ser mais util, preciso e seguro. RLHF significa "Reinforcement Learning from Human Feedback" (Aprendizado por Reforco com Feedback Humano).</li>
+                    </ol>
+
+                    <h2>O que sao tokens?</h2>
+                    <p>O ChatGPT nao le texto da mesma forma que nos. Ele divide o texto em pedacos chamados "tokens". Um token pode ser uma palavra inteira, parte de uma palavra ou ate mesmo um caractere de pontuacao.</p>
+                    <p>Como regra geral:</p>
+                    <ul>
+                        <li>1 token equivale a aproximadamente 4 caracteres em ingles</li>
+                        <li>1 token equivale a aproximadamente 3 caracteres em portugues</li>
+                        <li>Uma palavra curta como "ola" e geralmente 1 token</li>
+                        <li>Uma palavra longa como "extraordinario" pode ser dividida em 3-4 tokens</li>
+                    </ul>
+                    <p>Isso e importante porque cada modelo tem um limite de tokens que pode processar por conversa. O GPT-3.5 suporta cerca de 4.000 tokens, enquanto o GPT-4 pode lidar com ate 128.000 tokens. Esse limite inclui tanto o que voce escreve quanto o que o ChatGPT responde.</p>
+
+                    <h2>Capacidades e limitacoes</h2>
+                    <p>O ChatGPT e incrivelmente versatil, mas e fundamental entender o que ele faz bem e onde tem limitacoes.</p>
+                    <p><strong>O que o ChatGPT faz muito bem:</strong></p>
+                    <ul>
+                        <li>Escrever e revisar textos em diversos estilos e formatos</li>
+                        <li>Explicar conceitos complexos de forma simples</li>
+                        <li>Traduzir entre idiomas</li>
+                        <li>Ajudar com programacao e debug de codigo</li>
+                        <li>Brainstorming e geracao de ideias</li>
+                        <li>Resumir textos longos</li>
+                        <li>Responder perguntas sobre uma ampla gama de assuntos</li>
+                    </ul>
+                    <p><strong>Limitacoes importantes:</strong></p>
+                    <ul>
+                        <li><strong>Alucinacoes:</strong> O ChatGPT pode gerar informacoes que parecem verdadeiras mas sao inventadas. Sempre verifique dados importantes.</li>
+                        <li><strong>Conhecimento limitado:</strong> O modelo tem uma data de corte no treinamento e pode nao saber sobre eventos muito recentes.</li>
+                        <li><strong>Matematica complexa:</strong> Embora tenha melhorado, ainda pode cometer erros em calculos avancados.</li>
+                        <li><strong>Sem opiniao propria:</strong> Ele gera respostas baseadas em padroes, nao em experiencia pessoal ou crencas.</li>
+                        <li><strong>Vieses:</strong> Como foi treinado com dados da internet, pode refletir vieses presentes nesses dados.</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Dica importante:</strong> Pense no ChatGPT como um assistente muito inteligente, mas que as vezes pode errar. Sempre verifique informacoes criticas de forma independente, especialmente numeros, datas e fatos especificos. Use-o como ponto de partida, nao como fonte unica de verdade.
+                    </div>
+
+                    <h2>Versoes do ChatGPT</h2>
+                    <p>A OpenAI lancou diversas versoes do modelo, cada uma mais poderosa que a anterior:</p>
+                    <ul>
+                        <li><strong>GPT-3.5:</strong> A versao gratuita original. Rapida e competente para a maioria das tarefas do dia a dia.</li>
+                        <li><strong>GPT-4:</strong> Mais inteligente, precisa e capaz de lidar com tarefas complexas. Disponivel no plano Plus.</li>
+                        <li><strong>GPT-4o:</strong> Versao otimizada com capacidades multimodais (texto, imagem e voz). Mais rapida que o GPT-4 original.</li>
+                        <li><strong>GPT-4o mini:</strong> Versao compacta e acessivel, disponivel gratuitamente com limites de uso.</li>
+                    </ul>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>O ChatGPT e um modelo de linguagem que gera texto baseado em padroes aprendidos durante treinamento</li>
+                        <li>A arquitetura Transformer usa mecanismos de atencao para entender contexto</li>
+                        <li>Tokens sao as unidades basicas de processamento - cada modelo tem um limite</li>
+                        <li>O ChatGPT e excelente para escrita, explicacoes e brainstorming, mas pode alucinar</li>
+                        <li>Sempre verifique informacoes criticas de forma independente</li>
+                        <li>Existem diferentes versoes com capacidades e precos variados</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="1-1" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="modulo-1.html">&larr; Voltar ao Modulo 1</a>
+                    <a href="aula-1-2.html">Aula 1.2 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

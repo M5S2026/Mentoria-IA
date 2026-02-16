@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>ChatGPT com GPTs personalizados | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-4.html">Modulo 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-4.html">Modulo 4</a>
+                    <span class="separator">/</span>
+                    <span>Aula 1</span>
+                </div>
+                <h1>ChatGPT com GPTs personalizados</h1>
+                <div class="lesson-body">
+                    <h2>O que sao GPTs personalizados?</h2>
+                    <p>GPTs personalizados (tambem chamados de "Custom GPTs" ou simplesmente "GPTs") sao versoes customizadas do ChatGPT que voce pode criar para tarefas especificas. Pense neles como assistentes especializados que ja vem configurados com instrucoes, conhecimento e comportamento definidos por voce.</p>
+                    <p>Em vez de repetir as mesmas instrucoes toda vez que abre uma nova conversa, voce cria um GPT com essas instrucoes embutidas. Por exemplo:</p>
+                    <ul>
+                        <li>Um GPT especialista em criar conteudo para suas redes sociais, ja sabendo seu tom de voz e publico</li>
+                        <li>Um GPT que analisa contratos juridicos seguindo criterios especificos da sua empresa</li>
+                        <li>Um GPT que funciona como tutor de ingles adaptado ao seu nivel</li>
+                        <li>Um GPT que gera relatorios financeiros no formato padrao da sua organizacao</li>
+                    </ul>
+                    <p>GPTs personalizados estao disponiveis para usuarios dos planos Plus, Team e Enterprise. Voce pode criar GPTs para uso pessoal ou publicar na GPT Store para que outros usuarios tambem possam utilizar.</p>
+
+                    <h2>Criando seu primeiro GPT personalizado</h2>
+                    <p>Para criar um GPT, acesse o menu do ChatGPT e clique em "Explorar GPTs" e depois em "Criar". Voce sera levado ao GPT Builder, que tem duas abas principais:</p>
+                    <p><strong>Aba "Criar" (modo assistido):</strong></p>
+                    <p>O proprio ChatGPT te guia pelo processo de criacao, fazendo perguntas sobre o que voce quer que seu GPT faca. Essa e a forma mais facil de comecar.</p>
+                    <p><strong>Aba "Configurar" (modo manual):</strong></p>
+                    <p>Aqui voce tem controle total sobre cada aspecto do GPT. Os campos disponiveis sao:</p>
+                    <ol>
+                        <li><strong>Nome:</strong> Um nome claro e descritivo. Exemplo: "Assistente de Conteudo - Marca XYZ"</li>
+                        <li><strong>Descricao:</strong> Uma breve explicacao do que o GPT faz (aparece na listagem)</li>
+                        <li><strong>Instrucoes:</strong> O campo mais importante. Aqui voce define exatamente como o GPT deve se comportar, que tipo de respostas dar e quais regras seguir.</li>
+                        <li><strong>Conversation starters:</strong> Sugestoes de primeiras mensagens que aparecem quando alguem abre o GPT</li>
+                        <li><strong>Conhecimento:</strong> Arquivos que voce faz upload (PDFs, documentos, planilhas) que o GPT pode consultar</li>
+                        <li><strong>Capacidades:</strong> Ativar ou desativar navegacao web, geracao de imagens (DALL-E) e interpretacao de codigo</li>
+                        <li><strong>Acoes:</strong> Integracoes com APIs externas (nivel avancado)</li>
+                    </ol>
+
+                    <h2>Escrevendo instrucoes eficazes para seu GPT</h2>
+                    <p>As instrucoes sao o coracao do seu GPT personalizado. Elas definem toda a personalidade, comportamento e regras. Aqui esta um framework para escrever instrucoes completas:</p>
+                    <code>## Identidade
+Voce e [nome/papel], um assistente especializado em [area].
+
+## Objetivo principal
+Sua funcao e ajudar o usuario a [objetivo especifico].
+
+## Tom e estilo
+- Comunique-se em [idioma]
+- Use tom [formal/informal/tecnico]
+- [Outras regras de estilo]
+
+## Regras de comportamento
+1. Sempre [comportamento obrigatorio]
+2. Nunca [comportamento proibido]
+3. Quando o usuario pedir [situacao], faca [acao]
+
+## Formato de resposta
+- Use [formato padrao: listas, paragrafos, tabelas]
+- Limite respostas a [tamanho]
+- Sempre inclua [elemento: exemplos, fontes, proximos passos]
+
+## Conhecimento especifico
+- [Informacao importante 1]
+- [Informacao importante 2]
+- Consulte os arquivos anexados para [tipo de informacao]
+
+## Limitacoes
+- Se nao souber algo, diga claramente em vez de inventar
+- Para assuntos fora do escopo, redirecione educadamente</code>
+
+                    <h2>Exemplos praticos de GPTs uteis</h2>
+                    <p><strong>GPT Assistente de Social Media:</strong></p>
+                    <code>Voce e um especialista em criacao de conteudo para redes sociais. Seu foco e criar posts para Instagram, LinkedIn e Twitter para uma marca de [segmento]. O publico-alvo e [descricao]. O tom de voz da marca e [descricao]. Sempre inclua hashtags relevantes. Para Instagram, crie legendas com gancho, desenvolvimento e CTA. Para LinkedIn, foque em storytelling profissional. Para Twitter, seja conciso e use ganchos fortes. Quando o usuario enviar um tema, crie versoes para todas as 3 plataformas automaticamente.</code>
+                    <p><strong>GPT Revisor de Textos:</strong></p>
+                    <code>Voce e um editor profissional com 20 anos de experiencia em revisao de textos em portugues brasileiro. Quando o usuario enviar um texto, faca: 1) Corrija erros gramaticais e ortograficos, 2) Melhore a clareza e fluidez, 3) Sugira alternativas para palavras repetidas, 4) Mantenha o estilo original do autor. Apresente o texto corrigido primeiro, depois liste todas as alteracoes feitas com explicacao breve de cada uma. Pergunte se o texto e formal ou informal antes de revisar.</code>
+
+                    <div class="tip-box">
+                        <strong>Dica importante:</strong> Comece simples e va adicionando complexidade. Crie seu GPT com instrucoes basicas, teste bastante e va refinando as instrucoes com base no que funciona e no que nao funciona. Apos cada teste, pergunte a si mesmo: "O GPT respondeu como eu esperava?" Se nao, ajuste as instrucoes. Os melhores GPTs sao resultado de muitas iteracoes, nao de uma unica tentativa perfeita.
+                    </div>
+
+                    <h2>Publicando e compartilhando seu GPT</h2>
+                    <p>Apos criar seu GPT, voce tem tres opcoes de compartilhamento:</p>
+                    <ul>
+                        <li><strong>Somente eu:</strong> O GPT fica privado, acessivel apenas para voce. Ideal para assistentes pessoais e ferramentas internas.</li>
+                        <li><strong>Qualquer pessoa com o link:</strong> Voce pode compartilhar o link direto com pessoas especificas. Elas precisam ter uma conta ChatGPT para usar.</li>
+                        <li><strong>Publico (GPT Store):</strong> Seu GPT fica disponivel na loja para qualquer usuario do ChatGPT encontrar e usar. Voce pode ate ganhar dinheiro se seu GPT tiver muitos usuarios.</li>
+                    </ul>
+                    <p>Para publicar na GPT Store, seu GPT precisa seguir as politicas de uso da OpenAI. Certifique-se de que o nome e descricao sao claros e que o GPT funciona como prometido.</p>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>GPTs personalizados sao versoes customizadas do ChatGPT para tarefas especificas</li>
+                        <li>Voce pode criar GPTs usando o modo assistido ou configurando manualmente cada campo</li>
+                        <li>As instrucoes sao o campo mais importante - use o framework: identidade, objetivo, tom, regras, formato e limitacoes</li>
+                        <li>Faca upload de arquivos relevantes para dar conhecimento especializado ao seu GPT</li>
+                        <li>Comece com instrucoes simples e refine com base em testes</li>
+                        <li>Compartilhe de forma privada, por link ou publique na GPT Store</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="4-1" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="modulo-4.html">&larr; Voltar ao Modulo 4</a>
+                    <a href="aula-4-2.html">Aula 4.2 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

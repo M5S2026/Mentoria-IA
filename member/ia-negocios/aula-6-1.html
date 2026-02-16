@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Segmentacao e personalizacao | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-6.html">Modulo 6</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-6.html">Modulo 6</a>
+                    <span class="separator">/</span>
+                    <span>Aula 1</span>
+                </div>
+                <h1>Segmentacao e personalizacao</h1>
+                <div class="lesson-body">
+                    <h2>De segmentos estaticos a clusters inteligentes</h2>
+                    <p>A segmentacao tradicional divide clientes em grupos amplos como "homens 25-35 anos" ou "classe B da regiao sudeste". Esses segmentos sao estaticos, genericos e cada vez menos eficazes em um mundo onde os consumidores esperam experiencias personalizadas.</p>
+                    <p>A IA transforma a segmentacao de tres formas fundamentais:</p>
+                    <ul>
+                        <li><strong>Clusters comportamentais:</strong> Em vez de dados demograficos, a IA agrupa clientes por comportamento real - como compram, quando compram, o que pesquisam, como interagem com sua marca.</li>
+                        <li><strong>Microsegmentos:</strong> A IA consegue identificar dezenas ou centenas de microsegmentos, cada um com necessidades e comportamentos especificos, impossivel de gerenciar manualmente.</li>
+                        <li><strong>Segmentacao dinamica:</strong> Clientes mudam de segmento automaticamente conforme seu comportamento evolui. Alguem que era "cliente esporadico" passa para "cliente em risco de churn" quando para de comprar.</li>
+                    </ul>
+                    <p>Ferramentas como Google Analytics 4, Segment e Amplitude ja oferecem segmentacao por IA de forma acessivel.</p>
+
+                    <h2>Audience clustering na pratica</h2>
+                    <p>Audience clustering e a tecnica de usar algoritmos de machine learning para descobrir grupos naturais nos seus dados de clientes. O processo funciona assim:</p>
+                    <ol>
+                        <li><strong>Colete dados:</strong> Historico de compras, navegacao no site, engajamento com emails, interacoes com suporte, dados de CRM</li>
+                        <li><strong>Defina variaveis:</strong> Selecione quais dados serao usados para o agrupamento. As mais comuns sao: frequencia de compra, valor medio, recencia (ultima compra), categorias preferidas, canal de compra</li>
+                        <li><strong>Execute o algoritmo:</strong> A IA analisa todas as variaveis e identifica grupos de clientes que se comportam de forma similar</li>
+                        <li><strong>Interprete os clusters:</strong> De nomes descritivos a cada grupo. Exemplo: "Compradores frequentes de alto valor", "Cacadores de promocao", "Novos clientes em exploracao"</li>
+                        <li><strong>Ative os segmentos:</strong> Crie estrategias especificas para cada cluster</li>
+                    </ol>
+                    <p>Um modelo popular e o RFM (Recencia, Frequencia, Valor Monetario), que pode ser facilmente implementado com ferramentas de analytics e gera insights acionaveis imediatamente.</p>
+
+                    <h2>Conteudo dinamico e personalizacao</h2>
+                    <p>Com segmentos inteligentes definidos, a personalizacao de conteudo se torna poderosa:</p>
+                    <ul>
+                        <li><strong>Email marketing personalizado:</strong> Assunto, conteudo, produtos recomendados e horario de envio diferentes para cada segmento. Empresas relatam aumento de 29% em taxa de abertura e 41% em cliques.</li>
+                        <li><strong>Site dinamico:</strong> A homepage, banners e destaques mudam conforme o perfil do visitante. Um cliente recorrente ve lancamentos; um novo visitante ve bestsellers e depoimentos.</li>
+                        <li><strong>Precificacao personalizada:</strong> Ofertas e descontos calibrados por segmento. Clientes sensiveis a preco recebem cupons; clientes de alto valor recebem beneficios exclusivos.</li>
+                        <li><strong>Retargeting inteligente:</strong> Anuncios de retargeting mostram exatamente os produtos que o cliente demonstrou interesse, no formato e canal que mais engaja aquele perfil.</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Dica pratica:</strong> Comece a personalizacao pelo email marketing. E o canal mais facil de personalizar e com melhor ROI mensuravel. Segmente sua lista em pelo menos 3 grupos (clientes ativos, inativos e novos) e crie comunicacoes especificas para cada um. So isso ja pode dobrar seus resultados de email.
+                    </div>
+
+                    <h2>Motores de recomendacao</h2>
+                    <p>Motores de recomendacao sao sistemas de IA que sugerem produtos, conteudos ou servicos relevantes para cada usuario. A Amazon gera 35% da sua receita com recomendacoes. Voce pode usar essa mesma tecnologia no seu negocio.</p>
+                    <p>Tipos de recomendacao:</p>
+                    <ul>
+                        <li><strong>Filtragem colaborativa:</strong> "Clientes que compraram X tambem compraram Y." Funciona bem quando voce tem muitos dados de transacao.</li>
+                        <li><strong>Baseada em conteudo:</strong> Recomenda itens similares ao que o cliente ja comprou ou visualizou, baseado em atributos dos produtos.</li>
+                        <li><strong>Hibrida:</strong> Combina ambas as abordagens para recomendacoes mais precisas.</li>
+                    </ul>
+                    <p>Ferramentas acessiveis: Shopify com apps de recomendacao, Nosto (para e-commerce), e Recombee (API de recomendacao que pode ser integrada a qualquer plataforma).</p>
+
+                    <h2>Privacidade e etica na personalizacao</h2>
+                    <p>Personalizacao eficaz deve respeitar a privacidade do cliente e estar em conformidade com a LGPD:</p>
+                    <ul>
+                        <li><strong>Transparencia:</strong> Explique como os dados sao usados para personalizar a experiencia</li>
+                        <li><strong>Consentimento:</strong> Obtenha consentimento explicito para coleta e uso de dados pessoais</li>
+                        <li><strong>Controle do usuario:</strong> Permita que clientes ajustem suas preferencias de personalizacao</li>
+                        <li><strong>Limite a intrusividade:</strong> Personalizacao que parece "assustadora" gera rejeicao. Ha uma linha fina entre "util" e "invasivo"</li>
+                    </ul>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>IA permite segmentacao por comportamento real, com microsegmentos e atualizacao dinamica</li>
+                        <li>Audience clustering descobre grupos naturais nos dados usando machine learning</li>
+                        <li>Personalize emails, site, precos e retargeting para cada segmento</li>
+                        <li>Motores de recomendacao podem gerar ate 35% da receita com sugestoes relevantes</li>
+                        <li>Sempre respeite privacidade e LGPD na personalizacao</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="6-1" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="modulo-6.html">&larr; Voltar ao Modulo 6</a>
+                    <a href="aula-6-2.html">Aula 2 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Transcricao e legendagem automatica | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-4.html">Modulo 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-4.html">Modulo 4</a>
+                    <span class="separator">/</span>
+                    <span>Aula 2</span>
+                </div>
+                <h1>Transcricao e Legendagem Automatica</h1>
+                <div class="lesson-body">
+                    <h2>Whisper da OpenAI: o padrao-ouro em transcricao</h2>
+                    <p>O Whisper e o modelo de reconhecimento de fala da OpenAI que revolucionou a transcricao automatica. Ele suporta mais de 90 idiomas, incluindo portugues brasileiro com alta precisao, e pode ser usado de forma gratuita.</p>
+                    <p>Formas de acessar o Whisper:</p>
+                    <ul>
+                        <li><strong>Online gratuito:</strong> Plataformas como o Hugging Face oferecem o Whisper gratuitamente pela web para arquivos de ate 25MB.</li>
+                        <li><strong>Via API:</strong> A API da OpenAI processa audio de qualquer tamanho por um custo muito baixo (cerca de $0.006 por minuto).</li>
+                        <li><strong>Localmente:</strong> Para quem tem um computador razoavelmente potente, o Whisper pode rodar offline com total privacidade.</li>
+                        <li><strong>Integrado em apps:</strong> Ferramentas como Descript e CapCut ja usam modelos similares ao Whisper internamente.</li>
+                    </ul>
+                    <p>A precisao do Whisper em portugues brasileiro fica em torno de 95-98% para audio limpo. Para audio com ruido de fundo, a precisao cai, mas ainda supera a maioria das alternativas.</p>
+
+                    <h2>Ferramentas de legendagem para criadores</h2>
+                    <p>Alem do Whisper puro, diversas ferramentas combinam transcricao com formatacao de legendas pronta para uso:</p>
+                    <ul>
+                        <li><strong>CapCut:</strong> Gera legendas automaticas com sincronizacao perfeita e oferece estilos visuais prontos. Melhor opcao para Reels e TikTok.</li>
+                        <li><strong>Descript:</strong> Transcricao integrada com edicao. Voce pode corrigir erros diretamente no texto e exportar como arquivo SRT.</li>
+                        <li><strong>Subtitle Edit:</strong> Software gratuito e open-source para edicao avancada de legendas. Permite ajuste fino de timing e formatacao.</li>
+                        <li><strong>Happy Scribe:</strong> Plataforma web com transcricao em tempo real e exportacao em diversos formatos (SRT, VTT, TXT).</li>
+                    </ul>
+
+                    <h2>Criando conteudo multilingual com IA</h2>
+                    <p>Uma das oportunidades mais poderosas da IA para criadores e a capacidade de expandir seu conteudo para outros idiomas sem aprender novas linguas:</p>
+                    <p><strong>Workflow para conteudo multilingual:</strong></p>
+                    <ol>
+                        <li><strong>Transcreva:</strong> Use o Whisper para transcrever seu conteudo original em portugues.</li>
+                        <li><strong>Traduza:</strong> Use o ChatGPT ou DeepL para traduzir a transcricao para o idioma desejado. O ChatGPT e superior para manter o tom e contexto cultural.</li>
+                        <li><strong>Gere legendas:</strong> Crie arquivos SRT com as legendas traduzidas e sincronize com o video original.</li>
+                        <li><strong>Alternativa avancada:</strong> Use o ElevenLabs para dublar seu video com voz sintetica no idioma traduzido, mantendo sua propria voz.</li>
+                    </ol>
+                    <p>Prompt para traducao com contexto:</p>
+                    <p><em>"Traduza este texto para [idioma]. Mantenha o tom [casual/profissional] e adapte expressoes culturais para o publico [pais/regiao]. Nao traduza literalmente -- localize o conteudo: [cole o texto]"</em></p>
+
+                    <h2>Formatos de arquivo e exportacao</h2>
+                    <p>Entender os formatos de legenda e essencial para publicar em diferentes plataformas:</p>
+                    <ul>
+                        <li><strong>SRT (SubRip):</strong> O formato mais universal. Funciona no YouTube, Vimeo e na maioria dos editores de video. Contem texto e marcacoes de tempo.</li>
+                        <li><strong>VTT (WebVTT):</strong> Similar ao SRT, mas suporta formatacao extra como cores e posicionamento. Usado em players web.</li>
+                        <li><strong>ASS/SSA:</strong> Formatos avancados que suportam estilos visuais complexos, como fontes personalizadas e efeitos de animacao.</li>
+                        <li><strong>TXT:</strong> Apenas texto puro sem marcacoes de tempo. Util para criar posts de blog a partir de videos ou gerar resumos.</li>
+                    </ul>
+                    <p>Para YouTube, exporte sempre em SRT. Para adicionar legendas diretamente no video (burned-in), use o CapCut ou Premiere Pro.</p>
+
+                    <div class="tip-box">
+                        <strong>Dica Pro:</strong> Transforme cada video que voce grava em pelo menos 3 formatos de conteudo usando transcricao: (1) legendas no video, (2) post de blog editado a partir da transcricao e (3) tweets ou carrossel com os melhores trechos. Isso triplica seu alcance sem triplicar seu trabalho. Use o ChatGPT para reformatar a transcricao em cada formato.
+                    </div>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>O Whisper da OpenAI e o padrao-ouro em transcricao com 95-98% de precisao em portugues.</li>
+                        <li>CapCut e Descript sao as melhores ferramentas para legendagem integrada com edicao de video.</li>
+                        <li>Conteudo multilingual pode ser criado combinando transcricao, traducao por IA e dublagem sintetica.</li>
+                        <li>SRT e o formato universal de legendas; VTT para web; ASS para estilos avancados.</li>
+                        <li>Toda transcricao pode ser transformada em multiplos formatos de conteudo para maximizar alcance.</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="4-2" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="aula-4-1.html">&larr; Aula 1</a>
+                    <a href="modulo-5.html">Modulo 5 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Dashboards e relatorios de impacto | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-7.html">Modulo 7</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-7.html">Modulo 7</a>
+                    <span class="separator">/</span>
+                    <span>Aula 2</span>
+                </div>
+                <h1>Dashboards e relatorios de impacto</h1>
+                <div class="lesson-body">
+                    <h2>Construindo dashboards que contam historias</h2>
+                    <p>Um dashboard eficaz nao e uma colecao de graficos e numeros. E uma ferramenta que conta a historia do impacto da IA no negocio de forma clara e acionavel. A diferenca entre um dashboard util e um inutil esta na capacidade de gerar acoes a partir dos dados apresentados.</p>
+                    <p>Principios de design para dashboards de IA:</p>
+                    <ul>
+                        <li><strong>Hierarquia visual:</strong> Os numeros mais importantes devem ser os mais visiveis. Use tamanho, cor e posicao para guiar o olhar do leitor.</li>
+                        <li><strong>Contexto sempre:</strong> Numeros isolados nao dizem nada. Sempre compare com o baseline (antes da IA), meta e periodo anterior.</li>
+                        <li><strong>Acao clara:</strong> Cada metrica deve sugerir uma acao. Se o numero esta verde, continue fazendo o que esta fazendo. Se esta vermelho, o dashboard deve indicar o que investigar.</li>
+                        <li><strong>Simplicidade:</strong> Menos e mais. Um dashboard com 30 metricas nao e informativo, e confuso. Limite a 6-8 metricas por tela.</li>
+                    </ul>
+
+                    <h2>Estrutura de um dashboard de IA</h2>
+                    <p>Organize seu dashboard em tres niveis de detalhe:</p>
+                    <p><strong>Nivel 1 - Visao executiva (1 tela):</strong></p>
+                    <ul>
+                        <li>ROI geral do programa de IA (valor gerado vs. investimento)</li>
+                        <li>Numero de processos automatizados e horas economizadas</li>
+                        <li>Impacto na receita e reducao de custos</li>
+                        <li>Status dos projetos em andamento (verde/amarelo/vermelho)</li>
+                    </ul>
+                    <p><strong>Nivel 2 - Visao por projeto (1 tela por projeto):</strong></p>
+                    <ul>
+                        <li>KPIs especificos do projeto (definidos na aula anterior)</li>
+                        <li>Tendencia ao longo do tempo (grafico de linha)</li>
+                        <li>Comparacao com baseline e meta</li>
+                        <li>Alertas e anomalias detectadas</li>
+                    </ul>
+                    <p><strong>Nivel 3 - Visao operacional (detalhado):</strong></p>
+                    <ul>
+                        <li>Metricas tecnicas do modelo (precisao, recall, F1-score)</li>
+                        <li>Volume de dados processados</li>
+                        <li>Erros e excecoes</li>
+                        <li>Performance em tempo real</li>
+                    </ul>
+
+                    <h2>Ferramentas para construir dashboards</h2>
+                    <p>Escolha a ferramenta com base na complexidade das suas necessidades e orcamento:</p>
+                    <ul>
+                        <li><strong>Google Looker Studio (gratuito):</strong> Antigo Data Studio. Conecta com Google Analytics, Google Sheets, BigQuery e dezenas de fontes. Ideal para comecar sem investimento.</li>
+                        <li><strong>Power BI (Microsoft):</strong> Versao desktop gratuita, versao Pro por R$ 50/usuario/mes. Excelente integracao com ecossistema Microsoft. Graficos interativos e poderosos.</li>
+                        <li><strong>Metabase (open source):</strong> Ferramenta gratuita e auto-hospedavel. Conecta diretamente ao banco de dados e permite criar dashboards sem programacao.</li>
+                        <li><strong>Tableau:</strong> A ferramenta mais poderosa do mercado para visualizacao de dados. Custo mais alto, ideal para empresas de medio e grande porte.</li>
+                    </ul>
+                    <p>Para a maioria das empresas, Google Looker Studio ou Power BI atendem todas as necessidades de dashboards de IA.</p>
+
+                    <div class="tip-box">
+                        <strong>Dica pratica:</strong> Crie um dashboard simples no Google Looker Studio conectado a uma planilha do Google Sheets. Atualize os numeros semanalmente (pode ser manual no comeco). Isso e melhor do que esperar meses pela ferramenta perfeita. Comece medindo, depois automatize a coleta de dados.
+                    </div>
+
+                    <h2>Relatorios para stakeholders</h2>
+                    <p>Diferentes stakeholders precisam de informacoes diferentes. Adapte sua comunicacao:</p>
+                    <p><strong>Para o CEO/diretoria:</strong></p>
+                    <ul>
+                        <li>Foco em impacto financeiro: ROI, economia gerada, impacto na receita</li>
+                        <li>Formato: 1 pagina executiva com 3-4 numeros-chave e uma conclusao clara</li>
+                        <li>Frequencia: mensal ou trimestral</li>
+                    </ul>
+                    <p><strong>Para gerentes de area:</strong></p>
+                    <ul>
+                        <li>Foco em metricas operacionais: eficiencia, qualidade, produtividade da equipe</li>
+                        <li>Formato: dashboard interativo com possibilidade de drill-down</li>
+                        <li>Frequencia: semanal</li>
+                    </ul>
+                    <p><strong>Para a equipe tecnica:</strong></p>
+                    <ul>
+                        <li>Foco em performance do modelo: precisao, erros, volume, tempo de resposta</li>
+                        <li>Formato: dashboard tecnico com alertas automaticos</li>
+                        <li>Frequencia: diario ou tempo real</li>
+                    </ul>
+
+                    <h2>Melhoria continua baseada em dados</h2>
+                    <p>Dashboards e relatorios nao sao o fim, sao o meio para a melhoria continua. Use os dados para:</p>
+                    <ul>
+                        <li><strong>Identificar oportunidades de otimizacao:</strong> Se um modelo tem precisao de 85%, onde estao os 15% de erros? Que tipo de caso a IA erra mais?</li>
+                        <li><strong>Justificar expansao:</strong> Se o projeto piloto gerou ROI de 300%, use os dados para aprovar a expansao para outras areas</li>
+                        <li><strong>Detectar degradacao:</strong> Modelos de IA perdem performance ao longo do tempo. Os dashboards devem detectar isso automaticamente</li>
+                        <li><strong>Priorizar proximos projetos:</strong> Com dados reais de ROI, voce pode estimar melhor o retorno de novos projetos</li>
+                        <li><strong>Celebrar vitorias:</strong> Compartilhe resultados positivos amplamente. Isso gera apoio e engajamento para proximas iniciativas</li>
+                    </ul>
+                    <p>Implemente um ritual mensal de "Revisao de IA" onde as metricas sao analisadas, aprendizados sao compartilhados e proximos passos sao definidos. Esse ritual mantem o momentum e a responsabilidade.</p>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>Dashboards eficazes contam historias com hierarquia visual, contexto e acoes claras</li>
+                        <li>Organize em tres niveis: executivo, por projeto e operacional</li>
+                        <li>Comece com ferramentas gratuitas como Google Looker Studio e evolua conforme necessario</li>
+                        <li>Adapte relatorios para cada stakeholder: CEO quer ROI, gerentes querem eficiencia, tecnicos querem performance</li>
+                        <li>Use dados dos dashboards para melhoria continua, expansao e priorizacao de projetos</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="7-2" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="aula-7-1.html">&larr; Aula 1</a>
+                    <a href="modulo-8.html">Modulo 8 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

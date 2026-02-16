@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Tecnicas de prompting avancado | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-2.html">Modulo 2</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-2.html">Modulo 2</a>
+                    <span class="separator">/</span>
+                    <span>Aula 2</span>
+                </div>
+                <h1>Tecnicas de prompting avancado</h1>
+                <div class="lesson-body">
+                    <h2>Chain-of-Thought (Cadeia de Pensamento)</h2>
+                    <p>A tecnica de Chain-of-Thought (CoT) consiste em pedir ao ChatGPT que mostre seu raciocinio passo a passo antes de chegar a uma conclusao. Isso melhora drasticamente a qualidade das respostas, especialmente em tarefas que envolvem logica, analise ou resolucao de problemas.</p>
+                    <p>Em vez de simplesmente pedir a resposta final, voce instrui o modelo a pensar em voz alta. Isso funciona porque forca o modelo a seguir um caminho logico em vez de pular direto para uma conclusao que pode estar errada.</p>
+                    <p><strong>Como usar na pratica:</strong></p>
+                    <code>Sem CoT: "Qual e a melhor estrategia de marketing para minha startup?"</code>
+                    <code>Com CoT: "Preciso definir a estrategia de marketing para minha startup de delivery de comida saudavel em Belo Horizonte. Pense passo a passo: primeiro analise o mercado-alvo, depois identifique os canais mais relevantes, em seguida defina as taticas para cada canal e por fim sugira um orcamento mensal inicial. Mostre seu raciocinio em cada etapa."</code>
+                    <p>Palavras-chave que ativam o Chain-of-Thought: "pense passo a passo", "explique seu raciocinio", "mostre como chegou a essa conclusao", "vamos analisar isso por partes".</p>
+
+                    <h2>Few-Shot Prompting (Aprendizado por exemplos)</h2>
+                    <p>Few-shot prompting e a tecnica de fornecer exemplos do que voce espera como resposta antes de fazer seu pedido real. O ChatGPT e extremamente bom em identificar padroes a partir de exemplos e replicar esse padrao.</p>
+                    <p>Essa tecnica e especialmente poderosa quando voce precisa de um formato ou estilo muito especifico que seria dificil descrever apenas com palavras.</p>
+                    <p><strong>Exemplo pratico - criacao de descricoes de produto:</strong></p>
+                    <code>Preciso que voce crie descricoes de produtos para minha loja. Aqui estao dois exemplos do estilo que quero:
+
+Produto: Camiseta Algodao Premium
+Descricao: Feita com algodao organico 100% brasileiro, esta camiseta combina conforto e consciencia ambiental. Corte moderno que veste bem do P ao GG. Disponivel em 8 cores.
+
+Produto: Calca Jogger Sport
+Descricao: Perfeita para quem nao abre mao de estilo nem no treino. Tecido com tecnologia dry-fit que mantem voce seco o dia todo. Bolsos laterais com ziper para seguranca total.
+
+Agora crie descricoes nesse mesmo estilo para:
+1. Tenis Running Pro
+2. Mochila Urban Daily
+3. Bone Snapback Classic</code>
+                    <p>Quanto mais exemplos voce fornecer, mais preciso sera o padrao que o ChatGPT vai seguir. Para tarefas simples, 2-3 exemplos sao suficientes. Para tarefas complexas, considere 4-5 exemplos.</p>
+
+                    <h2>Role-Playing (Simulacao de papeis)</h2>
+                    <p>A tecnica de role-playing vai alem de simplesmente atribuir um papel ao ChatGPT. Ela cria um cenario completo onde o modelo assume uma identidade com expertise, perspectivas e comportamentos especificos.</p>
+                    <p><strong>Niveis de role-playing:</strong></p>
+                    <p><strong>Nivel basico - Definir expertise:</strong></p>
+                    <code>"Voce e um nutricionista esportivo. Crie um plano alimentar para ganho de massa muscular."</code>
+                    <p><strong>Nivel intermediario - Adicionar personalidade:</strong></p>
+                    <code>"Voce e um nutricionista esportivo com 20 anos de experiencia que trabalha com atletas olimpicos. Voce e conhecido por sua abordagem pratica e sem modismos. Crie um plano alimentar realista para alguem que quer ganhar massa muscular mas tem pouco tempo para cozinhar."</code>
+                    <p><strong>Nivel avancado - Cenario completo:</strong></p>
+                    <code>"Vamos fazer uma simulacao. Voce e Dr. Carlos, nutricionista esportivo com 20 anos de experiencia. Eu sou seu novo paciente. Vou te contar sobre meus objetivos e rotina, e voce vai me fazer perguntas como faria em uma consulta real antes de dar qualquer recomendacao. Comece se apresentando e perguntando sobre meus objetivos."</code>
+                    <p>O role-playing avancado e especialmente util para simulacoes de entrevistas de emprego, praticar negociacoes, preparar apresentacoes e aprender conceitos complexos de forma interativa.</p>
+
+                    <h2>Step-by-Step (Decomposicao de tarefas)</h2>
+                    <p>A tecnica Step-by-Step consiste em dividir tarefas complexas em etapas menores e sequenciais. Em vez de pedir tudo de uma vez, voce guia o ChatGPT atraves de cada fase do processo.</p>
+                    <p><strong>Exemplo - Criar um plano de negocios:</strong></p>
+                    <p>Em vez de pedir "Crie um plano de negocios completo", faca assim:</p>
+                    <code>Mensagem 1: "Vamos criar um plano de negocios para uma cafeteria especializada em cafe gourmet em Curitiba. Comecemos pela analise de mercado. Identifique o tamanho do mercado de cafeterias especializadas no Brasil e as principais tendencias."</code>
+                    <code>Mensagem 2: "Otimo. Agora vamos definir o publico-alvo. Com base na analise de mercado, descreva 3 personas de clientes ideais com dados demograficos, comportamentos e dores."</code>
+                    <code>Mensagem 3: "Perfeito. Agora crie a proposta de valor unica baseada nas personas que definimos. O que diferencia nossa cafeteria das concorrentes?"</code>
+                    <p>Essa abordagem gera resultados muito superiores porque cada etapa se beneficia do contexto construido nas etapas anteriores. O ChatGPT consegue manter a coerencia e profundidade ao longo de todo o processo.</p>
+
+                    <div class="tip-box">
+                        <strong>Dica importante:</strong> Combine as tecnicas para resultados ainda melhores. Por exemplo, use role-playing + chain-of-thought: "Voce e um consultor financeiro senior. Analise passo a passo se devo investir em renda fixa ou variavel considerando que tenho 30 anos, renda de R$ 8.000 e nenhuma divida. Explique seu raciocinio em cada etapa." A combinacao de tecnicas potencializa os resultados.
+                    </div>
+
+                    <h2>Tecnicas bonus: Negative prompting e Constraint setting</h2>
+                    <p><strong>Negative prompting</strong> e dizer ao ChatGPT o que voce NAO quer. As vezes e mais facil definir o que evitar do que descrever exatamente o que voce quer:</p>
+                    <code>"Escreva um texto de vendas para meu curso online. NAO use cliches como 'transforme sua vida', 'metodo revolucionario' ou 'vagas limitadas'. NAO faca promessas exageradas. NAO use excesso de pontos de exclamacao."</code>
+                    <p><strong>Constraint setting</strong> e definir limites claros que focam a resposta:</p>
+                    <code>"Sugira 5 nomes para minha empresa de consultoria. Restricoes: maximo 2 palavras, deve soar profissional, deve ser facil de pronunciar em portugues e ingles, o dominio .com.br deve estar provavelmente disponivel (evite palavras muito comuns)."</code>
+                    <p>Ambas as tecnicas funcionam como guardrails que direcionam a criatividade do ChatGPT para exatamente onde voce precisa.</p>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>Chain-of-Thought forca o modelo a raciocinar passo a passo, melhorando respostas logicas e analiticas</li>
+                        <li>Few-Shot Prompting usa exemplos para definir exatamente o padrao desejado na resposta</li>
+                        <li>Role-Playing cria cenarios completos onde o ChatGPT assume expertises e perspectivas especificas</li>
+                        <li>Step-by-Step divide tarefas complexas em etapas menores para resultados mais profundos e coerentes</li>
+                        <li>Negative prompting define o que voce NAO quer, e constraint setting foca a criatividade</li>
+                        <li>Combinar tecnicas gera os melhores resultados - nao se limite a usar apenas uma</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="2-2" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="aula-2-1.html">&larr; Aula 2.1</a>
+                    <a href="aula-2-3.html">Aula 2.3 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

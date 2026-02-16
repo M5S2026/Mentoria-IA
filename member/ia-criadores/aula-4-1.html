@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Text-to-speech e vozes sinteticas | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-4.html">Modulo 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-4.html">Modulo 4</a>
+                    <span class="separator">/</span>
+                    <span>Aula 1</span>
+                </div>
+                <h1>Text-to-Speech e Vozes Sinteticas</h1>
+                <div class="lesson-body">
+                    <h2>O estado atual da tecnologia de voz sintetica</h2>
+                    <p>A tecnologia de text-to-speech (TTS) avancou tanto que vozes sinteticas modernas sao praticamente indistinguiveis de vozes humanas reais. Isso abre oportunidades enormes para criadores de conteudo que precisam de narracoes profissionais sem investir em estudio ou locutores.</p>
+                    <p>As principais plataformas de TTS atualmente sao:</p>
+                    <ul>
+                        <li><strong>ElevenLabs:</strong> A referencia do mercado em qualidade de voz. Oferece vozes extremamente naturais em portugues e diversos idiomas, com controle de emocao e entonacao. Plano gratuito com limite de caracteres.</li>
+                        <li><strong>Play.ht:</strong> Alternativa com boa qualidade e precos acessiveis. Destaque para a variedade de vozes e a interface simples.</li>
+                        <li><strong>Amazon Polly:</strong> Servico da AWS com precos por uso. Ideal para quem precisa gerar grandes volumes de audio com custo previsivel.</li>
+                        <li><strong>Google Cloud TTS:</strong> Integrado ao ecossistema Google, com vozes neurais de alta qualidade e suporte a SSML para controle avancado.</li>
+                    </ul>
+
+                    <h2>Criando narracoes profissionais para diferentes formatos</h2>
+                    <p>Cada formato de conteudo exige um estilo diferente de narracao. Veja como configurar a voz sintetica para cada caso:</p>
+                    <p><strong>Para podcasts:</strong> Use vozes com tom conversacional e ritmo natural. No ElevenLabs, ajuste o parametro "Stability" para 0.5-0.7 (mais variacao natural) e "Clarity" para 0.7-0.8. Adicione pausas estrategicas no texto usando pontuacao ou tags de pausa.</p>
+                    <p><strong>Para videos educativos:</strong> Opte por vozes claras e articuladas com ritmo moderado. Quebre o texto em paragrafos curtos para criar pausas naturais entre secoes.</p>
+                    <p><strong>Para audiobooks:</strong> Escolha vozes com mais expressividade emocional. Marque trechos de dialogo com indicacoes de tom no texto para que a IA interprete com mais naturalidade.</p>
+                    <p><strong>Para videos de vendas:</strong> Use vozes com energia e entusiasmo. Frases curtas e diretas funcionam melhor com TTS do que paragrafos longos.</p>
+
+                    <h2>Clonagem de voz: possibilidades e etica</h2>
+                    <p>A clonagem de voz permite criar uma copia digital da sua propria voz (ou de outra pessoa com consentimento). Com apenas 1-3 minutos de audio de amostra, plataformas como ElevenLabs criam um clone que pode narrar qualquer texto com sua voz.</p>
+                    <p><strong>Usos legitimos da clonagem de voz:</strong></p>
+                    <ul>
+                        <li>Narrar seus proprios conteudos sem precisar gravar cada vez.</li>
+                        <li>Criar versoes em outros idiomas mantendo sua voz original.</li>
+                        <li>Produzir conteudo em escala sem depender de disponibilidade de estudio.</li>
+                        <li>Manter consistencia de voz em series longas de conteudo.</li>
+                    </ul>
+                    <p><strong>Questoes eticas importantes:</strong></p>
+                    <ul>
+                        <li>Nunca clone a voz de outra pessoa sem autorizacao explicita por escrito.</li>
+                        <li>Informe sua audiencia quando usar voz sintetica, especialmente em contextos onde a autenticidade importa.</li>
+                        <li>Nao use clonagem de voz para criar conteudo enganoso ou deepfakes.</li>
+                        <li>Esteja ciente das leis locais sobre uso de voz sintetica em conteudo comercial.</li>
+                    </ul>
+
+                    <h2>Workflow pratico para producao de audio com IA</h2>
+                    <ol>
+                        <li><strong>Prepare o texto:</strong> Escreva ou gere o roteiro com ChatGPT. Revise para garantir que o texto flua bem quando falado em voz alta.</li>
+                        <li><strong>Formate para TTS:</strong> Adicione virgulas para pausas curtas, pontos para pausas longas. Use "..." para pausas dramaticas.</li>
+                        <li><strong>Escolha a voz:</strong> Teste 3-5 vozes diferentes com um trecho do seu texto antes de gerar o audio completo.</li>
+                        <li><strong>Gere o audio:</strong> Processe o texto completo na plataforma escolhida.</li>
+                        <li><strong>Pos-producao:</strong> Use o Audacity (gratuito) para ajustar volume, remover ruidos e adicionar musica de fundo.</li>
+                        <li><strong>Exporte:</strong> Salve em MP3 para podcasts (128-192 kbps) ou WAV para edicao de video.</li>
+                    </ol>
+
+                    <div class="tip-box">
+                        <strong>Dica Pro:</strong> No ElevenLabs, a qualidade do audio melhora significativamente quando voce formata o texto com pontuacao correta e quebras de paragrafo. Evite textos corridos. Alem disso, gere o audio em trechos de 2-3 paragrafos ao inves de tudo de uma vez -- isso da mais controle sobre o resultado final e permite ajustes pontuais sem regravar tudo.
+                    </div>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>ElevenLabs e a referencia em qualidade de voz sintetica, mas existem alternativas como Play.ht e servicos cloud.</li>
+                        <li>Cada formato de conteudo (podcast, video, audiobook) exige configuracoes diferentes de voz.</li>
+                        <li>Clonagem de voz e poderosa, mas deve ser usada com responsabilidade etica e transparencia.</li>
+                        <li>O workflow ideal inclui preparacao do texto, formatacao para TTS, selecao de voz e pos-producao no Audacity.</li>
+                        <li>Processar audio em trechos curtos da mais controle sobre a qualidade final.</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="4-1" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="modulo-4.html">&larr; Voltar ao Modulo 4</a>
+                    <a href="aula-4-2.html">Aula 2 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

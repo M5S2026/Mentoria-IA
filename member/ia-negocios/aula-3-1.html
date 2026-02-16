@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Identificando processos automatizaveis | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-3.html">Modulo 3</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-3.html">Modulo 3</a>
+                    <span class="separator">/</span>
+                    <span>Aula 1</span>
+                </div>
+                <h1>Identificando processos automatizaveis</h1>
+                <div class="lesson-body">
+                    <h2>O que torna um processo automatizavel</h2>
+                    <p>Nem todo processo e candidato ideal para automacao com IA. Entender os criterios que tornam um processo automatizavel e fundamental para evitar projetos frustrantes e garantir resultados positivos.</p>
+                    <p>Um processo e um bom candidato para automacao quando possui estas caracteristicas:</p>
+                    <ul>
+                        <li><strong>Regras claras:</strong> O processo segue regras definidas, mesmo que complexas. Se a decisao depende de "feeling" ou julgamento subjetivo complexo, a automacao sera mais dificil.</li>
+                        <li><strong>Alto volume:</strong> O processo e executado muitas vezes por dia, semana ou mes. Quanto maior o volume, maior o retorno da automacao.</li>
+                        <li><strong>Dados estruturados:</strong> As informacoes necessarias estao em formato digital e organizadas (planilhas, bancos de dados, sistemas).</li>
+                        <li><strong>Baixa variabilidade:</strong> O processo segue um fluxo relativamente previsivel, com poucas excecoes raras.</li>
+                        <li><strong>Propenso a erros:</strong> Erros humanos sao frequentes, indicando que a tarefa e repetitiva e cansativa para pessoas.</li>
+                    </ul>
+
+                    <h2>Mapeamento de processos passo a passo</h2>
+                    <p>O mapeamento de processos e a tecnica de documentar exatamente como um processo funciona hoje, do inicio ao fim. Sem esse mapeamento, voce nao consegue automatizar nada com eficacia.</p>
+                    <p>Siga este metodo em 5 passos:</p>
+                    <ol>
+                        <li><strong>Identifique o gatilho:</strong> O que inicia o processo? Um email recebido? Uma venda realizada? Um prazo atingido?</li>
+                        <li><strong>Liste todas as etapas:</strong> Documente cada acao executada, na ordem correta, incluindo quem faz e quanto tempo leva</li>
+                        <li><strong>Mapeie pontos de decisao:</strong> Onde existem "ses"? Se o valor e acima de X, faca A; senao, faca B</li>
+                        <li><strong>Identifique entradas e saidas:</strong> Que informacoes entram em cada etapa e que resultados sao produzidos</li>
+                        <li><strong>Registre excecoes:</strong> Quais sao os casos atipicos e como sao tratados hoje</li>
+                    </ol>
+                    <p>Exemplo: Processo de aprovacao de reembolsos. Gatilho: funcionario envia solicitacao. Etapas: receber solicitacao, verificar nota fiscal, conferir politica de reembolso, aprovar ou rejeitar, processar pagamento. Decisoes: valor acima de R$ 500 requer aprovacao do gerente.</p>
+
+                    <h2>Criterios de selecao para automacao</h2>
+                    <p>Use a matriz RICE adaptada para priorizar quais processos automatizar primeiro:</p>
+                    <ul>
+                        <li><strong>R - Reach (Alcance):</strong> Quantas pessoas ou transacoes sao impactadas pelo processo por mes?</li>
+                        <li><strong>I - Impact (Impacto):</strong> Qual o impacto de automatizar? Pontue de 1 (minimo) a 5 (massivo)</li>
+                        <li><strong>C - Confidence (Confianca):</strong> Qual sua confianca de que a automacao funcionara? Baseie-se na qualidade dos dados e clareza das regras</li>
+                        <li><strong>E - Effort (Esforco):</strong> Quanto esforco sera necessario para implementar? Quanto maior o esforco, menor a prioridade</li>
+                    </ul>
+                    <p>Formula: Prioridade = (Alcance x Impacto x Confianca) / Esforco. Quanto maior o resultado, maior a prioridade.</p>
+
+                    <div class="tip-box">
+                        <strong>Dica pratica:</strong> Comece mapeando o processo com quem realmente o executa, nao com quem o gerencia. Muitas vezes, o processo real e diferente do processo documentado. Sente com a equipe operacional e observe o trabalho sendo feito antes de desenhar qualquer automacao.
+                    </div>
+
+                    <h2>Ferramentas para mapeamento e selecao</h2>
+                    <p>Voce nao precisa de ferramentas caras para mapear processos. Comece com o que tem disponivel:</p>
+                    <ul>
+                        <li><strong>Nivel basico:</strong> Post-its em uma parede ou quadro branco. Simples, visual e colaborativo. Ideal para sessoes com a equipe.</li>
+                        <li><strong>Nivel intermediario:</strong> Ferramentas gratuitas como Miro, Lucidchart (versao free) ou Google Drawings para criar fluxogramas digitais.</li>
+                        <li><strong>Nivel avancado:</strong> Ferramentas de process mining como Celonis ou ProcessGold que analisam logs de sistemas para descobrir automaticamente como os processos realmente funcionam.</li>
+                    </ul>
+                    <p>Para a selecao e priorizacao, uma planilha simples com os criterios RICE e suficiente. Nao complique o que pode ser simples.</p>
+
+                    <h2>Processos comuns automatizaveis por setor</h2>
+                    <p>Para inspirar seu mapeamento, aqui estao processos frequentemente automatizados por setor:</p>
+                    <ul>
+                        <li><strong>Financeiro:</strong> Conciliacao bancaria, classificacao de despesas, emissao de notas fiscais, cobranca automatizada</li>
+                        <li><strong>RH:</strong> Triagem de curriculos, agendamento de entrevistas, onboarding de funcionarios, controle de ponto</li>
+                        <li><strong>Vendas:</strong> Qualificacao de leads, follow-up automatizado, propostas comerciais, previsao de pipeline</li>
+                        <li><strong>Atendimento:</strong> Respostas a perguntas frequentes, roteamento de tickets, analise de sentimento, feedback pos-atendimento</li>
+                        <li><strong>Logistica:</strong> Rastreamento de entregas, otimizacao de rotas, gestao de estoque, previsao de demanda</li>
+                    </ul>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>Processos automatizaveis tem regras claras, alto volume, dados estruturados e baixa variabilidade</li>
+                        <li>Mapeie cada processo documentando gatilho, etapas, decisoes, entradas/saidas e excecoes</li>
+                        <li>Use a matriz RICE (Alcance, Impacto, Confianca, Esforco) para priorizar automacoes</li>
+                        <li>Comece com ferramentas simples e evolua conforme a necessidade</li>
+                        <li>Sempre mapeie com quem executa o processo, nao com quem o gerencia</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="3-1" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="modulo-3.html">&larr; Voltar ao Modulo 3</a>
+                    <a href="aula-3-2.html">Aula 2 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

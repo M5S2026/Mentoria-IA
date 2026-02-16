@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>API e integracao com outros apps | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-4.html">Modulo 4</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-4.html">Modulo 4</a>
+                    <span class="separator">/</span>
+                    <span>Aula 2</span>
+                </div>
+                <h1>API e integracao com outros apps</h1>
+                <div class="lesson-body">
+                    <h2>O que e a API do ChatGPT?</h2>
+                    <p>API significa Application Programming Interface (Interface de Programacao de Aplicativos). A API da OpenAI permite que voce use o poder do ChatGPT diretamente dentro de outros programas, sites, aplicativos e automacoes, sem precisar abrir o site do ChatGPT.</p>
+                    <p>Pense na API como um "canal direto" para conversar com o ChatGPT de forma programatica. Em vez de digitar mensagens na interface web, voce envia instrucoes atraves de codigo ou ferramentas de automacao e recebe as respostas de volta.</p>
+                    <p><strong>Quando usar a API em vez da interface web:</strong></p>
+                    <ul>
+                        <li>Quando voce precisa processar grandes volumes de dados automaticamente</li>
+                        <li>Quando quer integrar a IA em seu proprio produto ou servico</li>
+                        <li>Quando precisa de respostas automaticas em tempo real (chatbots, atendimento)</li>
+                        <li>Quando quer conectar o ChatGPT com outras ferramentas que voce ja usa</li>
+                    </ul>
+                    <p><strong>Modelo de precos da API:</strong></p>
+                    <p>A API tem um modelo de precos separado do ChatGPT Plus. Voce paga por uso (pay-as-you-go), baseado na quantidade de tokens processados. Os precos variam conforme o modelo:</p>
+                    <ul>
+                        <li><strong>GPT-4o mini:</strong> Mais barato, ideal para tarefas simples em alto volume</li>
+                        <li><strong>GPT-4o:</strong> Equilibrio entre capacidade e custo</li>
+                        <li><strong>GPT-4:</strong> Mais caro, melhor qualidade para tarefas complexas</li>
+                    </ul>
+
+                    <h2>Configurando acesso a API</h2>
+                    <p>Para comecar a usar a API, siga estes passos:</p>
+                    <ol>
+                        <li><strong>Crie uma conta na plataforma:</strong> Acesse platform.openai.com e faca login (pode usar a mesma conta do ChatGPT)</li>
+                        <li><strong>Adicione creditos:</strong> Va em Billing e adicione um metodo de pagamento. Voce pode comecar com US$ 5-10 para testes.</li>
+                        <li><strong>Gere uma chave de API:</strong> Em API Keys, clique em "Create new secret key". Copie e guarde essa chave em lugar seguro - ela e como uma senha e nao sera mostrada novamente.</li>
+                        <li><strong>Teste a conexao:</strong> Use o Playground da OpenAI (disponivel na plataforma) para testar prompts antes de integrar em suas automacoes.</li>
+                    </ol>
+                    <p>O Playground da OpenAI e uma ferramenta visual onde voce pode testar diferentes modelos, ajustar parametros como temperatura e max tokens, e ver exatamente como a API vai responder antes de implementar no seu codigo ou automacao.</p>
+
+                    <h2>Integracao com Zapier</h2>
+                    <p>O Zapier e uma plataforma de automacao que conecta mais de 5.000 aplicativos sem precisar programar. A integracao com o ChatGPT permite criar automacoes poderosas.</p>
+                    <p><strong>Exemplos de automacoes com Zapier + ChatGPT:</strong></p>
+                    <ul>
+                        <li><strong>Email para resumo:</strong> Quando chega um email longo, o ChatGPT cria um resumo automatico e envia para o Slack</li>
+                        <li><strong>Formulario para conteudo:</strong> Quando alguem preenche um formulario de briefing, o ChatGPT gera um rascunho de conteudo automaticamente</li>
+                        <li><strong>Feedback para analise:</strong> Quando um cliente deixa um review, o ChatGPT classifica o sentimento (positivo/negativo/neutro) e cria um resumo</li>
+                        <li><strong>Planilha para email:</strong> Dados de uma planilha Google Sheets sao transformados em emails personalizados pelo ChatGPT</li>
+                    </ul>
+                    <p><strong>Como configurar um Zap basico:</strong></p>
+                    <ol>
+                        <li>No Zapier, clique em "Create Zap"</li>
+                        <li>Escolha o gatilho (trigger): "Novo email no Gmail", por exemplo</li>
+                        <li>Adicione a acao: busque "ChatGPT" e selecione "Conversation"</li>
+                        <li>Configure o prompt usando dados do gatilho: "Resuma o seguinte email em 3 bullet points: {corpo do email}"</li>
+                        <li>Adicione outra acao para enviar o resultado: Slack, Google Sheets, email, etc.</li>
+                        <li>Teste e ative o Zap</li>
+                    </ol>
+
+                    <h2>Integracao com Make (antigo Integromat)</h2>
+                    <p>O Make e similar ao Zapier, mas oferece mais flexibilidade visual para criar automacoes complexas. A interface de arrastar e soltar facilita a criacao de workflows mais elaborados.</p>
+                    <p><strong>Vantagens do Make sobre o Zapier:</strong></p>
+                    <ul>
+                        <li>Interface visual mais intuitiva para fluxos complexos</li>
+                        <li>Permite loops e condicionais mais facilmente</li>
+                        <li>Geralmente mais barato para alto volume de automacoes</li>
+                        <li>Melhor para cenarios com multiplas ramificacoes</li>
+                    </ul>
+                    <p><strong>Exemplo de cenario no Make:</strong></p>
+                    <p>Imagine um fluxo para atendimento ao cliente:</p>
+                    <ol>
+                        <li>Cliente envia email para suporte@suaempresa.com</li>
+                        <li>Make detecta o novo email (modulo Gmail)</li>
+                        <li>ChatGPT analisa o email e classifica: duvida, reclamacao ou elogio (modulo OpenAI)</li>
+                        <li>Com base na classificacao, o fluxo se ramifica:</li>
+                        <li>Duvida: ChatGPT gera resposta padrao e envia automaticamente</li>
+                        <li>Reclamacao: Cria ticket no sistema de suporte com prioridade alta</li>
+                        <li>Elogio: Salva em planilha de testimonials e envia agradecimento</li>
+                    </ol>
+
+                    <div class="tip-box">
+                        <strong>Dica importante:</strong> Comece com automacoes simples e de baixo risco. Nao automatize completamente processos criticos na primeira tentativa. Use a abordagem "humano no loop": a IA processa e sugere, mas um humano aprova antes da acao final. Conforme voce ganha confianca nos resultados, pode ir removendo a aprovacao humana gradualmente.
+                    </div>
+
+                    <h2>Webhooks e integracoes personalizadas</h2>
+                    <p>Para integracoes mais avancadas, webhooks permitem que qualquer sistema envie dados para o ChatGPT e receba respostas automaticamente.</p>
+                    <p><strong>O que e um webhook:</strong></p>
+                    <p>Um webhook e como um "endereco de entrega" digital. Quando algo acontece em um sistema (um formulario e preenchido, uma venda e feita), esse sistema envia os dados para o endereco do webhook, que dispara uma acao automatica.</p>
+                    <p><strong>Casos de uso de webhooks com ChatGPT:</strong></p>
+                    <ul>
+                        <li><strong>Chatbot no seu site:</strong> Quando um visitante envia uma mensagem, o webhook envia para a API do ChatGPT e retorna a resposta em tempo real</li>
+                        <li><strong>Processamento de pedidos:</strong> Quando um novo pedido chega no e-commerce, o ChatGPT gera automaticamente a confirmacao personalizada</li>
+                        <li><strong>Monitoramento de mencoes:</strong> Quando sua marca e mencionada em redes sociais, o ChatGPT analisa o sentimento e sugere uma resposta</li>
+                    </ul>
+                    <p>Implementar webhooks geralmente requer conhecimento basico de programacao ou o uso de plataformas como Zapier e Make que simplificam o processo.</p>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>A API da OpenAI permite usar o ChatGPT programaticamente dentro de outros sistemas e automacoes</li>
+                        <li>O modelo de precos da API e por uso (tokens processados), separado da assinatura Plus</li>
+                        <li>O Zapier permite criar automacoes simples conectando ChatGPT com mais de 5.000 apps sem programar</li>
+                        <li>O Make oferece mais flexibilidade visual para automacoes complexas com ramificacoes</li>
+                        <li>Comece com automacoes simples e de baixo risco, mantendo aprovacao humana no inicio</li>
+                        <li>Webhooks permitem integracoes em tempo real entre qualquer sistema e a API do ChatGPT</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="4-2" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="aula-4-1.html">&larr; Aula 4.1</a>
+                    <a href="aula-4-3.html">Aula 4.3 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

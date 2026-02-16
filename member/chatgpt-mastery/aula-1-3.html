@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/member.css">
+    <title>Entendendo o modelo de conversa | Silvia Assay</title>
+    <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo"><a href="../../index.html">SA</a></div>
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/member/">Dashboard</a></li>
+                    <li><a href="modulo-1.html">Modulo 1</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="padding: var(--spacing-2xl) 0; min-height: 80vh;">
+        <div class="container" id="member-content" style="display:none;">
+            <div class="lesson-content">
+                <div class="breadcrumb">
+                    <a href="/member/">Dashboard</a>
+                    <span class="separator">/</span>
+                    <a href="modulo-1.html">Modulo 1</a>
+                    <span class="separator">/</span>
+                    <span>Aula 3</span>
+                </div>
+                <h1>Entendendo o modelo de conversa</h1>
+                <div class="lesson-body">
+                    <h2>A janela de contexto</h2>
+                    <p>Um dos conceitos mais importantes para usar o ChatGPT de forma eficaz e entender a "janela de contexto" (context window). Essa janela representa a quantidade total de texto que o modelo consegue "ver" e processar de uma so vez.</p>
+                    <p>Imagine que voce esta conversando com alguem atraves de uma janela. Quanto maior a janela, mais da conversa essa pessoa consegue ver. Se a janela for pequena, ela so ve as ultimas mensagens e pode perder o contexto do inicio.</p>
+                    <p>Na pratica, isso significa que:</p>
+                    <ul>
+                        <li><strong>GPT-3.5:</strong> Janela de aproximadamente 4.000 tokens (cerca de 3.000 palavras)</li>
+                        <li><strong>GPT-4:</strong> Janela de ate 128.000 tokens (cerca de 96.000 palavras)</li>
+                        <li><strong>GPT-4o:</strong> Janela de 128.000 tokens com processamento mais eficiente</li>
+                    </ul>
+                    <p>Quando uma conversa ultrapassa o limite da janela de contexto, o modelo comeca a "esquecer" as mensagens mais antigas. Por isso, em conversas longas, voce pode perceber que o ChatGPT perde detalhes mencionados no inicio.</p>
+
+                    <h2>Como a temperatura afeta as respostas</h2>
+                    <p>A "temperatura" e um parametro que controla o quao criativas ou previsiveis sao as respostas do ChatGPT. Embora voce nao possa ajustar diretamente a temperatura na interface padrao, entender esse conceito ajuda a formular melhor seus prompts.</p>
+                    <p><strong>Temperatura baixa (0.0 - 0.3):</strong></p>
+                    <ul>
+                        <li>Respostas mais previsiveis e consistentes</li>
+                        <li>Ideal para tarefas fatuais, codigo e analise de dados</li>
+                        <li>O modelo escolhe sempre as palavras mais provaveis</li>
+                    </ul>
+                    <p><strong>Temperatura media (0.4 - 0.7):</strong></p>
+                    <ul>
+                        <li>Equilibrio entre criatividade e precisao</li>
+                        <li>Bom para escrita profissional e explicacoes</li>
+                        <li>E o padrao usado na maioria das interacoes</li>
+                    </ul>
+                    <p><strong>Temperatura alta (0.8 - 1.0):</strong></p>
+                    <ul>
+                        <li>Respostas mais criativas e variadas</li>
+                        <li>Ideal para brainstorming, escrita criativa e geracao de ideias</li>
+                        <li>Maior chance de respostas inesperadas</li>
+                    </ul>
+                    <p>Para influenciar a temperatura sem acesso direto ao parametro, voce pode usar instrucoes no seu prompt. Dizer "seja preciso e objetivo" tende a gerar respostas mais conservadoras, enquanto "seja criativo e pense fora da caixa" estimula respostas mais diversas.</p>
+
+                    <h2>System prompts e instrucoes personalizadas</h2>
+                    <p>O system prompt e uma instrucao especial que define o comportamento do ChatGPT antes mesmo de voce enviar sua primeira mensagem. Na interface do ChatGPT, voce pode configurar isso atraves das "Instrucoes personalizadas" (Custom Instructions).</p>
+                    <p>As instrucoes personalizadas tem dois campos:</p>
+                    <ol>
+                        <li><strong>"O que voce gostaria que o ChatGPT soubesse sobre voce?"</strong> - Aqui voce coloca informacoes de contexto como sua profissao, nivel de conhecimento, idioma preferido e objetivos.</li>
+                        <li><strong>"Como voce gostaria que o ChatGPT respondesse?"</strong> - Aqui voce define o estilo das respostas: formal ou informal, curto ou detalhado, com ou sem exemplos.</li>
+                    </ol>
+                    <p><strong>Exemplo pratico de instrucoes personalizadas:</strong></p>
+                    <code>Campo 1: Sou uma profissional de marketing digital no Brasil. Trabalho com redes sociais e criacao de conteudo. Meu publico e de pequenos empreendedores brasileiros.</code>
+                    <code>Campo 2: Responda sempre em portugues brasileiro. Use uma linguagem acessivel e pratica. Inclua exemplos quando possivel. Formate respostas com listas e subtitulos para facilitar a leitura.</code>
+
+                    <h2>Como funciona a memoria da conversa</h2>
+                    <p>O ChatGPT tem dois tipos de "memoria" que voce precisa entender:</p>
+                    <p><strong>Memoria dentro da conversa (contexto):</strong></p>
+                    <p>Dentro de uma mesma conversa, o ChatGPT lembra de tudo que foi dito (ate o limite da janela de contexto). Isso significa que voce pode fazer referencia a mensagens anteriores:</p>
+                    <ul>
+                        <li>"Sobre o ponto 3 que voce mencionou..." - O modelo entende a referencia</li>
+                        <li>"Agora reescreva isso em um tom mais formal" - Ele sabe o que "isso" significa</li>
+                        <li>"Adicione mais um item a lista" - Ele lembra qual lista voce esta falando</li>
+                    </ul>
+                    <p><strong>Memoria entre conversas:</strong></p>
+                    <p>A OpenAI introduziu uma funcao de memoria que permite ao ChatGPT lembrar informacoes entre diferentes conversas. Quando ativada:</p>
+                    <ul>
+                        <li>O ChatGPT pode salvar fatos importantes que voce menciona (sua profissao, preferencias, etc.)</li>
+                        <li>Voce pode pedir explicitamente: "Lembre-se de que eu prefiro respostas curtas"</li>
+                        <li>Voce pode gerenciar as memorias em Configuracoes > Personalizacao > Memoria</li>
+                        <li>Voce pode pedir para ele esquecer algo: "Esqueca que eu trabalho com marketing"</li>
+                    </ul>
+
+                    <div class="tip-box">
+                        <strong>Dica importante:</strong> Para conversas longas e complexas, comece cada nova sessao com um breve resumo do que foi discutido anteriormente. Isso garante que o ChatGPT tenha o contexto necessario mesmo que a conversa anterior tenha sido muito longa. Voce pode ate pedir ao ChatGPT para gerar esse resumo no final de cada sessao.
+                    </div>
+
+                    <h2>Estrategias para gerenciar conversas longas</h2>
+                    <p>Agora que voce entende como a memoria e o contexto funcionam, aqui estao estrategias praticas para conversas mais produtivas:</p>
+                    <ol>
+                        <li><strong>Uma conversa por assunto:</strong> Em vez de misturar topicos em uma unica conversa, crie conversas separadas para cada projeto ou assunto. Isso mantem o contexto limpo e relevante.</li>
+                        <li><strong>Renomeie suas conversas:</strong> Clique no titulo da conversa para renomea-la com algo descritivo como "Projeto Website - Conteudo" em vez de deixar o titulo automatico.</li>
+                        <li><strong>Use resumos intermediarios:</strong> Em conversas longas, periodicamente peca: "Resuma o que definimos ate agora em formato de lista".</li>
+                        <li><strong>Repita informacoes importantes:</strong> Se voce perceber que o ChatGPT "esqueceu" algo, basta reafirmar a informacao na mensagem atual.</li>
+                        <li><strong>Comece novo quando necessario:</strong> Se a conversa ficou confusa, nao hesite em comecar uma nova com instrucoes claras.</li>
+                    </ol>
+
+                    <h2>Resumo da aula</h2>
+                    <ul>
+                        <li>A janela de contexto e o limite de texto que o modelo consegue processar de uma vez</li>
+                        <li>A temperatura controla o nivel de criatividade das respostas - voce pode influencia-la com instrucoes no prompt</li>
+                        <li>Instrucoes personalizadas (system prompts) definem o comportamento padrao do ChatGPT para todas as suas conversas</li>
+                        <li>A memoria funciona de duas formas: dentro da conversa (contexto) e entre conversas (funcao memoria)</li>
+                        <li>Organize suas conversas por assunto e use resumos intermediarios para manter o contexto</li>
+                        <li>Quando a conversa ficar confusa, comece uma nova com instrucoes claras</li>
+                    </ul>
+                </div>
+                <button id="mark-complete-btn" data-lesson="1-3" class="mark-complete">
+                    Marcar como Concluida
+                </button>
+                <div class="lesson-nav">
+                    <a href="aula-1-2.html">&larr; Aula 1.2</a>
+                    <a href="modulo-2.html">Modulo 2 &rarr;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Silvia Assay. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../../js/member.js"></script>
+</body>
+</html>

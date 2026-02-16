@@ -2,6 +2,7 @@
   "name": "silviaassay-site",
   "private": true,
   "dependencies": {
+    "execa": "^9.6.1",
     "stripe": "^17.0.0"
   }
 }
