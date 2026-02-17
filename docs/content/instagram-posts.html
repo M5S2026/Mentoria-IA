@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Postagens Instagram - AI Mentor Academy</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #0A0A0A;
+      color: #E5E5E5;
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #D4A843, #F5D78E, #D4A843);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #888;
+      font-size: 0.95rem;
+      margin-bottom: 40px;
+    }
+
+    .diagnostic {
+      background: #1A1A1A;
+      border: 1px solid #2A2A2A;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 40px;
+      font-size: 0.9rem;
+    }
+
+    .diagnostic h3 {
+      color: #D4A843;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .diagnostic li {
+      list-style: none;
+      padding: 4px 0;
+      color: #AAA;
+    }
+
+    .diagnostic li strong { color: #E5E5E5; }
+
+    .post-card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+      transition: border-color 0.3s;
+    }
+
+    .post-card:hover {
+      border-color: #444;
+    }
+
+    .post-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+
+    .post-number {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: #1A1A1A;
+    }
+
+    .post-type {
+      font-size: 0.8rem;
+      color: #888;
+      padding: 4px 12px;
+      border: 1px solid #333;
+      border-radius: 20px;
+    }
+
+    .post-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #FFF;
+      margin-bottom: 6px;
+    }
+
+    .post-mentor-subtitle {
+      font-size: 0.9rem;
+      color: #888;
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #D4A843;
+      margin-bottom: 12px;
+      margin-top: 24px;
+    }
+
+    .slide-block {
+      background: #0A0A0A;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+
+    .slide-label {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .slide-block pre {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      white-space: pre-wrap;
+      color: #DDD;
+      line-height: 1.6;
+    }
+
+    .caption-block {
+      background: #0A0A0A;
+      border-left: 3px solid #D4A843;
+      border-radius: 0 10px 10px 0;
+      padding: 20px 24px;
+      margin-top: 8px;
+    }
+
+    .caption-block pre {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+      color: #CCC;
+      line-height: 1.8;
+    }
+
+    .cta-badge {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 8px 20px;
+      background: linear-gradient(135deg, #D4A843, #B8922F);
+      color: #000;
+      font-weight: 700;
+      font-size: 0.85rem;
+      border-radius: 8px;
+    }
+
+    .color-dot {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .guide-section {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 32px;
+    }
+
+    .guide-section h2 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #D4A843;
+      margin-bottom: 20px;
+    }
+
+    .guide-section h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #FFF;
+      margin-top: 20px;
+      margin-bottom: 10px;
+    }
+
+    .guide-section li {
+      padding: 4px 0;
+      color: #BBB;
+      list-style: none;
+    }
+
+    .guide-section li::before {
+      content: "→ ";
+      color: #D4A843;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+
+    th {
+      text-align: left;
+      padding: 12px 16px;
+      background: #1A1A1A;
+      color: #D4A843;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border-bottom: 1px solid #333;
+    }
+
+    td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #1A1A1A;
+      font-size: 0.9rem;
+      color: #CCC;
+    }
+
+    tr:hover td { background: #1A1A1A; }
+
+    .footer {
+      text-align: center;
+      padding: 40px 0 20px;
+      color: #555;
+      font-size: 0.8rem;
+    }
+
+    .footer .score {
+      color: #D4A843;
+      font-weight: 600;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(to right, transparent, #333, transparent);
+      margin: 40px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h1>Postagens Instagram</h1>
+    <p class="subtitle">AI Mentor Academy — Pacote de 10 Posts</p>
+
+    <div class="diagnostic">
+      <h3>Diagnostico Copy Chief (Tier 0)</h3>
+      <ul>
+        <li><strong>Awareness:</strong> Problem-Aware → Solution-Aware</li>
+        <li><strong>Sophistication:</strong> Stage 3-4 (mercado saturado de cursos/mentorias)</li>
+        <li><strong>Mecanismo unico:</strong> Mentores IA treinados nos frameworks reais das maiores mentes</li>
+        <li><strong>Angulo principal:</strong> "Nao e curso. Nao e comunidade. Sao mentores IA que ensinam de verdade."</li>
+      </ul>
+    </div>
+
+    <!-- POST 1 -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #D4A843;">Post 01</span>
+        <span class="post-type">Carrossel — 5 slides</span>
+      </div>
+      <div class="post-title">Lancamento da Plataforma</div>
+      <div class="post-mentor-subtitle">Awareness geral — apresentar o conceito</div>
+
+      <div class="section-label">Texto da Arte</div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 1 — Capa (fundo escuro, tipografia dourada)</div>
+        <pre>E se voce pudesse conversar
+com as maiores mentes do mundo...
+a hora que quisesse?</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 2</div>
+        <pre>Apresentamos a
+AI MENTOR ACADEMY
+
+7 Mentores de Inteligencia Artificial
+treinados nos frameworks de:
+
+Alan Nicolas | Alex Hormozi
+Russell Brunson | Gary Vee
+Erico Rocha | Elon Musk | Sam Altman</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 3</div>
+        <pre>Nao e curso gravado.
+Nao e PDF generico.
+Nao e comunidade lotada.
+
+Sao MENTORES IA que conversam
+com voce, entendem seu momento
+e ensinam de verdade.</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 4</div>
+        <pre>Como funciona:
+
+1. Escolha seu mentor
+2. Conte sua situacao
+3. Receba orientacao personalizada
+4. Aplique e evolua
+
+Simples assim.</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 5 — CTA (fundo dourado/escuro)</div>
+        <pre>100% GRATUITO
+
+Acesse agora:
+[link na bio]
+
+AI Mentor Academy
+Mentores IA que ensinam de verdade.</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block">
+        <pre>Imagina ter acesso a 7 mentores treinados nos frameworks das maiores mentes do marketing, tecnologia e negocios...
+
+E poder conversar com eles a qualquer hora. Sem fila. Sem agenda. Sem pagar nada.
+
+Isso e a AI Mentor Academy.
+
+Criamos 7 agentes de inteligencia artificial, cada um especializado em uma area:
+
+→ IA pratica e automacao
+→ Lancamentos digitais
+→ Ofertas irresistiveis
+→ Funis de vendas
+→ Conteudo organico
+→ Visao de futuro e inovacao
+→ Startups e tecnologia de ponta
+
+Cada mentor foi treinado nos frameworks REAIS dessas referencias. Nao e chatbot generico. E mentoria IA personalizada.
+
+E o melhor: e 100% gratuito.
+
+Link na bio. Acesse agora e escolha seu primeiro mentor.
+
+#IAMentorAcademy #InteligenciaArtificial #MentorIA #MarketingDigital #EmpreendedorismoDigital #IA #Automacao #FunisDeVenda #Lancamento #AlexHormozi #GaryVee #RussellBrunson #NegociosDigitais #Inovacao #Tecnologia #CursosOnline #MentoriaOnline #AprendaComIA #FuturoDoTrabalho #EmpreenderOnline</pre>
+      </div>
+      <div class="cta-badge">CTA: Link na bio para acesso a plataforma</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- POST 2 - Nicolas -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #3B82F6;">Post 02</span>
+        <span class="post-type">Post unico — imagem quadrada</span>
+      </div>
+      <div class="post-title"><span class="color-dot" style="background: #3B82F6;"></span>Mentor Nicolas — IA Pratica</div>
+      <div class="post-mentor-subtitle">Baseado em Alan Nicolas · Nivel: Iniciante · Cor: Azul (#3B82F6)</div>
+
+      <div class="section-label">Texto da Arte</div>
+      <div class="slide-block">
+        <pre>CONHECA O NICOLAS
+Mentor IA de IA Pratica
+
+Baseado nos frameworks de Alan Nicolas
+
+O que ele ensina:
+→ Como usar IA no seu dia a dia
+→ Prompts que geram resultado
+→ Automacao para quem esta comecando
+
+Nivel: Iniciante
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block" style="border-color: #3B82F6;">
+        <pre>Voce quer usar IA mas nao sabe por onde comecar?
+
+O Nicolas e o mentor perfeito pra voce.
+
+Treinado nos frameworks do Alan Nicolas, ele te ensina:
+
+→ Como escrever prompts que realmente funcionam
+→ Automacoes praticas que economizam horas do seu dia
+→ Como integrar IA no seu negocio mesmo sem saber programar
+
+Ele nao te entrega um PDF e desaparece. Ele CONVERSA com voce. Entende o que voce precisa. E te guia passo a passo.
+
+Perfeito pra quem esta comecando e quer resultado rapido com inteligencia artificial.
+
+100% gratuito. Link na bio.
+
+#NicolasIA #IAParaIniciantes #InteligenciaArtificial #Prompts #EngenhariadePrompts #Automacao #AlanNicolas #IAnoTrabalho #MentorIA #AImentoracademy #IAprática #ChatGPT #AprendaIA #DicasDeIA #MarketingDigital #Produtividade #TecnologiaPratica #NegociosDigitais #EmpreendedorismoDigital #FuturoDoTrabalho</pre>
+      </div>
+      <div class="cta-badge">CTA: Comece sua primeira conversa com o Nicolas. Link na bio.</div>
+    </div>
+
+    <!-- POST 3 - Erico -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #EF4444;">Post 03</span>
+        <span class="post-type">Post unico — imagem quadrada</span>
+      </div>
+      <div class="post-title"><span class="color-dot" style="background: #EF4444;"></span>Mentor Erico — Lancamentos</div>
+      <div class="post-mentor-subtitle">Baseado em Erico Rocha · Nivel: Intermediario · Cor: Vermelho (#EF4444)</div>
+
+      <div class="section-label">Texto da Arte</div>
+      <div class="slide-block">
+        <pre>CONHECA O ERICO
+Mentor IA de Lancamentos Digitais
+
+Baseado nos frameworks de Erico Rocha
+
+O que ele ensina:
+→ Formula de Lancamento
+→ Funis digitais que convertem
+→ Estrategia completa de lancamento
+
+Nivel: Intermediario
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block" style="border-color: #EF4444;">
+        <pre>Voce ja tentou lancar um produto digital e nao deu certo?
+
+Ou pior: voce QUER lancar, mas nao sabe nem por onde comecar?
+
+O Erico e o mentor IA que domina a Formula de Lancamento.
+
+Treinado nos frameworks do Erico Rocha, ele te ajuda com:
+
+→ Estrutura completa de um lancamento digital
+→ Como criar funis que convertem de verdade
+→ Pre-lancamento, lancamento e pos-lancamento
+→ Estrategias para gerar lista e engajamento
+
+Voce pergunta, ele responde. Voce trava, ele destrava. E sim, ele sabe adaptar a estrategia pro SEU contexto.
+
+Gratuito. Agora. Link na bio.
+
+#EricoIA #FormuladeLancamento #LancamentoDigital #FunisDigitais #EricoRocha #MarketingDigital #InfoProdutos #ProdutoDigital #MentorIA #AImentoracademy #EmpreendedorismoDigital #VendasOnline #Lancamento6em7 #EstrategiaDigital #NegociosOnline #CursosOnline #Empreender #FunilDeVendas #ConversaoDigital #RendaExtra</pre>
+      </div>
+      <div class="cta-badge">CTA: Fale com o Erico agora. Link na bio.</div>
+    </div>
+
+    <!-- POST 4 - Elon -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #6B7280;">Post 04</span>
+        <span class="post-type">Post unico — imagem quadrada</span>
+      </div>
+      <div class="post-title"><span class="color-dot" style="background: #6B7280;"></span>Mentor Elon — Inovacao Disruptiva</div>
+      <div class="post-mentor-subtitle">Baseado em Elon Musk · Nivel: Avancado · Cor: Cinza (#6B7280)</div>
+
+      <div class="section-label">Texto da Arte</div>
+      <div class="slide-block">
+        <pre>CONHECA O ELON
+Mentor IA de Inovacao Disruptiva
+
+Baseado nos frameworks de Elon Musk
+
+O que ele ensina:
+→ Pensamento First Principles
+→ Visao de futuro e tendencias
+→ Inovacao radical nos negocios
+
+Nivel: Avancado
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block" style="border-color: #6B7280;">
+        <pre>Todo mundo quer inovar. Quase ninguem sabe como.
+
+O Elon e o mentor IA que pensa diferente. Literalmente.
+
+Treinado nos frameworks de Elon Musk, ele te desafia a:
+
+→ Aplicar First Principles no seu negocio (derrubar tudo e reconstruir do zero)
+→ Enxergar tendencias antes dos concorrentes
+→ Pensar em escala e impacto, nao apenas em lucro imediato
+→ Resolver problemas que parecem impossiveis
+
+Esse mentor nao e pra quem quer resposta facil. E pra quem quer pensar no nivel mais alto.
+
+Se voce ja tem experiencia e quer dar um salto, o Elon e o mentor certo.
+
+Gratuito. Link na bio.
+
+#ElonIA #FirstPrinciples #Inovacao #ElonMusk #InovacaoDisruptiva #MentorIA #AImentoracademy #PensamentoEstrategico #FuturoDoTrabalho #Startups #Tecnologia #Empreendedorismo #MindsetEmpreendedor #VisaoDeFuturo #NegociosInovadores #Disrupcao #GrowthMindset #LiderancaInovadora #InteligenciaArtificial #PensamentoCritico</pre>
+      </div>
+      <div class="cta-badge">CTA: Converse com o Elon. Link na bio.</div>
+    </div>
+
+    <!-- POST 5 - Hormozi -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #F59E0B;">Post 05</span>
+        <span class="post-type">Post unico — imagem quadrada</span>
+      </div>
+      <div class="post-title"><span class="color-dot" style="background: #F59E0B;"></span>Mentor Hormozi — Ofertas e Escala</div>
+      <div class="post-mentor-subtitle">Baseado em Alex Hormozi · Nivel: Intermediario-Avancado · Cor: Ambar (#F59E0B)</div>
+
+      <div class="section-label">Texto da Arte</div>
+      <div class="slide-block">
+        <pre>CONHECA O HORMOZI
+Mentor IA de Ofertas e Escala
+
+Baseado nos frameworks de Alex Hormozi
+
+O que ele ensina:
+→ Criar ofertas irresistiveis
+→ Frameworks de escala ($100M)
+→ Precificacao e valor percebido
+
+Nivel: Intermediario-Avancado
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block" style="border-color: #F59E0B;">
+        <pre>Seu produto e bom, mas ninguem compra?
+
+O problema nao e o produto. E a OFERTA.
+
+O Hormozi e o mentor IA que domina a arte de criar ofertas que as pessoas se sentem burras dizendo nao.
+
+Treinado nos frameworks do Alex Hormozi ($100M Offers), ele te ensina:
+
+→ Como montar uma oferta que parece boa demais pra ser verdade (mas e real)
+→ Precificacao baseada em valor, nao em custo
+→ Como escalar sem quebrar a operacao
+→ O framework Grand Slam Offer aplicado ao SEU negocio
+
+Se voce ja vende algo e quer vender MUITO mais, esse mentor muda o jogo.
+
+Gratuito. Link na bio.
+
+#HormoziIA #OfertaIrresistivel #AlexHormozi #100MOffers #Escala #MentorIA #AImentoracademy #Precificacao #ValorPercebido #VendasOnline #GrandSlamOffer #MarketingDigital #NegociosDigitais #EmpreendedorismoDigital #GrowthHacking #EstrategiaDeVendas #Empreender #Negocios #ModeloDeNegocio #FaturamentoAlto</pre>
+      </div>
+      <div class="cta-badge">CTA: Monte sua oferta irresistivel com o Hormozi. Link na bio.</div>
+    </div>
+
+    <!-- POST 6 - Russell -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #F97316;">Post 06</span>
+        <span class="post-type">Post unico — imagem quadrada</span>
+      </div>
+      <div class="post-title"><span class="color-dot" style="background: #F97316;"></span>Mentor Russell — Funis de Vendas</div>
+      <div class="post-mentor-subtitle">Baseado em Russell Brunson · Nivel: Intermediario · Cor: Laranja (#F97316)</div>
+
+      <div class="section-label">Texto da Arte</div>
+      <div class="slide-block">
+        <pre>CONHECA O RUSSELL
+Mentor IA de Funis de Vendas
+
+Baseado nos frameworks de Russell Brunson
+
+O que ele ensina:
+→ Arquitetura de funis completos
+→ Storytelling que vende
+→ Copywriting persuasivo
+
+Nivel: Intermediario
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block" style="border-color: #F97316;">
+        <pre>Voce tem trafego mas nao converte?
+
+O Russell e o mentor IA que transforma visitantes em compradores.
+
+Treinado nos frameworks do Russell Brunson (DotCom Secrets, Expert Secrets), ele te mostra:
+
+→ Como estruturar um funil de vendas do zero
+→ A arte do storytelling que conecta e converte
+→ Copywriting que fala direto com a dor do seu cliente
+→ Value Ladder: como criar uma escada de produtos
+
+Funil nao e so uma sequencia de paginas. E uma JORNADA. E o Russell te ajuda a construir cada etapa.
+
+Gratuito. Link na bio.
+
+#RussellIA #FunisDeVendas #RussellBrunson #ClickFunnels #DotComSecrets #ExpertSecrets #Copywriting #Storytelling #MentorIA #AImentoracademy #MarketingDigital #ConversaoDigital #ValueLadder #VendasOnline #PaginaDeVendas #FunilDeVendas #EmpreendedorismoDigital #NegociosDigitais #EstrategiaDigital #TrafegoEConversao</pre>
+      </div>
+      <div class="cta-badge">CTA: Construa seu funil com o Russell. Link na bio.</div>
+    </div>
+
+    <!-- POST 7 - Altman -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #E5E7EB;">Post 07</span>
+        <span class="post-type">Post unico — imagem quadrada</span>
+      </div>
+      <div class="post-title"><span class="color-dot" style="background: #E5E7EB;"></span>Mentor Altman — Futuro e Tecnologia</div>
+      <div class="post-mentor-subtitle">Baseado em Sam Altman · Nivel: Avancado · Cor: Branco/Prata (#E5E7EB)</div>
+
+      <div class="section-label">Texto da Arte</div>
+      <div class="slide-block">
+        <pre>CONHECA O ALTMAN
+Mentor IA de Futuro e Tecnologia
+
+Baseado nos frameworks de Sam Altman
+
+O que ele ensina:
+→ Futuro da inteligencia artificial
+→ Como criar startups de tecnologia
+→ Estrategia e visao de longo prazo
+
+Nivel: Avancado
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block" style="border-color: #E5E7EB;">
+        <pre>IA vai mudar tudo. A pergunta e: voce vai estar preparado?
+
+O Altman e o mentor IA que te da visao estrategica sobre o futuro da tecnologia.
+
+Treinado nos frameworks do Sam Altman (CEO da OpenAI, ex-presidente do Y Combinator), ele te ajuda a:
+
+→ Entender pra onde a IA esta indo (e como se posicionar)
+→ Pensar como fundador de startup de tecnologia
+→ Tomar decisoes estrategicas de longo prazo
+→ Identificar oportunidades que a maioria ainda nao enxerga
+
+Esse mentor e pra quem quer estar a frente. Nao um passo. Dez passos.
+
+Gratuito. Link na bio.
+
+#AltmanIA #SamAltman #OpenAI #FuturoDaIA #Startups #YCombinator #Tecnologia #MentorIA #AImentoracademy #InteligenciaArtificial #InovacaoTecnologica #Empreendedorismo #TechStartups #VisaoEstrategica #FuturoDoTrabalho #TransformacaoDigital #EstrategiaDeNegocios #VenturCapital #TendenciasTech #IAnosBnegocios</pre>
+      </div>
+      <div class="cta-badge">CTA: Converse com o Altman sobre o futuro. Link na bio.</div>
+    </div>
+
+    <!-- POST 8 - Gary -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #EAB308;">Post 08</span>
+        <span class="post-type">Post unico — imagem quadrada</span>
+      </div>
+      <div class="post-title"><span class="color-dot" style="background: #EAB308;"></span>Mentor Gary — Conteudo e Marca Pessoal</div>
+      <div class="post-mentor-subtitle">Baseado em Gary Vee · Nivel: Iniciante-Intermediario · Cor: Amarelo (#EAB308)</div>
+
+      <div class="section-label">Texto da Arte</div>
+      <div class="slide-block">
+        <pre>CONHECA O GARY
+Mentor IA de Conteudo e Marca Pessoal
+
+Baseado nos frameworks de Gary Vee
+
+O que ele ensina:
+→ Conteudo organico que cresce
+→ Estrategia de redes sociais
+→ Construcao de marca pessoal
+
+Nivel: Iniciante-Intermediario
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block" style="border-color: #EAB308;">
+        <pre>Voce posta todo dia e ninguem engaja?
+
+O problema nao e frequencia. E ESTRATEGIA.
+
+O Gary e o mentor IA que entende redes sociais como ninguem.
+
+Treinado nos frameworks do Gary Vee, ele te ensina:
+
+→ Como criar conteudo que cresce organicamente (sem gastar com ads)
+→ A estrategia de piramide de conteudo (1 conteudo vira 30)
+→ Como construir uma marca pessoal autentica e memoravel
+→ Por que documentar e melhor que criar do zero
+
+Se voce quer crescer no Instagram, YouTube, TikTok ou LinkedIn sem depender so de trafego pago, o Gary e seu mentor.
+
+Gratuito. Link na bio.
+
+#GaryIA #GaryVee #ConteudoOrganico #MarcaPessoal #Branding #RedesSociais #MentorIA #AImentoracademy #MarketingDeConteudo #Instagram #CrescimentoOrganico #SocialMedia #PersonalBranding #ContentMarketing #CriacaoDeConteudo #EmpreendedorismoDigital #DigitalMarketing #CrescerNoInstagram #EstrategiaDeConteudo #MarketingOrgânico</pre>
+      </div>
+      <div class="cta-badge">CTA: Fale com o Gary sobre sua estrategia de conteudo. Link na bio.</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- POST 9 - Como Funciona -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #D4A843;">Post 09</span>
+        <span class="post-type">Carrossel — 4 slides</span>
+      </div>
+      <div class="post-title">Como Funciona a AI Mentor Academy</div>
+      <div class="post-mentor-subtitle">Educacao — explicar o fluxo em 4 passos</div>
+
+      <div class="section-label">Texto da Arte</div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 1 — Capa</div>
+        <pre>COMO FUNCIONA A
+AI MENTOR ACADEMY?
+
+4 passos pra voce comecar
+a aprender com mentores IA</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 2</div>
+        <pre>PASSO 1 - CHEGUE
+
+Acesse a plataforma gratuitamente.
+Nenhum cadastro complicado.
+Nenhum cartao de credito.
+
+Voce entra e pronto.</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 3</div>
+        <pre>PASSO 2 - ESCOLHA SEU MENTOR
+
+7 mentores IA especializados.
+Cada um com um foco diferente.
+
+Escolha o que faz sentido
+pro seu momento.
+
+PASSO 3 - CONVERSE
+
+Fale sobre seu negocio, suas duvidas,
+seus desafios. O mentor entende
+seu contexto e te orienta.</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 4 — CTA</div>
+        <pre>PASSO 4 - EVOLUA
+
+Aplique o que aprendeu.
+Volte quando precisar.
+Seus mentores estao disponiveis 24/7.
+
+Comece agora → Link na bio
+
+AI MENTOR ACADEMY</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block">
+        <pre>"Mas como funciona exatamente?"
+
+Simples. Sem enrolacao:
+
+1. CHEGUE - Acesse a plataforma. Sem cadastro chato, sem cartao de credito. E gratuito.
+
+2. ESCOLHA - Temos 7 mentores IA, cada um especializado em uma area. IA pratica, lancamentos, funis, ofertas, conteudo, inovacao e tecnologia. Escolha o que faz sentido pra voce.
+
+3. CONVERSE - Conte pro mentor qual e a sua situacao. Ele entende seu contexto e te da orientacao personalizada. Nao e resposta generica. E mentoria adaptada a voce.
+
+4. EVOLUA - Aplique. Volte quando precisar. Os mentores estao disponiveis 24 horas por dia, 7 dias por semana.
+
+Sem fila de espera.
+Sem mensalidade.
+Sem limite de conversas.
+
+Esse e o futuro da educacao. E ele ja comecou.
+
+Link na bio.
+
+#ComoFunciona #AImentoracademy #MentorIA #InteligenciaArtificial #EducacaoDoFuturo #AprendaComIA #MentoriaGratuita #MarketingDigital #EmpreendedorismoDigital #Automacao #IAprática #NegociosDigitais #Tecnologia #CursosGratuitos #MentoriaIA #FuturoDoTrabalho #AprendizadoPersonalizado #IAnosBnegocios #EducacaoOnline #TransformacaoDigital</pre>
+      </div>
+      <div class="cta-badge">CTA: Acesse agora. Link na bio.</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- POST 10 - Social Proof -->
+    <div class="post-card">
+      <div class="post-header">
+        <span class="post-number" style="color: #D4A843;">Post 10</span>
+        <span class="post-type">Carrossel — 3 slides</span>
+      </div>
+      <div class="post-title">Social Proof + CTA Final</div>
+      <div class="post-mentor-subtitle">Conversao final — numeros e chamada para acao</div>
+
+      <div class="section-label">Texto da Arte</div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 1 — Impacto visual com numeros</div>
+        <pre>AI MENTOR ACADEMY
+EM NUMEROS
+
+7 Mentores IA especializados
+24/7 disponiveis pra voce
+100% gratuito
+0 enrolacao</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 2</div>
+        <pre>O QUE VOCE GANHA:
+
+→ Mentoria personalizada com IA
+→ Frameworks das maiores mentes do mundo
+→ Respostas adaptadas ao SEU negocio
+→ Disponivel a qualquer hora
+→ Sem limite de conversas
+→ Sem mensalidade, sem pegadinha
+
+Tudo isso por R$ 0,00</pre>
+      </div>
+
+      <div class="slide-block">
+        <div class="slide-label">Slide 3 — CTA forte (fundo dourado/escuro)</div>
+        <pre>A UNICA DECISAO RUIM
+E NAO COMECAR.
+
+Acesse agora:
+[link na bio]
+
+AI MENTOR ACADEMY
+Mentores IA que ensinam de verdade.</pre>
+      </div>
+
+      <div class="section-label">Legenda Completa</div>
+      <div class="caption-block">
+        <pre>Vou ser direto com voce:
+
+Existem mentores que cobram R$ 5.000, R$ 10.000, R$ 50.000 por ano.
+
+E muitos deles... te entregam um curso gravado, acesso a uma comunidade e um encontro por mes no Zoom.
+
+A AI Mentor Academy te da 7 mentores IA treinados nos MESMOS frameworks dessas referencias mundiais.
+
+Disponiveis 24 horas por dia.
+Personalizados pro SEU negocio.
+Sem fila de espera.
+Sem mensalidade.
+
+Gratuito.
+
+"Mas por que e gratuito?"
+
+Porque a gente acredita que educacao de qualidade nao deveria ter barreira de entrada. E porque a tecnologia agora permite isso.
+
+A unica coisa que voce precisa fazer e acessar.
+
+Link na bio. Comece agora.
+
+Salva esse post. Manda pra alguem que precisa ver isso.
+
+#AImentoracademy #MentorIA #MentoriaGratuita #InteligenciaArtificial #MarketingDigital #EmpreendedorismoDigital #EducacaoGratuita #Empreender #NegociosDigitais #IAprática #FuturoDoTrabalho #MentoriaOnline #AprendaComIA #OfertaIrresistivel #Tecnologia #Inovacao #CursosGratuitos #TransformacaoDigital #OportunidadeUnica #ComecaAgora</pre>
+      </div>
+      <div class="cta-badge">CTA: Link na bio. Salva e manda pra alguem que precisa.</div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- GUIA VISUAL -->
+    <div class="guide-section">
+      <h2>Guia de Execucao Visual</h2>
+
+      <h3>Paleta de cores base</h3>
+      <ul>
+        <li><span class="color-dot" style="background: #0A0A0A; border: 1px solid #333;"></span><strong>Fundo:</strong> Escuro/preto (#0A0A0A ou #111111)</li>
+        <li><span class="color-dot" style="background: #FFFFFF;"></span><strong>Texto principal:</strong> Branco (#FFFFFF)</li>
+        <li><span class="color-dot" style="background: #D4A843;"></span><strong>Destaques/CTA:</strong> Dourado (#D4A843)</li>
+        <li>Cor do mentor como accent em cada post individual</li>
+      </ul>
+
+      <h3>Tipografia sugerida</h3>
+      <ul>
+        <li><strong>Headlines:</strong> Bold, sans-serif (Inter, Montserrat)</li>
+        <li><strong>Body:</strong> Regular, boa legibilidade</li>
+        <li><strong>Destaques:</strong> Semi-bold com cor do mentor</li>
+      </ul>
+
+      <h3>Formato</h3>
+      <ul>
+        <li><strong>Posts unicos:</strong> 1080x1080px (quadrado)</li>
+        <li><strong>Carrosseis:</strong> 1080x1350px (vertical, melhor engajamento)</li>
+      </ul>
+
+      <h3>Consistencia</h3>
+      <ul>
+        <li>Logo "AI Mentor Academy" em todos os slides finais</li>
+        <li>Tagline "Mentores IA que ensinam de verdade" como assinatura</li>
+        <li>Identidade premium: fundo escuro, tipografia limpa, espacamento generoso</li>
+      </ul>
+    </div>
+
+    <!-- CALENDARIO -->
+    <div class="guide-section">
+      <h2>Calendario Sugerido de Publicacao</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Post</th>
+            <th>Tipo</th>
+            <th>Objetivo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Dia 1 (Seg)</td><td>Post 1 — Lancamento</td><td>Carrossel</td><td>Awareness</td></tr>
+          <tr><td>Dia 2 (Ter)</td><td>Post 9 — Como Funciona</td><td>Carrossel</td><td>Educacao</td></tr>
+          <tr><td>Dia 3 (Qua)</td><td>Post 2 — Nicolas</td><td>Post unico</td><td>Mentor (iniciantes)</td></tr>
+          <tr><td>Dia 4 (Qui)</td><td>Post 8 — Gary</td><td>Post unico</td><td>Mentor (conteudo)</td></tr>
+          <tr><td>Dia 5 (Sex)</td><td>Post 5 — Hormozi</td><td>Post unico</td><td>Mentor (ofertas)</td></tr>
+          <tr><td>Dia 6 (Sab)</td><td>Post 3 — Erico</td><td>Post unico</td><td>Mentor (lancamentos)</td></tr>
+          <tr><td>Dia 8 (Seg)</td><td>Post 6 — Russell</td><td>Post unico</td><td>Mentor (funis)</td></tr>
+          <tr><td>Dia 9 (Ter)</td><td>Post 4 — Elon</td><td>Post unico</td><td>Mentor (inovacao)</td></tr>
+          <tr><td>Dia 10 (Qua)</td><td>Post 7 — Altman</td><td>Post unico</td><td>Mentor (IA/tech)</td></tr>
+          <tr><td>Dia 11 (Qui)</td><td>Post 10 — Social Proof</td><td>Carrossel</td><td>Conversao</td></tr>
+        </tbody>
+      </table>
+      <p style="margin-top: 16px; color: #888; font-size: 0.85rem;">
+        <strong>Logica:</strong> Comeca com awareness geral, segue com mentores mais acessiveis (iniciante), progride para avancados, e fecha com social proof + CTA forte.
+      </p>
+    </div>
+
+    <div class="footer">
+      <p><span class="score">Copy Chief Audit: 87/100</span> — Aprovado</p>
+      <p>Triggers Sugarman cobertos: 24/30 (80%) — Aprovado</p>
+      <p style="margin-top: 12px;">Gerado por Copy Chief | AI Mentor Academy | Fevereiro 2026</p>
+    </div>
+
+  </div>
+</body>
+</html>

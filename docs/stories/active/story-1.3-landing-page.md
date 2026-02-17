@@ -2,7 +2,7 @@
 
 ## Status
 
-Draft
+Done
 
 ## Executor Assignment
 
@@ -18,20 +18,20 @@ quality_gate_tools: ["typecheck", "lint", "build", "lighthouse"]
 
 ## Acceptance Criteria
 
-- [ ] 1. Hero section com headline impactante sobre mentores IA que ensinam de verdade
-- [ ] 2. Subtitulo explicando o conceito (agentes IA treinados nos frameworks de grandes mentes)
-- [ ] 3. CTA principal "Fale com um Mentor IA Agora" visivel above the fold, com estilo dourado
-- [ ] 4. Secao "Como Funciona" com 3-4 passos visuais do fluxo (chegar > conversar > aprender > evoluir)
-- [ ] 5. Secao de showcase dos 7 mentores com cards (avatar placeholder, nome, especialidade, cor do mentor)
-- [ ] 6. Cada card de mentor tem animacao hover (scale + glow na cor do mentor) e breve descricao
-- [ ] 7. Secao social proof com numeros (alunos, satisfacao %, horas de mentoria IA, mentores disponiveis)
-- [ ] 8. Secao de depoimentos/testimonials (placeholder com 3 depoimentos)
-- [ ] 9. CTA secundario antes do footer ("Pronto para comecar? Fale com um Mentor")
-- [ ] 10. SEO: meta tags, Open Graph, title, description otimizados
-- [ ] 11. Performance: LCP < 2.5s, CLS < 0.1 (medir com Lighthouse)
-- [ ] 12. Pagina servida via SSG (Static Site Generation) para performance maxima
-- [ ] 13. Todos os textos em portugues BR
-- [ ] 14. Design premium consistente com design system (dark mode, dourado, animacoes)
+- [x] 1. Hero section com headline impactante sobre mentores IA que ensinam de verdade
+- [x] 2. Subtitulo explicando o conceito (agentes IA treinados nos frameworks de grandes mentes)
+- [x] 3. CTA principal "Fale com um Mentor IA Agora" visivel above the fold, com estilo dourado
+- [x] 4. Secao "Como Funciona" com 3-4 passos visuais do fluxo (chegar > conversar > aprender > evoluir)
+- [x] 5. Secao de showcase dos 7 mentores com cards (avatar placeholder, nome, especialidade, cor do mentor)
+- [x] 6. Cada card de mentor tem animacao hover (scale + glow na cor do mentor) e breve descricao
+- [x] 7. Secao social proof com numeros (alunos, satisfacao %, horas de mentoria IA, mentores disponiveis)
+- [x] 8. Secao de depoimentos/testimonials (placeholder com 3 depoimentos)
+- [x] 9. CTA secundario antes do footer ("Pronto para comecar? Fale com um Mentor")
+- [x] 10. SEO: meta tags, Open Graph, title, description otimizados
+- [x] 11. Performance: LCP < 2.5s, CLS < 0.1 (medir com Lighthouse)
+- [x] 12. Pagina servida via SSG (Static Site Generation) para performance maxima
+- [x] 13. Todos os textos em portugues BR
+- [x] 14. Design premium consistente com design system (dark mode, dourado, animacoes)
 
 ## Tasks / Subtasks
 
