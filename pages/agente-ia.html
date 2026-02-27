@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Agente de IA Terapeuta - Automatize atendimento com IA. Integração simples, resultados imediatos.">
+    <meta name="keywords" content="agente IA, automação, chatbot, terapeuta, atendimento">
+    <title>Agente de IA Terapeuta — Atendimento Automático com IA</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --night:     #f8f5f1;
+            --deep:      #f0e8e1;
+            --card:      #ffffff;
+            --card2:     #ffe8e0;
+            --border:    rgba(120,80,60,0.12);
+            --primary:   #8b4513;
+            --primary-l: #a0522d;
+            --primary-ll:#cd853f;
+            --dark:      #3e2723;
+            --accent:    #d4a574;
+            --accent-bg: rgba(212,165,116,0.08);
+            --text:      #4a3728;
+            --muted:     #7a6b60;
+            --faint:     #a89880;
+            --white:     #ffffff;
+            --success:   #6b8e23;
+        }
+
+        *,*::before,*::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--night);
+            color: var(--text);
+            min-height: 100vh;
+            line-height: 1.6;
+        }
+
+        /* ── HEADER ─────────────────────────────────────────── */
+        header {
+            background: var(--primary);
+            padding: 0 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .header-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.95);
+            letter-spacing: 0.5px;
+        }
+
+        .header-tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.6);
+        }
+
+        /* ── HERO ────────────────────────────────────────────────── */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-l) 100%);
+            padding: 64px 40px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -120px;
+            right: -120px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -80px;
+            left: -80px;
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.03);
+            pointer-events: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.9);
+            padding: 8px 16px;
+            border-radius: 24px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            animation: fadeUp 0.6s ease 0.1s both;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 300;
+            color: #fff;
+            line-height: 1.1;
+            margin-bottom: 16px;
+            animation: fadeUp 0.6s ease 0.2s both;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: rgba(255,230,200,0.95);
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.75);
+            max-width: 520px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+            animation: fadeUp 0.6s ease 0.3s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            gap: 16px;
+            animation: fadeUp 0.6s ease 0.4s both;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--dark);
+            padding: 14px 32px;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 16px rgba(212,165,116,0.3);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-ll);
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 24px rgba(212,165,116,0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #fff;
+            padding: 14px 32px;
+            border: 1.5px solid rgba(255,255,255,0.3);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255,255,255,0.1);
+            border-color: rgba(255,255,255,0.6);
+            color: #fff;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ── MAIN ────────────────────────────────────────────────── */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 64px 24px;
+        }
+
+        /* ── SEÇÕES ──────────────────────────────────────────────── */
+        .section-label {
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 300;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 32px;
+        }
+
+        .section-title em {
+            font-style: italic;
+            color: var(--primary);
+        }
+
+        /* ── FEATURES ────────────────────────────────────────────── */
+        .features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 64px;
+        }
+
+        @media (max-width: 640px) {
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            border-color: var(--primary-ll);
+            box-shadow: 0 4px 20px rgba(120,80,60,0.08);
+            transform: translateY(-2px);
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 10px;
+            background: var(--accent-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .feature-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* ── BENEFÍCIOS ──────────────────────────────────────────── */
+        .benefits-list {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 32px;
+            margin-bottom: 64px;
+        }
+
+        .benefit-item {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .benefit-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .benefit-icon {
+            color: var(--success);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .benefit-text {
+            flex: 1;
+        }
+
+        .benefit-title {
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .benefit-desc {
+            font-size: 0.9rem;
+            color: var(--muted);
+        }
+
+        /* ── PREÇO ───────────────────────────────────────────────── */
+        .pricing-section {
+            background: var(--accent-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .price-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            font-weight: 300;
+            color: var(--primary);
+            margin: 16px 0;
+            line-height: 1;
+        }
+
+        .price-desc {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-bottom: 24px;
+        }
+
+        .price-note {
+            font-size: 0.85rem;
+            color: var(--faint);
+            margin-top: 16px;
+        }
+
+        /* ── CTA FINAL ───────────────────────────────────────────── */
+        .final-cta {
+            text-align: center;
+            padding: 48px 0;
+            border-top: 1px solid var(--border);
+        }
+
+        .final-cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            font-weight: 300;
+            color: var(--dark);
+            margin-bottom: 24px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-l) 100%);
+            color: #fff;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 6px 24px rgba(139,69,19,0.25);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 32px rgba(139,69,19,0.35);
+        }
+
+        .cta-subtitle {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--muted);
+            margin-top: 16px;
+        }
+
+        /* ── FOOTER ──────────────────────────────────────────────── */
+        footer {
+            background: var(--text);
+            color: rgba(255,255,255,0.7);
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 0.85rem;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.9);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* ── RESPONSIVO ──────────────────────────────────────────── */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: 48px 20px 64px;
+            }
+
+            .hero h1 {
+                margin-bottom: 20px;
+            }
+
+            main {
+                padding: 48px 20px;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+            }
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .price-value {
+                font-size: 2.5rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div>
+            <span class="header-logo">Terapeuta 2</span>
+            <span class="header-tag">Agente de IA</span>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <span class="hero-badge">🤖 Inteligência Artificial</span>
+        <h1>Seu Agente de IA para <em>Atendimento Automático</em></h1>
+        <p>Configure em minutos, otimize seu atendimento em segundos. Agente de IA completo com integração simples e resultados imediatos.</p>
+        <div class="hero-cta">
+            <a href="https://pay.hotmart.com/M104557472U" class="btn-primary" target="_blank" rel="noopener noreferrer">
+                Adquirir Agora
+            </a>
+            <a href="#features" class="btn-secondary">
+                Conhecer Mais
+            </a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Features Section -->
+        <section id="features">
+            <span class="section-label">✨ Recursos</span>
+            <h2 class="section-title">Tudo que você <em>precisa</em> em um agente</h2>
+
+            <div class="features">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Setup em Minutos</h3>
+                    <p class="feature-desc">Sem código, sem complexidade. Integre com suas plataformas em segundos.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">IA Treinada</h3>
+                    <p class="feature-desc">Modelo otimizado para seu negócio. Entende contexto e nuances.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Analytics Completo</h3>
+                    <p class="feature-desc">Dashboard em tempo real. Veja cada interação e otimize continuamente.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Integrações Prontas</h3>
+                    <p class="feature-desc">WhatsApp, Telegram, Slack, Discord e mais. Conecte tudo.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3 class="feature-title">Segurança Garantida</h3>
+                    <p class="feature-desc">Dados criptografados. Conformidade com LGPD e GDPR.</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3 class="feature-title">Suporte 24/7</h3>
+                    <p class="feature-desc">Time especializado pronto para ajudar. Resposta em até 2 horas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits Section -->
+        <section>
+            <span class="section-label">💪 Benefícios</span>
+            <h2 class="section-title">Por que escolher <em>nosso agente</em></h2>
+
+            <div class="benefits-list">
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <div class="benefit-text">
+                        <div class="benefit-title">Reduz Custos de Atendimento</div>
+                        <p class="benefit-desc">Automatize 80% das respostas simples. Economize em mão de obra.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <div class="benefit-text">
+                        <div class="benefit-title">Atendimento 24/7</div>
+                        <p class="benefit-desc">Seu agente trabalha sempre. Nenhum cliente fica sem resposta.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <div class="benefit-text">
+                        <div class="benefit-title">Melhora Satisfação do Cliente</div>
+                        <p class="benefit-desc">Respostas rápidas e precisas. Aumento de 40% na satisfação.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <div class="benefit-text">
+                        <div class="benefit-title">Escalável sem Limite</div>
+                        <p class="benefit-desc">1 ou 1 milhão de conversas. Mesma qualidade, sem mais custo.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <div class="benefit-text">
+                        <div class="benefit-title">Aprende Continuamente</div>
+                        <p class="benefit-desc">Cada conversa melhora o modelo. Fica mais inteligente ao usar.</p>
+                    </div>
+                </div>
+
+                <div class="benefit-item">
+                    <span class="benefit-icon">✓</span>
+                    <div class="benefit-text">
+                        <div class="benefit-title">Sem Risco</div>
+                        <p class="benefit-desc">Garantia de 30 dias. Se não gostar, devolvemos seu investimento.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Section -->
+        <section class="pricing-section">
+            <span class="section-label">💰 Investimento</span>
+            <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--dark); margin-bottom: 8px;">Plano Único - Acesso Vitalício</h3>
+            <div class="price-value">R$ 297</div>
+            <p class="price-desc">Pagamento único. Atualizações forever incluídas.</p>
+            <div class="price-note">💳 Cartão, Boleto, PIX e PayPal</div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="final-cta">
+            <h2>Pronto para <em>automatizar</em>?</h2>
+            <a href="https://pay.hotmart.com/M104557472U" class="cta-button" target="_blank" rel="noopener noreferrer">
+                Adquirir Agora por R$ 297
+            </a>
+            <span class="cta-subtitle">⭐ Mais de 500 clientes satisfeitos | Garantia de 30 dias</span>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Terapeuta 2. Todos os direitos reservados.</p>
+        <p style="margin-top: 12px; font-size: 0.8rem;">
+            <a href="#">Termos de Uso</a> |
+            <a href="#">Política de Privacidade</a> |
+            <a href="#">Contato</a>
+        </p>
+    </footer>
+</body>
+</html>
