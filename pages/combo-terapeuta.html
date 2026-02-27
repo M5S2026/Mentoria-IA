@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kit Terapeuta Eficiente: Ebook + Guia Notion + Agente IA — 3 produtos por R$ 497. Recupere 2 horas por dia na sua clínica. Dentro da ética do CFP.">
+<title>Kit Terapeuta Eficiente — Combo Completo por R$ 497</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --night:   #080e09;
+  --deep:    #0d160f;
+  --card:    #111a12;
+  --card2:   #162019;
+  --border:  rgba(90,148,104,0.15);
+  --moss:    #3d6b4a;
+  --moss-l:  #5a9468;
+  --moss-ll: #7ab88a;
+  --moss-p:  #c8e8d0;
+  --gold:    #c8a45a;
+  --gold-l:  #e2c07a;
+  --gold-d:  rgba(200,164,90,0.12);
+  --cream:   #f0ebe0;
+  --muted:   rgba(240,235,224,0.55);
+  --faint:   rgba(240,235,224,0.22);
+  --red:     #e05c5c;
+}
+
+*,*::before,*::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family:'DM Sans', sans-serif;
+  background:var(--night);
+  color:var(--cream);
+  overflow-x:hidden;
+}
+
+/* ── NOISE TEXTURE OVERLAY ─────────────────────────── */
+body::before {
+  content:'';
+  position:fixed; inset:0; pointer-events:none; z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:.4;
+}
+
+/* ── TYPOGRAPHY ────────────────────────────────────── */
+.serif { font-family:'Cormorant Garamond', serif; }
+
+/* ── ANIMATIONS ────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity:0; transform:translateY(32px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+@keyframes shimmer {
+  0%,100% { opacity:.6; }
+  50%     { opacity:1; }
+}
+@keyframes spin-slow {
+  from { transform:rotate(0deg); }
+  to   { transform:rotate(360deg); }
+}
+@keyframes pulse-ring {
+  0%   { transform:scale(1); opacity:.4; }
+  100% { transform:scale(1.6); opacity:0; }
+}
+
+.fade-up {
+  opacity:0; transform:translateY(32px);
+  transition:opacity .7s ease, transform .7s ease;
+}
+.fade-up.visible { opacity:1; transform:translateY(0); }
+
+/* ── NAV ────────────────────────────────────────────── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  padding:16px 40px;
+  display:flex; justify-content:space-between; align-items:center;
+  background:linear-gradient(to bottom, rgba(8,14,9,.95) 0%, transparent 100%);
+  backdrop-filter:blur(8px);
+}
+.nav-logo {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.1rem; font-weight:300; letter-spacing:1px;
+  color:var(--moss-ll);
+}
+.nav-cta {
+  background:var(--moss); color:var(--cream);
+  padding:9px 24px; border-radius:100px;
+  font-size:.8rem; font-weight:500; text-decoration:none;
+  transition:background .2s, transform .2s;
+}
+.nav-cta:hover { background:var(--moss-l); transform:translateY(-1px); }
+
+/* ── HERO ───────────────────────────────────────────── */
+.hero {
+  min-height:100vh;
+  display:flex; flex-direction:column; justify-content:center;
+  padding:120px 40px 80px;
+  position:relative; overflow:hidden;
+}
+
+/* Orb de fundo */
+.hero::before {
+  content:'';
+  position:absolute; top:-200px; right:-200px;
+  width:700px; height:700px; border-radius:50%;
+  background:radial-gradient(circle, rgba(61,107,74,.18) 0%, transparent 65%);
+  pointer-events:none;
+}
+.hero::after {
+  content:'';
+  position:absolute; bottom:-150px; left:-150px;
+  width:500px; height:500px; border-radius:50%;
+  background:radial-gradient(circle, rgba(200,164,90,.07) 0%, transparent 65%);
+  pointer-events:none;
+}
+
+.hero-inner {
+  max-width:920px; margin:0 auto; width:100%;
+  animation:fadeUp .9s ease both;
+}
+
+.hero-tag {
+  display:inline-flex; align-items:center; gap:8px;
+  font-size:.72rem; font-weight:500; letter-spacing:3px;
+  text-transform:uppercase; color:var(--moss-ll);
+  border:1px solid rgba(122,184,138,.25);
+  padding:7px 18px; border-radius:100px; margin-bottom:36px;
+}
+.hero-tag-dot {
+  width:6px; height:6px; border-radius:50%;
+  background:var(--moss-ll);
+  animation:shimmer 2s ease infinite;
+}
+
+.hero-h1 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(3rem, 8vw, 6.5rem);
+  font-weight:300; line-height:1.0; margin-bottom:8px;
+}
+.hero-h1 em {
+  font-style:italic; color:var(--moss-ll);
+  font-weight:300;
+}
+.hero-h1 .line-gold { color:var(--gold-l); }
+
+.hero-sub {
+  font-size:clamp(.95rem, 2vw, 1.2rem);
+  font-weight:300; color:var(--muted); line-height:1.7;
+  max-width:580px; margin:24px 0 48px;
+}
+
+.hero-price-block {
+  display:flex; align-items:baseline; gap:16px; margin-bottom:12px;
+  flex-wrap:wrap;
+}
+.hero-price-was {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.6rem; color:var(--faint);
+  text-decoration:line-through;
+}
+.hero-price-main {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2.8rem, 6vw, 4.5rem);
+  font-weight:300; color:var(--gold-l); line-height:1;
+}
+.hero-price-note {
+  font-size:.82rem; color:var(--muted); font-weight:300;
+}
+
+.hero-cta {
+  display:inline-flex; align-items:center; gap:10px;
+  background:var(--moss); color:var(--cream);
+  padding:18px 44px; border-radius:100px;
+  font-size:1rem; font-weight:500; text-decoration:none;
+  margin-top:16px; position:relative; overflow:hidden;
+  transition:transform .2s, background .2s;
+}
+.hero-cta::before {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(135deg, rgba(255,255,255,.08) 0%, transparent 50%);
+}
+.hero-cta:hover { background:var(--moss-l); transform:translateY(-2px); }
+.hero-cta svg { width:18px; height:18px; }
+
+.hero-guarantee {
+  margin-top:16px; font-size:.8rem; color:var(--faint);
+  display:flex; align-items:center; gap:8px;
+}
+
+/* ── SECTION BASE ───────────────────────────────────── */
+section { padding:100px 40px; }
+.section-inner { max-width:920px; margin:0 auto; }
+
+.eyebrow {
+  font-size:.7rem; font-weight:500; letter-spacing:4px;
+  text-transform:uppercase; color:var(--gold);
+  margin-bottom:12px; display:block;
+}
+
+/* ── PROBLEMA ───────────────────────────────────────── */
+.problema {
+  background:var(--deep);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.problema-grid {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:48px; align-items:center;
+}
+@media(max-width:680px){ .problema-grid { grid-template-columns:1fr; } }
+
+.problema h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  font-weight:300; line-height:1.15; margin-bottom:20px;
+}
+.problema h2 em { font-style:italic; color:var(--moss-ll); }
+
+.problema p {
+  color:var(--muted); font-weight:300; line-height:1.8;
+  font-size:.95rem; margin-bottom:14px;
+}
+
+.dores {
+  display:flex; flex-direction:column; gap:10px;
+}
+.dor-item {
+  display:flex; align-items:flex-start; gap:14px;
+  background:var(--card); border:1px solid var(--border);
+  padding:16px 20px; border-radius:8px;
+}
+.dor-icon { color:var(--red); font-size:1rem; flex-shrink:0; margin-top:1px; }
+.dor-text { font-size:.9rem; color:var(--muted); font-weight:300; line-height:1.5; }
+
+/* ── O QUE ESTÁ DENTRO ──────────────────────────────── */
+.produtos { background:var(--night); }
+
+.produtos h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2rem, 4.5vw, 3.5rem);
+  font-weight:300; line-height:1.1; margin-bottom:8px;
+}
+.produtos h2 em { font-style:italic; color:var(--gold-l); }
+.produtos .lead {
+  color:var(--muted); font-weight:300; line-height:1.7;
+  max-width:560px; margin-bottom:60px; font-size:.95rem;
+}
+
+.produto-cards {
+  display:grid; grid-template-columns:repeat(3,1fr);
+  gap:20px; margin-bottom:40px;
+}
+@media(max-width:800px){ .produto-cards { grid-template-columns:1fr; } }
+
+.produto-card {
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:12px; padding:32px 28px;
+  position:relative; overflow:hidden;
+  transition:transform .3s, border-color .3s;
+}
+.produto-card:hover {
+  transform:translateY(-4px);
+  border-color:rgba(122,184,138,.4);
+}
+.produto-card::before {
+  content:''; position:absolute;
+  top:0; left:0; right:0; height:3px;
+}
+.produto-card.ebook::before  { background:var(--moss-ll); }
+.produto-card.notion::before { background:var(--gold); }
+.produto-card.agente::before { background:linear-gradient(to right, var(--moss-ll), var(--gold)); }
+
+.produto-card.agente {
+  border-color:rgba(200,164,90,.25);
+  background:linear-gradient(135deg, var(--card) 0%, rgba(22,32,25,.8) 100%);
+}
+
+.prod-num {
+  font-family:'Cormorant Garamond', serif;
+  font-size:3.5rem; font-weight:300; line-height:1;
+  color:rgba(122,184,138,.18); margin-bottom:16px;
+}
+.prod-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.6rem; font-weight:300; line-height:1.2;
+  margin-bottom:6px; color:var(--cream);
+}
+.prod-subtitle {
+  font-size:.8rem; color:var(--moss-ll); font-weight:400;
+  letter-spacing:.5px; margin-bottom:20px;
+  text-transform:uppercase; font-size:.7rem; letter-spacing:2px;
+}
+.prod-sep {
+  width:32px; height:1px; background:var(--border);
+  margin-bottom:20px;
+}
+.prod-item {
+  display:flex; align-items:flex-start; gap:10px;
+  font-size:.87rem; color:var(--muted); font-weight:300;
+  line-height:1.5; margin-bottom:10px;
+}
+.prod-item-icon { color:var(--moss-ll); flex-shrink:0; margin-top:2px; }
+
+.prod-valor {
+  margin-top:24px; padding-top:20px;
+  border-top:1px solid var(--border);
+  display:flex; align-items:center; justify-content:space-between;
+}
+.prod-preco-de {
+  font-size:.75rem; color:var(--faint);
+  text-decoration:line-through; font-family:'Cormorant Garamond', serif;
+  font-size:1rem;
+}
+.prod-preco-por {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.6rem; color:var(--gold-l); font-weight:300;
+}
+.prod-badge {
+  font-size:.7rem; font-weight:500; letter-spacing:1px;
+  background:var(--gold-d); color:var(--gold);
+  border:1px solid rgba(200,164,90,.2);
+  padding:4px 10px; border-radius:100px; text-transform:uppercase;
+}
+
+/* ── COMBO BOX ──────────────────────────────────────── */
+.combo-box {
+  background:var(--card2);
+  border:1px solid rgba(200,164,90,.25);
+  border-radius:16px; padding:48px;
+  text-align:center; position:relative; overflow:hidden;
+}
+.combo-box::before {
+  content:''; position:absolute;
+  top:-80px; left:50%; transform:translateX(-50%);
+  width:600px; height:300px;
+  background:radial-gradient(ellipse, rgba(200,164,90,.06) 0%, transparent 65%);
+  pointer-events:none;
+}
+.combo-title {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(1.5rem, 3vw, 2.5rem);
+  font-weight:300; margin-bottom:8px;
+}
+.combo-subtitle {
+  color:var(--muted); font-weight:300; font-size:.92rem;
+  margin-bottom:32px;
+}
+.combo-items {
+  display:flex; justify-content:center; gap:8px;
+  flex-wrap:wrap; margin-bottom:32px;
+}
+.combo-item {
+  background:var(--card); border:1px solid var(--border);
+  padding:8px 18px; border-radius:100px;
+  font-size:.82rem; color:var(--cream); font-weight:300;
+  display:flex; align-items:center; gap:8px;
+}
+.combo-item-dot { width:6px; height:6px; border-radius:50%; background:var(--moss-ll); }
+
+.combo-price-area {
+  margin-bottom:32px;
+}
+.combo-de {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.4rem; color:var(--faint);
+  text-decoration:line-through; margin-bottom:4px;
+}
+.combo-por {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(3.5rem, 7vw, 5.5rem);
+  font-weight:300; color:var(--gold-l); line-height:1;
+  margin-bottom:8px;
+}
+.combo-parcela {
+  font-size:.88rem; color:var(--muted); font-weight:300;
+}
+
+.combo-cta {
+  display:inline-flex; align-items:center; gap:12px;
+  background:linear-gradient(135deg, var(--moss) 0%, var(--moss-l) 100%);
+  color:var(--cream); padding:20px 56px; border-radius:100px;
+  font-size:1.05rem; font-weight:500; text-decoration:none;
+  position:relative; overflow:hidden;
+  transition:transform .2s, box-shadow .2s;
+  box-shadow:0 8px 32px rgba(61,107,74,.25);
+}
+.combo-cta:hover {
+  transform:translateY(-3px);
+  box-shadow:0 14px 40px rgba(61,107,74,.35);
+}
+.combo-guarantee {
+  margin-top:20px; font-size:.8rem; color:var(--faint);
+  display:flex; align-items:center; justify-content:center; gap:8px;
+}
+
+/* ── PARA QUEM É ─────────────────────────────────────── */
+.paraquem { background:var(--deep); }
+.paraquem h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  font-weight:300; line-height:1.15; margin-bottom:48px;
+}
+.paraquem h2 em { font-style:italic; color:var(--moss-ll); }
+
+.pq-grid {
+  display:grid; grid-template-columns:repeat(2,1fr);
+  gap:16px;
+}
+@media(max-width:640px){ .pq-grid { grid-template-columns:1fr; } }
+
+.pq-item {
+  display:flex; align-items:flex-start; gap:16px;
+  background:var(--card); border:1px solid var(--border);
+  padding:20px 24px; border-radius:8px;
+}
+.pq-check {
+  width:24px; height:24px; border-radius:50%;
+  background:var(--moss); display:flex; align-items:center;
+  justify-content:center; flex-shrink:0; margin-top:1px;
+  font-size:.7rem;
+}
+.pq-text { font-size:.9rem; color:var(--muted); font-weight:300; line-height:1.6; }
+
+/* ── TRANSFORMAÇÃO ───────────────────────────────────── */
+.transf { background:var(--night); }
+.transf h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2rem, 4.5vw, 3.5rem);
+  font-weight:300; line-height:1.15; margin-bottom:16px;
+}
+.transf h2 em { font-style:italic; color:var(--gold-l); }
+.transf .lead {
+  color:var(--muted); font-weight:300; font-size:.95rem;
+  max-width:560px; margin-bottom:56px; line-height:1.7;
+}
+
+.transf-grid {
+  display:grid; grid-template-columns:repeat(3,1fr); gap:16px;
+}
+@media(max-width:700px){ .transf-grid { grid-template-columns:1fr; } }
+
+.transf-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:12px; padding:28px 24px;
+}
+.transf-num {
+  font-family:'Cormorant Garamond', serif;
+  font-size:2.8rem; font-weight:300; color:rgba(122,184,138,.2);
+  line-height:1; margin-bottom:12px;
+}
+.transf-title {
+  font-size:1rem; font-weight:500; color:var(--cream);
+  margin-bottom:8px;
+}
+.transf-desc {
+  font-size:.86rem; color:var(--muted); font-weight:300; line-height:1.6;
+}
+
+/* ── SOBRE ───────────────────────────────────────────── */
+.sobre {
+  background:var(--deep);
+  border-top:1px solid var(--border);
+}
+.sobre-inner {
+  display:grid; grid-template-columns:1fr 1fr;
+  gap:64px; align-items:center;
+}
+@media(max-width:680px){ .sobre-inner { grid-template-columns:1fr; } }
+
+.sobre-avatar {
+  width:180px; height:180px; border-radius:50%;
+  background:var(--card2);
+  border:2px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'Cormorant Garamond', serif;
+  font-size:3rem; color:var(--moss-ll); margin-bottom:24px;
+}
+.sobre h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight:300; margin-bottom:16px;
+}
+.sobre p {
+  color:var(--muted); font-weight:300; line-height:1.8;
+  font-size:.92rem; margin-bottom:12px;
+}
+.sobre-tag {
+  display:inline-block;
+  background:var(--card2); border:1px solid var(--border);
+  padding:6px 14px; border-radius:100px;
+  font-size:.75rem; color:var(--moss-ll); margin-right:8px; margin-top:8px;
+}
+
+/* ── FAQ ─────────────────────────────────────────────── */
+.faq { background:var(--night); }
+.faq h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2rem, 4vw, 3rem);
+  font-weight:300; margin-bottom:48px;
+}
+.faq h2 em { font-style:italic; color:var(--moss-ll); }
+
+.faq-list { display:flex; flex-direction:column; gap:2px; }
+
+details {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:8px; overflow:hidden;
+}
+details + details { margin-top:2px; }
+summary {
+  padding:20px 24px; cursor:pointer;
+  font-size:.95rem; font-weight:400; color:var(--cream);
+  display:flex; justify-content:space-between; align-items:center;
+  list-style:none; user-select:none;
+}
+summary::-webkit-details-marker { display:none; }
+summary::after {
+  content:'+'; font-size:1.3rem; color:var(--moss-ll);
+  transition:transform .2s; font-weight:300;
+}
+details[open] summary::after { transform:rotate(45deg); }
+.faq-answer {
+  padding:0 24px 20px; color:var(--muted);
+  font-size:.88rem; font-weight:300; line-height:1.8;
+  border-top:1px solid var(--border);
+  padding-top:16px;
+}
+
+/* ── CTA FINAL ──────────────────────────────────────── */
+.cta-final {
+  background:var(--deep);
+  border-top:1px solid var(--border);
+  text-align:center; padding:120px 40px;
+  position:relative; overflow:hidden;
+}
+.cta-final::before {
+  content:''; position:absolute;
+  top:50%; left:50%; transform:translate(-50%,-50%);
+  width:800px; height:400px;
+  background:radial-gradient(ellipse, rgba(61,107,74,.1) 0%, transparent 65%);
+  pointer-events:none;
+}
+.cta-final h2 {
+  font-family:'Cormorant Garamond', serif;
+  font-size:clamp(2.5rem, 6vw, 5rem);
+  font-weight:300; line-height:1.05; margin-bottom:16px;
+  position:relative;
+}
+.cta-final h2 em { font-style:italic; color:var(--moss-ll); }
+.cta-final p {
+  color:var(--muted); font-weight:300; font-size:.95rem;
+  max-width:480px; margin:0 auto 48px; line-height:1.7;
+  position:relative;
+}
+
+/* ── FOOTER ─────────────────────────────────────────── */
+footer {
+  padding:40px; background:var(--night);
+  border-top:1px solid var(--border);
+  display:flex; justify-content:space-between; align-items:center;
+  flex-wrap:wrap; gap:16px;
+}
+.footer-logo {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1rem; font-weight:300; color:var(--moss-ll);
+}
+.footer-text {
+  font-size:.78rem; color:var(--faint); font-weight:300;
+}
+
+/* ── STICKY CTA MOBILE ──────────────────────────────── */
+.sticky-bar {
+  display:none; position:fixed; bottom:0; left:0; right:0;
+  background:rgba(8,14,9,.95); backdrop-filter:blur(12px);
+  border-top:1px solid var(--border);
+  padding:16px 24px; z-index:100;
+  flex-direction:column; align-items:center; gap:4px;
+}
+@media(max-width:640px){ .sticky-bar { display:flex; } }
+.sticky-price {
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.4rem; color:var(--gold-l);
+}
+.sticky-cta {
+  width:100%; background:var(--moss); color:var(--cream);
+  padding:14px; border-radius:100px; text-align:center;
+  font-size:.9rem; font-weight:500; text-decoration:none;
+}
+
+/* ── SCROLL INDICATOR ───────────────────────────────── */
+.scroll-hint {
+  position:absolute; bottom:40px; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:8px;
+  animation:fadeUp 1s ease 1.5s both;
+}
+.scroll-line {
+  width:1px; height:40px;
+  background:linear-gradient(to bottom, var(--moss-ll), transparent);
+  animation:shimmer 2s ease infinite;
+}
+.scroll-text {
+  font-size:.68rem; color:var(--faint); letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+/* ── UTILS ──────────────────────────────────────────── */
+@media(max-width:600px){
+  section { padding:72px 24px; }
+  nav { padding:14px 24px; }
+  .hero { padding:100px 24px 72px; }
+  .combo-box { padding:32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-logo serif">Terapeuta Eficiente</span>
+  <a href="#combo" class="nav-cta">Quero o Combo →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      Combo Completo · Lançamento
+    </div>
+
+    <h1 class="hero-h1 serif">
+      Recupere<br>
+      <em>2 horas por dia</em><br>
+      <span class="line-gold">na sua clínica</span>
+    </h1>
+
+    <p class="hero-sub">
+      O kit completo para terapeutas que querem usar IA de forma prática, ética e sem complicação técnica — ebook, sistema no Notion e agente personalizado em um único combo.
+    </p>
+
+    <div class="hero-price-block">
+      <span class="hero-price-was serif">R$ 1.491</span>
+      <span class="hero-price-main serif">R$ 497</span>
+    </div>
+    <p class="hero-price-note">ou 12× de R$ 49,27 · acesso imediato</p>
+
+    <a href="#combo" class="hero-cta">
+      Quero o combo completo
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+
+    <p class="hero-guarantee">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      7 dias de garantia incondicional · sem perguntas
+    </p>
+  </div>
+
+  <div class="scroll-hint">
+    <span class="scroll-text">role para ver</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section class="problema">
+  <div class="section-inner">
+    <div class="problema-grid fade-up">
+      <div>
+        <span class="eyebrow">O problema real</span>
+        <h2 class="serif">Você não se <em>formou</em> para isso.</h2>
+        <p>Prontuários acumulados, WhatsApp sem resposta, posts que prometeu criar semana passada — e uma lista de tarefas que nunca acaba.</p>
+        <p>O problema não é falta de disciplina. É falta de sistema. E sistema é exatamente o que este combo entrega.</p>
+      </div>
+      <div class="dores">
+        <div class="dor-item">
+          <span class="dor-icon">✕</span>
+          <span class="dor-text">Prontuários escritos às 22h depois de um dia inteiro de atendimentos</span>
+        </div>
+        <div class="dor-item">
+          <span class="dor-icon">✕</span>
+          <span class="dor-text">Instagram travado — você sabe que precisa postar mas nunca sai do rascunho</span>
+        </div>
+        <div class="dor-item">
+          <span class="dor-icon">✕</span>
+          <span class="dor-text">WhatsApp acumulando mensagens de pacientes esperando resposta</span>
+        </div>
+        <div class="dor-item">
+          <span class="dor-icon">✕</span>
+          <span class="dor-text">Propostas de mentoria refeitas do zero toda vez que alguém pergunta</span>
+        </div>
+        <div class="dor-item">
+          <span class="dor-icon">✕</span>
+          <span class="dor-text">Medo de usar IA por não saber se está dentro da ética do CFP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUTOS -->
+<section class="produtos">
+  <div class="section-inner">
+    <span class="eyebrow fade-up">O que está incluído</span>
+    <h2 class="serif fade-up">Três produtos.<br><em>Uma transformação.</em></h2>
+    <p class="lead fade-up">Cada item foi criado especificamente para a rotina de terapeutas — com a linguagem, as preocupações éticas e o dia a dia real de quem atende pacientes.</p>
+
+    <div class="produto-cards">
+
+      <!-- EBOOK -->
+      <div class="produto-card ebook fade-up">
+        <div class="prod-num serif">01</div>
+        <h3 class="prod-title serif">Terapeuta Eficiente</h3>
+        <p class="prod-subtitle">Ebook Digital · PDF</p>
+        <div class="prod-sep"></div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> 6 módulos do zero ao sistema funcionando</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Prompts prontos para WhatsApp e documentação clínica</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Método do resumo de voz para prontuários em 5 min</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> 30 ganchos + calendário editorial para Instagram</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Dentro da Resolução CFP nº 9/2024</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Bônus: 30 prompts prontos + checklist semanal</div>
+        <div class="prod-valor">
+          <span class="prod-preco-de serif">R$ 497</span>
+          <span class="prod-badge">Incluso</span>
+        </div>
+      </div>
+
+      <!-- NOTION -->
+      <div class="produto-card notion fade-up" style="animation-delay:.1s">
+        <div class="prod-num serif">02</div>
+        <h3 class="prod-title serif">Ebook no Notion</h3>
+        <p class="prod-subtitle">Guia Prático · PDF</p>
+        <div class="prod-sep"></div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Como montar o Terapeuta Eficiente no Notion</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Banco de prompts filtrável por categoria</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Calendário editorial como banco de dados visual</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Template duplicável de registro de evolução</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Estrutura para criar novos ebooks no Notion</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Integração com entrega automática na Hotmart</div>
+        <div class="prod-valor">
+          <span class="prod-preco-de serif">R$ 497</span>
+          <span class="prod-badge">Incluso</span>
+        </div>
+      </div>
+
+      <!-- AGENTE -->
+      <div class="produto-card agente fade-up" style="animation-delay:.2s">
+        <div class="prod-num serif">03</div>
+        <h3 class="prod-title serif">Agente IA<br><em class="serif">para Terapeutas</em></h3>
+        <p class="prod-subtitle">Sistema Digital · Essencial</p>
+        <div class="prod-sep"></div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> System prompt personalizado para a sua prática</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Base de conhecimento com +80 prompts calibrados</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Configurado para o seu tom, público e abordagem</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Prompts por categoria: comunicação, docs, conteúdo</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Guia de implementação em 7 dias</div>
+        <div class="prod-item"><span class="prod-item-icon">→</span> Suporte por mensagem por 30 dias</div>
+        <div class="prod-valor">
+          <span class="prod-preco-de serif">R$ 497</span>
+          <span class="prod-badge">Incluso</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- COMBO BOX -->
+    <div class="combo-box fade-up" id="combo">
+      <span class="eyebrow">Combo completo</span>
+      <h3 class="combo-title serif">Os três juntos por um preço único</h3>
+      <p class="combo-subtitle">Tudo que você precisa para transformar sua rotina clínica com IA — de uma vez.</p>
+
+      <div class="combo-items">
+        <span class="combo-item"><span class="combo-item-dot"></span> Ebook PDF</span>
+        <span class="combo-item"><span class="combo-item-dot"></span> Guia Notion</span>
+        <span class="combo-item"><span class="combo-item-dot"></span> Agente IA Essencial</span>
+        <span class="combo-item"><span class="combo-item-dot"></span> 30 dias de suporte</span>
+        <span class="combo-item"><span class="combo-item-dot"></span> Checklist + Prompts</span>
+      </div>
+
+      <div class="combo-price-area">
+        <p class="combo-de serif">De R$ 1.491</p>
+        <p class="combo-por serif">R$ 497</p>
+        <p class="combo-parcela">ou 12× de R$ 49,27 sem juros · acesso imediato após a confirmação</p>
+      </div>
+
+      <a href="https://pay.hotmart.com/M104557472U" class="combo-cta">
+        Quero o combo agora
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+
+      <p class="combo-guarantee">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Garantia de 7 dias — se não gostar, devolvemos 100% do valor sem perguntas
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUEM É -->
+<section class="paraquem">
+  <div class="section-inner">
+    <span class="eyebrow fade-up">Este combo é para você se…</span>
+    <h2 class="serif fade-up">Você reconhece <em>pelo menos 3</em><br>dessas situações</h2>
+
+    <div class="pq-grid fade-up">
+      <div class="pq-item">
+        <div class="pq-check">✓</div>
+        <p class="pq-text">Você passa mais de 1 hora por dia em tarefas administrativas que não precisariam ser suas</p>
+      </div>
+      <div class="pq-item">
+        <div class="pq-check">✓</div>
+        <p class="pq-text">Seus prontuários ficam para o fim do dia — ou do fim de semana</p>
+      </div>
+      <div class="pq-item">
+        <div class="pq-check">✓</div>
+        <p class="pq-text">Você sabe que precisa de presença nas redes sociais, mas nunca encontra tempo</p>
+      </div>
+      <div class="pq-item">
+        <div class="pq-check">✓</div>
+        <p class="pq-text">Já ouviu falar de IA mas não sabe por onde começar — ou tem medo de fazer errado</p>
+      </div>
+      <div class="pq-item">
+        <div class="pq-check">✓</div>
+        <p class="pq-text">Quer usar tecnologia mas precisa ter certeza de que está dentro da ética do CFP</p>
+      </div>
+      <div class="pq-item">
+        <div class="pq-check">✓</div>
+        <p class="pq-text">Está cansada de improvisar e quer um sistema que funcione no dia a dia real da clínica</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORMAÇÃO -->
+<section class="transf">
+  <div class="section-inner">
+    <span class="eyebrow fade-up">O que muda</span>
+    <h2 class="serif fade-up">Depois de implementar,<br><em>a sua semana muda assim</em></h2>
+    <p class="lead fade-up">Não é sobre tecnologia. É sobre ter mais energia para o que realmente importa.</p>
+
+    <div class="transf-grid">
+      <div class="transf-card fade-up">
+        <div class="transf-num serif">2h</div>
+        <h4 class="transf-title">Recuperadas por dia</h4>
+        <p class="transf-desc">Prontuários em 5 minutos com o método do resumo de voz. WhatsApp respondido com um clique.</p>
+      </div>
+      <div class="transf-card fade-up" style="animation-delay:.1s">
+        <div class="transf-num serif">30</div>
+        <h4 class="transf-title">Posts gerados em 10 min</h4>
+        <p class="transf-desc">Um prompt e um mês inteiro de conteúdo para o Instagram. Sem travar, sem improviso.</p>
+      </div>
+      <div class="transf-card fade-up" style="animation-delay:.2s">
+        <div class="transf-num serif">7d</div>
+        <h4 class="transf-title">Para implementar tudo</h4>
+        <p class="transf-desc">Com o checklist semanal incluso, você tem um sistema funcionando em uma semana.</p>
+      </div>
+      <div class="transf-card fade-up">
+        <div class="transf-num serif">0</div>
+        <h4 class="transf-title">Conhecimento técnico necessário</h4>
+        <p class="transf-desc">Se você sabe copiar e colar, você consegue usar tudo o que está neste combo.</p>
+      </div>
+      <div class="transf-card fade-up" style="animation-delay:.1s">
+        <div class="transf-num serif">∞</div>
+        <h4 class="transf-title">Acesso vitalício</h4>
+        <p class="transf-desc">Sem renovação, sem mensalidade. Comprou, é seu para sempre — incluindo atualizações.</p>
+      </div>
+      <div class="transf-card fade-up" style="animation-delay:.2s">
+        <div class="transf-num serif">CFP</div>
+        <h4 class="transf-title">Dentro da ética</h4>
+        <p class="transf-desc">Tudo desenvolvido respeitando a Resolução CFP nº 9/2024 e as normas de sigilo e LGPD.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="sobre">
+  <div class="section-inner">
+    <div class="sobre-inner fade-up">
+      <div>
+        <div class="sobre-avatar">SA</div>
+        <span class="sobre-tag">Especialista em IA</span>
+        <span class="sobre-tag">IA aplicada à saúde mental</span>
+        <span class="sobre-tag">Automação e Produtividade</span>
+      </div>
+      <div>
+        <span class="eyebrow">Quem criou este material</span>
+        <h2 class="serif">Silvia Assay</h2>
+        <p>Sou especialista em Inteligência Artificial aplicada a profissionais de saúde mental. Criei estes materiais porque vi terapeutas brilhantes perdendo horas com burocracia que a IA resolve em minutos — mas sem nenhum recurso que respeitasse a ética da profissão.</p>
+        <p>Cada prompt, cada estrutura e cada sistema neste combo foi desenvolvido em colaboração com terapeutas reais e testado na prática clínica.</p>
+        <p>Meu objetivo é simples: que você pare de perder energia com tarefas repetitivas e passe mais tempo fazendo o que escolheu fazer — cuidar de pessoas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="section-inner">
+    <span class="eyebrow fade-up">Perguntas frequentes</span>
+    <h2 class="serif fade-up">Ainda tem <em>dúvidas?</em></h2>
+
+    <div class="faq-list fade-up">
+      <details>
+        <summary>Preciso entender de tecnologia para usar?</summary>
+        <div class="faq-answer">Não. Se você sabe abrir o WhatsApp e copiar um texto, você consegue usar tudo. Os prompts são para copiar, colar e editar os campos entre [colchetes]. Sem código, sem instalação, sem complicação.</div>
+      </details>
+      <details>
+        <summary>Isso é ético? Posso usar com pacientes?</summary>
+        <div class="faq-answer">Sim — e com muito cuidado para garantir isso. Todo o material foi desenvolvido respeitando a Resolução CFP nº 9/2024 e as normas de sigilo e LGPD. Os prompts nunca usam dados identificáveis de pacientes e os documentos clínicos são sempre rascunhos para a sua revisão. A responsabilidade clínica é sempre sua.</div>
+      </details>
+      <details>
+        <summary>Qual ferramenta de IA preciso usar?</summary>
+        <div class="faq-answer">Os prompts funcionam com Claude (claude.ai), ChatGPT e Gemini — os três têm versão gratuita. Você não precisa assinar nada além do que já tem. O material indica qual ferramenta funciona melhor para cada situação, mas qualquer uma serve.</div>
+      </details>
+      <details>
+        <summary>O Notion é gratuito? Preciso pagar algo extra?</summary>
+        <div class="faq-answer">Sim, o Notion tem um plano gratuito robusto que é suficiente para tudo neste combo. Você não precisa assinar nem gastar nada além do valor do combo. O guia mostra como usar a versão gratuita do começo ao fim.</div>
+      </details>
+      <details>
+        <summary>Como funciona o acesso após a compra?</summary>
+        <div class="faq-answer">Imediatamente após a confirmação do pagamento, você recebe acesso ao Agente IA pela Hotmart. Os dois ebooks em PDF são enviados diretamente para o seu e-mail. O Agente IA personalizado é entregue em até 48h úteis com o material configurado para a sua prática.</div>
+      </details>
+      <details>
+        <summary>E se eu não gostar? Existe garantia?</summary>
+        <div class="faq-answer">Sim. Você tem 7 dias corridos após a compra para pedir o reembolso integral. Basta enviar uma mensagem — sem perguntas, sem burocracia. O reembolso é processado pela Hotmart em até 5 dias úteis.</div>
+      </details>
+      <details>
+        <summary>Este combo tem validade ou mensalidade?</summary>
+        <div class="faq-answer">Nenhuma. Você paga uma vez e o acesso é seu para sempre. Incluindo todas as atualizações futuras do material — quando algo mudar nas ferramentas ou nas resoluções do CFP, o material é atualizado e você recebe sem pagar nada extra.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <h2 class="serif fade-up">Comece a recuperar<br><em>seu tempo amanhã</em></h2>
+  <p class="fade-up">Acesso imediato. Sem mensalidade. Dentro da ética do CFP. Com garantia de 7 dias.</p>
+
+  <div class="fade-up" style="margin-bottom:16px;">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.2rem; color:var(--faint); text-decoration:line-through; margin-bottom:4px;">R$ 1.491 separado</p>
+    <p style="font-family:'Cormorant Garamond',serif; font-size:4rem; color:var(--gold-l); line-height:1; margin-bottom:8px;">R$ 497</p>
+    <p style="font-size:.85rem; color:var(--muted);">ou 12× de R$ 49,27 · acesso imediato</p>
+  </div>
+
+  <a href="https://pay.hotmart.com/M104557472U" class="combo-cta fade-up" style="position:relative;">
+    Quero o combo completo agora
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+
+  <p class="combo-guarantee fade-up" style="margin-top:20px; justify-content:center;">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    Garantia incondicional de 7 dias · Processado pela Hotmart
+  </p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo serif">Terapeuta Eficiente</span>
+  <span class="footer-text">Silvia Assay · Especialista em IA</span>
+  <span class="footer-text">© 2025 · Todos os direitos reservados</span>
+</footer>
+
+<!-- STICKY MOBILE -->
+<div class="sticky-bar">
+  <span class="sticky-price serif">Combo por R$ 497</span>
+  <a href="https://pay.hotmart.com/M104557472U" class="sticky-cta">Comprar agora →</a>
+</div>
+
+<script>
+// Scroll animations
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      obs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+
+// Stagger cards
+document.querySelectorAll('.produto-card, .transf-card, .pq-item').forEach((el,i) => {
+  el.style.transitionDelay = (i % 3) * 0.08 + 's';
+});
+</script>
+</body>
+</html>
