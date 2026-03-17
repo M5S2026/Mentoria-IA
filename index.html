@@ -251,7 +251,6 @@ section{padding:5rem 2rem}
 .n4 .nivel-price{color:var(--amber)}
 .n5 .nivel-price{color:var(--pink)}
 
-.nivel-price-alt{font-size:.85rem;font-weight:600;display:block;opacity:.6;margin-top:.15rem}
 .nivel-period{font-size:.72rem;color:var(--text3);display:block;margin-bottom:.75rem}
 .nivel-btn{
   display:inline-block;padding:.45rem 1rem;border-radius:8px;
@@ -528,10 +527,6 @@ footer a:hover{color:var(--text)}
   .dash-stats{grid-template-columns:1fr}
   .dash-stats .ds:last-child{grid-column:auto}
 }
-/* ── LANG SWITCHER ── */
-.lang-sw{display:flex;gap:.3rem;margin-left:.75rem}
-.lang-btn{background:transparent;border:1px solid var(--border);color:var(--text3);padding:.2rem .45rem;border-radius:6px;cursor:pointer;font-size:.6rem;font-weight:700;letter-spacing:.05em;transition:.2s;font-family:'Inter',sans-serif}
-.lang-btn:hover,.lang-btn.active{background:var(--purple);color:var(--white);border-color:var(--purple)}
 </style>
 </head>
 <body>
@@ -540,17 +535,12 @@ footer a:hover{color:var(--text)}
 <nav>
   <a href="#" class="nav-logo">🤖 <span>AI Mentor Academy</span></a>
   <ul class="nav-links">
-    <li><a href="#niveis" data-i18n="nav-1">Níveis</a></li>
-    <li><a href="#mentores" data-i18n="nav-2">Mentores</a></li>
-    <li><a href="#dashboard" data-i18n="nav-3">Dashboard</a></li>
-    <li><a href="#faq" data-i18n="nav-4">FAQ</a></li>
+    <li><a href="#niveis">Níveis</a></li>
+    <li><a href="#mentores">Mentores</a></li>
+    <li><a href="#dashboard">Dashboard</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#niveis" class="nav-cta" data-i18n="nav-cta">Começar Grátis</a>
-  <div class="lang-sw">
-    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
-    <button class="lang-btn" onclick="setLang('en')">EN</button>
-    <button class="lang-btn" onclick="setLang('ja')">JA</button>
-  </div>
+  <a href="#niveis" class="nav-cta">Começar Grátis</a>
 </nav>
 
 <!-- HERO -->
@@ -560,60 +550,60 @@ footer a:hover{color:var(--text)}
 
   <div class="hero-badge">
     <span class="badge-dot"></span>
-    <span data-i18n="hero-badge">7 mentores disponíveis agora · sem espera</span>
+    7 mentores disponíveis agora · sem espera
   </div>
 
   <h1>
-    <span data-i18n="hero-h1a">7 Mentores IA.</span><br>
-    <span class="h1-gradient" data-i18n="hero-h1b">5 Níveis. Sem Curso.</span>
+    7 Mentores IA.<br>
+    <span class="h1-gradient">5 Níveis. Sem Curso.</span>
   </h1>
 
-  <p class="hero-sub" data-i18n-html="hero-sub">
+  <p class="hero-sub">
     Converse com agentes de IA treinados nos <strong>melhores frameworks de negócios</strong>,
     vendas e conteúdo. Aprenda no seu nível, no seu ritmo —
     <strong>sem depender de curso gravado que ninguém termina.</strong>
   </p>
 
   <div class="hero-ctas">
-    <a href="#niveis" class="btn-primary" data-i18n="hero-cta1">Escolher Meu Nível — Grátis →</a>
-    <a href="#mentores" class="btn-ghost" data-i18n="hero-cta2">Conhecer os Mentores</a>
+    <a href="#niveis" class="btn-primary">Escolher Meu Nível — Grátis →</a>
+    <a href="#mentores" class="btn-ghost">Conhecer os Mentores</a>
   </div>
-  <p class="hero-proof" data-i18n="hero-proof">Sem cadastro &nbsp;·&nbsp; Sem cartão &nbsp;·&nbsp; Comece em 10 segundos</p>
+  <p class="hero-proof">Sem cadastro &nbsp;·&nbsp; Sem cartão &nbsp;·&nbsp; Comece em 10 segundos</p>
 
   <div class="hero-stats">
-    <div class="stat"><span class="stat-n">2.400+</span><span class="stat-l" data-i18n="stat-1">sessões realizadas</span></div>
-    <div class="stat"><span class="stat-n">4.9/5</span><span class="stat-l" data-i18n="stat-2">avaliação média</span></div>
-    <div class="stat"><span class="stat-n">850+</span><span class="stat-l" data-i18n="stat-3">profissionais impactados</span></div>
-    <div class="stat"><span class="stat-n">47</span><span class="stat-l" data-i18n="stat-4">frameworks de elite</span></div>
+    <div class="stat"><span class="stat-n">2.400+</span><span class="stat-l">sessões realizadas</span></div>
+    <div class="stat"><span class="stat-n">4.9/5</span><span class="stat-l">avaliação média</span></div>
+    <div class="stat"><span class="stat-n">850+</span><span class="stat-l">profissionais impactados</span></div>
+    <div class="stat"><span class="stat-n">47</span><span class="stat-l">frameworks de elite</span></div>
   </div>
 </section>
 
 <!-- COMO FUNCIONA -->
 <section class="cf-section" id="como-funciona">
   <div class="container">
-    <span class="s-tag" data-i18n="cf-tag">Como funciona</span>
-    <h2 class="s-title" data-i18n="cf-title">4 passos. Sem complicação.</h2>
-    <p class="s-sub" data-i18n="cf-sub">Do primeiro clique à mentoria personalizada em menos de 2 minutos.</p>
+    <span class="s-tag">Como funciona</span>
+    <h2 class="s-title">4 passos. Sem complicação.</h2>
+    <p class="s-sub">Do primeiro clique à mentoria personalizada em menos de 2 minutos.</p>
     <div class="steps reveal">
       <div class="step">
         <div class="step-n">01</div>
-        <h3 data-i18n="cf-s1t">Chegue e converse</h3>
-        <p data-i18n="cf-s1d">Nosso concierge entende quem você é, o que faz e qual é seu nível com IA — sem formulário, só conversa.</p>
+        <h3>Chegue e converse</h3>
+        <p>Nosso concierge entende quem você é, o que faz e qual é seu nível com IA — sem formulário, só conversa.</p>
       </div>
       <div class="step">
         <div class="step-n">02</div>
-        <h3 data-i18n="cf-s2t">Receba sua avaliação</h3>
-        <p data-i18n="cf-s2d">Em tempo real, o concierge identifica seu nível e quais áreas do seu negócio mais se beneficiam de IA agora.</p>
+        <h3>Receba sua avaliação</h3>
+        <p>Em tempo real, o concierge identifica seu nível e quais áreas do seu negócio mais se beneficiam de IA agora.</p>
       </div>
       <div class="step">
         <div class="step-n">03</div>
-        <h3 data-i18n="cf-s3t">Conheça seu mentor</h3>
-        <p data-i18n="cf-s3d">O concierge indica os 2–3 mentores ideais para o seu momento. Você escolhe e começa imediatamente.</p>
+        <h3>Conheça seu mentor</h3>
+        <p>O concierge indica os 2–3 mentores ideais para o seu momento. Você escolhe e começa imediatamente.</p>
       </div>
       <div class="step">
         <div class="step-n">04</div>
-        <h3 data-i18n="cf-s4t">Aprenda e evolua</h3>
-        <p data-i18n="cf-s4d">Seu mentor ensina frameworks reais adaptados ao seu contexto. Quando evoluir, avança para o próximo nível.</p>
+        <h3>Aprenda e evolua</h3>
+        <p>Seu mentor ensina frameworks reais adaptados ao seu contexto. Quando evoluir, avança para o próximo nível.</p>
       </div>
     </div>
   </div>
@@ -623,9 +613,9 @@ footer a:hover{color:var(--text)}
 <section id="niveis" style="background:var(--bg);border-top:1px solid var(--border2)">
   <div class="container">
     <div style="text-align:center;margin-bottom:3rem">
-      <span class="s-tag" data-i18n="nv-tag">Os 5 níveis</span>
-      <h2 class="s-title" data-i18n="nv-title">Onde você está hoje?</h2>
-      <p class="s-sub" style="margin:0 auto" data-i18n="nv-sub">Cada nível tem mentores específicos e um plano de aprendizado desenhado para o seu momento.</p>
+      <span class="s-tag">Os 5 níveis</span>
+      <h2 class="s-title">Onde você está hoje?</h2>
+      <p class="s-sub" style="margin:0 auto">Cada nível tem mentores específicos e um plano de aprendizado desenhado para o seu momento.</p>
     </div>
 
     <div class="niveis reveal">
@@ -633,39 +623,37 @@ footer a:hover{color:var(--text)}
       <div class="nivel n1">
         <div class="nivel-icon">1</div>
         <div class="nivel-body">
-          <div class="nivel-tag" data-i18n="n1-tag">Iniciante absoluto</div>
-          <div class="nivel-name" data-i18n="n1-name">IA do Zero</div>
-          <div class="nivel-desc" data-i18n="n1-desc">Nunca usou IA ou está dando os primeiros passos. Aprenda a usar IA no dia a dia, sem código e sem complicação.</div>
+          <div class="nivel-tag">Iniciante absoluto</div>
+          <div class="nivel-name">IA do Zero</div>
+          <div class="nivel-desc">Nunca usou IA ou está dando os primeiros passos. Aprenda a usar IA no dia a dia, sem código e sem complicação.</div>
           <div class="pills">
-            <span class="pill" data-i18n="n1-p1">Nik — Prompts & Automação</span>
-            <span class="pill" data-i18n="n1-p2">Gar — Conteúdo & Redes Sociais</span>
+            <span class="pill">Nik — Prompts & Automação</span>
+            <span class="pill">Gar — Conteúdo & Redes Sociais</span>
           </div>
         </div>
         <div class="nivel-price-col">
-          <span class="nivel-price" data-i18n="n1-price">Grátis</span>
-          <span class="nivel-price-alt" data-i18n="n1-alt">無料 · Free</span>
-          <span class="nivel-period" data-i18n="n1-period">20 mensagens para começar</span>
-          <a href="#" class="nivel-btn" data-i18n="n1-btn">Começar agora →</a>
+          <span class="nivel-price">Grátis</span>
+          <span class="nivel-period">20 mensagens para começar</span>
+          <a href="#" class="nivel-btn">Começar agora →</a>
         </div>
       </div>
 
       <div class="nivel n2">
         <div class="nivel-icon">2</div>
         <div class="nivel-body">
-          <div class="nivel-tag" data-i18n="n2-tag">Usuário curioso</div>
-          <div class="nivel-name" data-i18n="n2-name">IA Produtiva</div>
-          <div class="nivel-desc" data-i18n="n2-desc">Já usa ChatGPT ou Claude mas quer extrair muito mais resultado. Foco em produtividade e automações que funcionam.</div>
+          <div class="nivel-tag">Usuário curioso</div>
+          <div class="nivel-name">IA Produtiva</div>
+          <div class="nivel-desc">Já usa ChatGPT ou Claude mas quer extrair muito mais resultado. Foco em produtividade e automações que funcionam.</div>
           <div class="pills">
-            <span class="pill" data-i18n="n2-p1">Nik — Automações avançadas</span>
-            <span class="pill" data-i18n="n2-p2">Gar — Conteúdo em escala</span>
-            <span class="pill" data-i18n="n2-p3">Rus — Copy & Funis</span>
+            <span class="pill">Nik — Automações avançadas</span>
+            <span class="pill">Gar — Conteúdo em escala</span>
+            <span class="pill">Rus — Copy & Funis</span>
           </div>
         </div>
         <div class="nivel-price-col">
           <span class="nivel-price">R$ 197</span>
-          <span class="nivel-price-alt">¥ 5.900</span>
-          <span class="nivel-period" data-i18n="n2-period">por mês · acesso ilimitado</span>
-          <a href="https://paypal.me/silviaassay899/197BRL" target="_blank" class="nivel-btn" data-i18n="n2-btn">Assinar →</a>
+          <span class="nivel-period">por mês · acesso ilimitado</span>
+          <a href="#" class="nivel-btn">Assinar →</a>
         </div>
       </div>
 
@@ -673,60 +661,57 @@ footer a:hover{color:var(--text)}
         <div class="popular-badge">⭐ Mais popular</div>
         <div class="nivel-icon">3</div>
         <div class="nivel-body">
-          <div class="nivel-tag" data-i18n="n3-tag">Empreendedor</div>
-          <div class="nivel-name" data-i18n="n3-name">AI Mentor Academy Pro</div>
-          <div class="nivel-desc" data-i18n="n3-desc">Para quem quer implementar IA de verdade no negócio. Todos os 7 mentores, 47 frameworks e dashboard de progresso.</div>
+          <div class="nivel-tag">Empreendedor</div>
+          <div class="nivel-name">AI Mentor Academy Pro</div>
+          <div class="nivel-desc">Para quem quer implementar IA de verdade no negócio. Todos os 7 mentores, 47 frameworks e dashboard de progresso.</div>
           <div class="pills">
-            <span class="pill" data-i18n="n3-p1">Todos os 7 mentores</span>
-            <span class="pill" data-i18n="n3-p2">47 frameworks</span>
-            <span class="pill" data-i18n="n3-p3">Dashboard de progresso</span>
+            <span class="pill">Todos os 7 mentores</span>
+            <span class="pill">47 frameworks</span>
+            <span class="pill">Dashboard de progresso</span>
           </div>
         </div>
         <div class="nivel-price-col">
           <span class="nivel-price">R$ 497</span>
-          <span class="nivel-price-alt">¥ 14.900</span>
-          <span class="nivel-period" data-i18n="n3-period">por mês · ou R$ 1.997/ano (¥ 59.900)</span>
-          <a href="https://paypal.me/silviaassay899/497BRL" target="_blank" class="nivel-btn" data-i18n="n3-btn">Assinar Pro →</a>
+          <span class="nivel-period">por mês · ou R$ 1.997/ano</span>
+          <a href="#niveis" class="nivel-btn">Assinar Pro →</a>
         </div>
       </div>
 
       <div class="nivel n4">
         <div class="nivel-icon">4</div>
         <div class="nivel-body">
-          <div class="nivel-tag" data-i18n="n4-tag">Digital avançado</div>
-          <div class="nivel-name" data-i18n="n4-name">IA para Monetizar</div>
-          <div class="nivel-desc" data-i18n="n4-desc">Transforme seu conhecimento de IA em renda. Crie produtos, ofereça serviços de automação e escale o faturamento.</div>
+          <div class="nivel-tag">Digital avançado</div>
+          <div class="nivel-name">IA para Monetizar</div>
+          <div class="nivel-desc">Transforme seu conhecimento de IA em renda. Crie produtos, ofereça serviços de automação e escale o faturamento.</div>
           <div class="pills">
-            <span class="pill" data-i18n="n4-p1">Jef — Lançamentos & Funis</span>
-            <span class="pill" data-i18n="n4-p2">Alex — Ofertas & Escala</span>
-            <span class="pill" data-i18n="n4-p3">Rus — Copy & Vendas</span>
+            <span class="pill">Jef — Lançamentos & Funis</span>
+            <span class="pill">Alex — Ofertas & Escala</span>
+            <span class="pill">Rus — Copy & Vendas</span>
           </div>
         </div>
         <div class="nivel-price-col">
           <span class="nivel-price">R$ 997</span>
-          <span class="nivel-price-alt">¥ 29.900</span>
-          <span class="nivel-period" data-i18n="n4-period">por mês · grupo exclusivo</span>
-          <a href="https://paypal.me/silviaassay899/997BRL" target="_blank" class="nivel-btn" data-i18n="n4-btn">Quero monetizar →</a>
+          <span class="nivel-period">por mês · grupo exclusivo</span>
+          <a href="#" class="nivel-btn">Quero monetizar →</a>
         </div>
       </div>
 
       <div class="nivel n5">
         <div class="nivel-icon">5</div>
         <div class="nivel-body">
-          <div class="nivel-tag" data-i18n="n5-tag">VIP & Estratégico</div>
-          <div class="nivel-name" data-i18n="n5-name">AI Elite Mastermind</div>
-          <div class="nivel-desc" data-i18n="n5-desc">Visão de futuro, primeiros princípios e posicionamento estratégico. Para líderes, inovadores e quem pensa em escala.</div>
+          <div class="nivel-tag">VIP & Estratégico</div>
+          <div class="nivel-name">AI Elite Mastermind</div>
+          <div class="nivel-desc">Visão de futuro, primeiros princípios e posicionamento estratégico. Para líderes, inovadores e quem pensa em escala.</div>
           <div class="pills">
-            <span class="pill" data-i18n="n5-p1">Mus — Inovação & First Principles</span>
-            <span class="pill" data-i18n="n5-p2">San — Futuro da IA & Startups</span>
-            <span class="pill" data-i18n="n5-p3">Alex — Ofertas de alto valor</span>
+            <span class="pill">Mus — Inovação & First Principles</span>
+            <span class="pill">San — Futuro da IA & Startups</span>
+            <span class="pill">Alex — Ofertas de alto valor</span>
           </div>
         </div>
         <div class="nivel-price-col">
           <span class="nivel-price">R$ 1.997</span>
-          <span class="nivel-price-alt">¥ 59.900</span>
-          <span class="nivel-period" data-i18n="n5-period">por mês · vagas limitadas</span>
-          <a href="https://paypal.me/silviaassay899/1997BRL" target="_blank" class="nivel-btn" data-i18n="n5-btn">Entrar na lista →</a>
+          <span class="nivel-period">por mês · vagas limitadas</span>
+          <a href="#" class="nivel-btn">Entrar na lista →</a>
         </div>
       </div>
 
@@ -737,9 +722,9 @@ footer a:hover{color:var(--text)}
 <!-- MENTORES -->
 <section class="mentores-section" id="mentores">
   <div class="container">
-    <span class="s-tag" data-i18n="mt-tag">Seus mentores</span>
-    <h2 class="s-title" data-i18n="mt-title">Conheça seus 7 mentores</h2>
-    <p class="s-sub" data-i18n="mt-sub">Cada um é especialista em uma área. Todos ensinam no seu ritmo.</p>
+    <span class="s-tag">Seus mentores</span>
+    <h2 class="s-title">Conheça seus 7 mentores</h2>
+    <p class="s-sub">Cada um é especialista em uma área. Todos ensinam no seu ritmo.</p>
 
     <div class="mentores-grid reveal">
 
@@ -748,10 +733,10 @@ footer a:hover{color:var(--text)}
           <div class="m-avatar">NK</div>
           <div><div class="m-name">Nik</div><span class="m-nivel-tag">Nível 1 e 2</span></div>
         </div>
-        <div class="m-specialty" data-i18n="m-nik-spec">IA Prática, Prompts & Automação</div>
-        <p class="m-desc" data-i18n="m-nik-desc">Você quer usar IA mas não sabe por onde começar? Nik te pega do zero. Ensina a criar prompts que funcionam, automatizar tarefas repetitivas e ganhar horas de volta toda semana.</p>
-        <p class="m-quote" data-i18n="m-nik-q">"De zero a produtivo com IA."</p>
-        <a href="#" class="m-btn" data-i18n="m-nik-btn">Conversar com Nik →</a>
+        <div class="m-specialty">IA Prática, Prompts & Automação</div>
+        <p class="m-desc">Você quer usar IA mas não sabe por onde começar? Nik te pega do zero. Ensina a criar prompts que funcionam, automatizar tarefas repetitivas e ganhar horas de volta toda semana.</p>
+        <p class="m-quote">"De zero a produtivo com IA."</p>
+        <a href="#" class="m-btn">Conversar com Nik →</a>
       </div>
 
       <div class="mentor-card m-gar">
@@ -759,10 +744,10 @@ footer a:hover{color:var(--text)}
           <div class="m-avatar">GR</div>
           <div><div class="m-name">Gar</div><span class="m-nivel-tag">Nível 1, 2 e 3</span></div>
         </div>
-        <div class="m-specialty" data-i18n="m-gar-spec">Conteúdo Orgânico, Redes Sociais & Branding</div>
-        <p class="m-desc" data-i18n="m-gar-desc">Não perde tempo com teoria. Ensina como usar IA para criar conteúdo que engaja, construir presença digital e transformar atenção em autoridade no Instagram, LinkedIn e YouTube.</p>
-        <p class="m-quote" data-i18n="m-gar-q">"Atenção é a moeda. IA é a impressora."</p>
-        <a href="#" class="m-btn" data-i18n="m-gar-btn">Conversar com Gar →</a>
+        <div class="m-specialty">Conteúdo Orgânico, Redes Sociais & Branding</div>
+        <p class="m-desc">Não perde tempo com teoria. Ensina como usar IA para criar conteúdo que engaja, construir presença digital e transformar atenção em autoridade no Instagram, LinkedIn e YouTube.</p>
+        <p class="m-quote">"Atenção é a moeda. IA é a impressora."</p>
+        <a href="#" class="m-btn">Conversar com Gar →</a>
       </div>
 
       <div class="mentor-card m-jef">
@@ -770,10 +755,10 @@ footer a:hover{color:var(--text)}
           <div class="m-avatar">JF</div>
           <div><div class="m-name">Jef</div><span class="m-nivel-tag">Nível 3 e 4</span></div>
         </div>
-        <div class="m-specialty" data-i18n="m-jef-spec">Lançamentos, Fórmula & Funis Digitais</div>
-        <p class="m-desc" data-i18n="m-jef-desc">Direto ao ponto: se você quer vender online, precisa de estrutura. Ensina como montar lançamentos com IA, criar funis que convertem e usar a Fórmula adaptada para o seu produto.</p>
-        <p class="m-quote" data-i18n="m-jef-q">"Lançamento não é sorte. É método."</p>
-        <a href="#" class="m-btn" data-i18n="m-jef-btn">Conversar com Jef →</a>
+        <div class="m-specialty">Lançamentos, Fórmula & Funis Digitais</div>
+        <p class="m-desc">Direto ao ponto: se você quer vender online, precisa de estrutura. Ensina como montar lançamentos com IA, criar funis que convertem e usar a Fórmula adaptada para o seu produto.</p>
+        <p class="m-quote">"Lançamento não é sorte. É método."</p>
+        <a href="#" class="m-btn">Conversar com Jef →</a>
       </div>
 
       <div class="mentor-card m-rus">
@@ -781,10 +766,10 @@ footer a:hover{color:var(--text)}
           <div class="m-avatar">RS</div>
           <div><div class="m-name">Rus</div><span class="m-nivel-tag">Nível 2, 3 e 4</span></div>
         </div>
-        <div class="m-specialty" data-i18n="m-rus-spec">Funis de Vendas, Storytelling & Copywriting</div>
-        <p class="m-desc" data-i18n="m-rus-desc">Pessoas compram histórias, não produtos. Ensina como construir funis de vendas com IA, escrever copy que converte e estruturar sua oferta do zero ao fechamento.</p>
-        <p class="m-quote" data-i18n="m-rus-q">"Você está a um funil de distância."</p>
-        <a href="#" class="m-btn" data-i18n="m-rus-btn">Conversar com Rus →</a>
+        <div class="m-specialty">Funis de Vendas, Storytelling & Copywriting</div>
+        <p class="m-desc">Pessoas compram histórias, não produtos. Ensina como construir funis de vendas com IA, escrever copy que converte e estruturar sua oferta do zero ao fechamento.</p>
+        <p class="m-quote">"Você está a um funil de distância."</p>
+        <a href="#" class="m-btn">Conversar com Rus →</a>
       </div>
 
       <div class="mentor-card m-alex">
@@ -792,10 +777,10 @@ footer a:hover{color:var(--text)}
           <div class="m-avatar">AL</div>
           <div><div class="m-name">Alex</div><span class="m-nivel-tag">Nível 3, 4 e 5</span></div>
         </div>
-        <div class="m-specialty" data-i18n="m-alex-spec">Ofertas Irresistíveis, Escala & Crescimento</div>
-        <p class="m-desc" data-i18n="m-alex-desc">Não fala de teoria. Fala de números. Ensina como criar ofertas que as pessoas sintam que seria um erro recusar, como precificar para lucrar de verdade e como escalar sem inflar a equipe.</p>
-        <p class="m-quote" data-i18n="m-alex-q">"Construa uma oferta tão boa que recusar doa."</p>
-        <a href="#" class="m-btn" data-i18n="m-alex-btn">Conversar com Alex →</a>
+        <div class="m-specialty">Ofertas Irresistíveis, Escala & Crescimento</div>
+        <p class="m-desc">Não fala de teoria. Fala de números. Ensina como criar ofertas que as pessoas sintam que seria um erro recusar, como precificar para lucrar de verdade e como escalar sem inflar a equipe.</p>
+        <p class="m-quote">"Construa uma oferta tão boa que recusar doa."</p>
+        <a href="#" class="m-btn">Conversar com Alex →</a>
       </div>
 
       <div class="mentor-card m-san">
@@ -803,10 +788,10 @@ footer a:hover{color:var(--text)}
           <div class="m-avatar">SN</div>
           <div><div class="m-name">San</div><span class="m-nivel-tag">Nível 4 e 5</span></div>
         </div>
-        <div class="m-specialty" data-i18n="m-san-spec">Futuro da IA, Startups & Tecnologia de Ponta</div>
-        <p class="m-desc" data-i18n="m-san-desc">Vive no futuro. Ensina o que está por vir na inteligência artificial, como posicionar seu negócio para as mudanças dos próximos 2–5 anos e como pensar em escala desde o dia zero.</p>
-        <p class="m-quote" data-i18n="m-san-q">"O futuro pertence a quem se prepara hoje."</p>
-        <a href="#" class="m-btn" data-i18n="m-san-btn">Conversar com San →</a>
+        <div class="m-specialty">Futuro da IA, Startups & Tecnologia de Ponta</div>
+        <p class="m-desc">Vive no futuro. Ensina o que está por vir na inteligência artificial, como posicionar seu negócio para as mudanças dos próximos 2–5 anos e como pensar em escala desde o dia zero.</p>
+        <p class="m-quote">"O futuro pertence a quem se prepara hoje."</p>
+        <a href="#" class="m-btn">Conversar com San →</a>
       </div>
 
       <div class="mentor-card m-mus">
@@ -814,10 +799,10 @@ footer a:hover{color:var(--text)}
           <div class="m-avatar">MS</div>
           <div><div class="m-name">Mus</div><span class="m-nivel-tag">Nível 5</span></div>
         </div>
-        <div class="m-specialty" data-i18n="m-mus-spec">Visão de Futuro, Inovação & First Principles</div>
-        <p class="m-desc" data-i18n="m-mus-desc">Não ensina táticas. Ensina a pensar diferente. Usa raciocínio por primeiros princípios para te ajudar a identificar oportunidades que ninguém está vendo e questionar premissas do seu mercado.</p>
-        <p class="m-quote" data-i18n="m-mus-q">"Pense em primeiros princípios. Questione tudo."</p>
-        <a href="#" class="m-btn" data-i18n="m-mus-btn">Conversar com Mus →</a>
+        <div class="m-specialty">Visão de Futuro, Inovação & First Principles</div>
+        <p class="m-desc">Não ensina táticas. Ensina a pensar diferente. Usa raciocínio por primeiros princípios para te ajudar a identificar oportunidades que ninguém está vendo e questionar premissas do seu mercado.</p>
+        <p class="m-quote">"Pense em primeiros princípios. Questione tudo."</p>
+        <a href="#" class="m-btn">Conversar com Mus →</a>
       </div>
 
     </div>
@@ -827,41 +812,41 @@ footer a:hover{color:var(--text)}
 <!-- DASHBOARD -->
 <section class="dash-section" id="dashboard">
   <div class="container">
-    <span class="s-tag" data-i18n="db-tag">Seu progresso</span>
-    <h2 class="s-title" data-i18n="db-title">Dashboard do aluno</h2>
-    <p class="s-sub" data-i18n="db-sub">Acompanhe cada sessão, veja quais frameworks você dominou e saiba exatamente quando está pronto para o próximo nível.</p>
+    <span class="s-tag">Seu progresso</span>
+    <h2 class="s-title">Dashboard do aluno</h2>
+    <p class="s-sub">Acompanhe cada sessão, veja quais frameworks você dominou e saiba exatamente quando está pronto para o próximo nível.</p>
 
     <div class="dash-wrap reveal">
       <div class="dash-bar">
-        <span class="dash-logo" data-i18n="db-logo">🤖 AI Mentor Academy — Painel do Aluno</span>
-        <span class="dash-user-info" data-i18n-html="db-user">Olá, <span>Silvia</span> &nbsp;·&nbsp; Nível 3 — Pro</span>
+        <span class="dash-logo">🤖 AI Mentor Academy — Painel do Aluno</span>
+        <span class="dash-user-info">Olá, <span>Silvia</span> &nbsp;·&nbsp; Nível 3 — Pro</span>
       </div>
 
       <div class="dash-stats">
         <div class="ds">
-          <div class="ds-label" data-i18n="db-l1">Sessões totais</div>
+          <div class="ds-label">Sessões totais</div>
           <div class="ds-val">24</div>
-          <div class="ds-sub" data-i18n="db-s1">+3 esta semana</div>
+          <div class="ds-sub">+3 esta semana</div>
         </div>
         <div class="ds">
-          <div class="ds-label" data-i18n="db-l2">Frameworks aprendidos</div>
+          <div class="ds-label">Frameworks aprendidos</div>
           <div class="ds-val">18</div>
-          <div class="ds-sub" data-i18n="db-s2">de 47 disponíveis</div>
+          <div class="ds-sub">de 47 disponíveis</div>
         </div>
         <div class="ds">
-          <div class="ds-label" data-i18n="db-l3">Próximo nível em</div>
+          <div class="ds-label">Próximo nível em</div>
           <div class="ds-val">12</div>
-          <div class="ds-sub" data-i18n="db-s3">sessões estimadas</div>
+          <div class="ds-sub">sessões estimadas</div>
         </div>
       </div>
 
       <div class="dash-nivel-row">
-        <span class="dash-nivel-label" data-i18n="db-active">⭐ Nível 3 — Pro · ativo</span>
-        <span class="dash-nivel-next" data-i18n-html="db-next">Próximo: <b>Nível 4 — IA para Monetizar</b> · desbloqueie em 12 sessões</span>
+        <span class="dash-nivel-label">⭐ Nível 3 — Pro · ativo</span>
+        <span class="dash-nivel-next">Próximo: <b>Nível 4 — IA para Monetizar</b> · desbloqueie em 12 sessões</span>
       </div>
 
       <div class="dash-progress">
-        <div class="dp-title" data-i18n="db-prog">Progresso por mentor</div>
+        <div class="dp-title">Progresso por mentor</div>
         <div class="dp-row">
           <span class="dp-name">Nik</span>
           <div class="dp-bar-bg"><div class="dp-fill" style="width:85%;background:var(--green)"></div></div>
@@ -905,9 +890,9 @@ footer a:hover{color:var(--text)}
 <!-- DEPOIMENTOS -->
 <section class="depos-section" id="depoimentos">
   <div class="container">
-    <span class="s-tag" data-i18n="dp-tag">Resultados reais</span>
-    <h2 class="s-title" data-i18n="dp-title">O que dizem quem já passou</h2>
-    <p class="s-sub" data-i18n="dp-sub">Resultados de profissionais que decidiram aprender com mentores IA.</p>
+    <span class="s-tag">Resultados reais</span>
+    <h2 class="s-title">O que dizem quem já passou</h2>
+    <p class="s-sub">Resultados de profissionais que decidiram aprender com mentores IA.</p>
     <div class="depos-grid reveal">
       <div class="depo">
         <div class="depo-stars">★★★★★</div>
@@ -958,7 +943,7 @@ footer a:hover{color:var(--text)}
         </div>
       </div>
     </div>
-    <p style="text-align:center;font-size:.75rem;color:var(--text3);margin-top:1.5rem" data-i18n="dp-disc">Resultados baseados em experiência com beta testers. Resultados individuais podem variar.</p>
+    <p style="text-align:center;font-size:.75rem;color:var(--text3);margin-top:1.5rem">Resultados baseados em experiência com beta testers. Resultados individuais podem variar.</p>
   </div>
 </section>
 
@@ -966,8 +951,8 @@ footer a:hover{color:var(--text)}
 <section class="faq-section" id="faq">
   <div class="container">
     <div style="text-align:center">
-      <span class="s-tag" data-i18n="fq-tag">Dúvidas</span>
-      <h2 class="s-title" data-i18n="fq-title">Perguntas frequentes</h2>
+      <span class="s-tag">Dúvidas</span>
+      <h2 class="s-title">Perguntas frequentes</h2>
     </div>
     <div class="faq-wrap">
       <div class="faq-item">
@@ -1007,18 +992,18 @@ footer a:hover{color:var(--text)}
   <div class="cta-glow"></div>
   <div class="cta-line"></div>
   <div class="container">
-    <span class="cta-urgency" data-i18n="cta-urg">⚡ 850+ profissionais já começaram — sua vez agora</span>
+    <span class="cta-urgency">⚡ 850+ profissionais já começaram — sua vez agora</span>
     <h2>
-      <span data-i18n="cta-h1">Você pode continuar</span><br>
-      <span data-i18n="cta-h2">sozinho. Ou ter</span><br>
-      <span class="cta-g" data-i18n="cta-h3">7 mentores ao seu lado.</span>
+      Você pode continuar<br>
+      sozinho. Ou ter<br>
+      <span class="cta-g">7 mentores ao seu lado.</span>
     </h2>
-    <p data-i18n="cta-p">Todo dia que passa, alguém no seu mercado está usando IA para produzir mais, vender mais e crescer mais rápido. A diferença não é talento — é acesso ao conhecimento certo, na hora certa.</p>
+    <p>Todo dia que passa, alguém no seu mercado está usando IA para produzir mais, vender mais e crescer mais rápido. A diferença não é talento — é acesso ao conhecimento certo, na hora certa.</p>
     <div class="cta-btns">
-      <a href="#niveis" class="btn-primary" data-i18n="cta-btn1">Começar Grátis Agora →</a>
-      <a href="#niveis" class="btn-ghost" data-i18n="cta-btn2">Ver todos os planos</a>
+      <a href="#niveis" class="btn-primary">Começar Grátis Agora →</a>
+      <a href="#niveis" class="btn-ghost">Ver todos os planos</a>
     </div>
-    <p class="cta-note" data-i18n="cta-note">7 dias de garantia incondicional &nbsp;·&nbsp; Cancele quando quiser &nbsp;·&nbsp; Sem fidelidade</p>
+    <p class="cta-note">7 dias de garantia incondicional &nbsp;·&nbsp; Cancele quando quiser &nbsp;·&nbsp; Sem fidelidade</p>
   </div>
 </section>
 
@@ -1031,7 +1016,7 @@ footer a:hover{color:var(--text)}
     <a href="#">Termos de Uso</a> &nbsp;·&nbsp;
     <a href="#">Privacidade</a>
   </p>
-  <p data-i18n="footer">© 2026 AI Mentor Academy by Silvia Assay. Todos os direitos reservados.</p>
+  <p>© 2026 AI Mentor Academy by Silvia Assay. Todos os direitos reservados.</p>
 </footer>
 
 <script>
@@ -1065,158 +1050,6 @@ window.addEventListener('scroll',()=>{
   document.querySelector('nav').style.boxShadow=
     window.scrollY>20?'0 1px 30px rgba(0,0,0,.6)':'none';
 });
-
-/* ── i18n ── */
-const T={
-en:{
-'nav-1':'Levels','nav-2':'Mentors','nav-3':'Dashboard','nav-4':'FAQ','nav-cta':'Start Free',
-'hero-badge':'7 mentors available now · no waiting',
-'hero-h1a':'7 AI Mentors.','hero-h1b':'5 Levels. No Course.',
-'hero-sub':'Talk to AI agents trained on the <strong>best business frameworks</strong>, sales and content. Learn at your level, at your pace — <strong>no recorded courses nobody finishes.</strong>',
-'hero-cta1':'Choose My Level — Free →','hero-cta2':'Meet the Mentors',
-'hero-proof':'No signup &nbsp;·&nbsp; No credit card &nbsp;·&nbsp; Start in 10 seconds',
-'stat-1':'sessions completed','stat-2':'average rating','stat-3':'professionals impacted','stat-4':'elite frameworks',
-'cf-tag':'How it works','cf-title':'4 steps. No hassle.','cf-sub':'From first click to personalized mentoring in under 2 minutes.',
-'cf-s1t':'Arrive and chat','cf-s1d':'Our concierge understands who you are, what you do and your AI level — no forms, just conversation.',
-'cf-s2t':'Get your assessment','cf-s2d':'In real time, the concierge identifies your level and which areas of your business benefit most from AI right now.',
-'cf-s3t':'Meet your mentor','cf-s3d':'The concierge recommends the 2–3 ideal mentors for your stage. You choose and start immediately.',
-'cf-s4t':'Learn and evolve','cf-s4d':'Your mentor teaches real frameworks adapted to your context. When you level up, you advance.',
-'nv-tag':'The 5 levels','nv-title':'Where are you today?','nv-sub':'Each level has specific mentors and a learning plan designed for your stage.',
-'n1-tag':'Absolute beginner','n1-name':'AI from Zero','n1-desc':'Never used AI or just getting started. Learn to use AI daily, no code, no complications.',
-'n1-p1':'Nik — Prompts & Automation','n1-p2':'Gar — Content & Social Media',
-'n1-price':'Free','n1-alt':'無料 · Grátis','n1-period':'20 messages to start','n1-btn':'Start now →',
-'n2-tag':'Curious user','n2-name':'Productive AI','n2-desc':'Already uses ChatGPT or Claude but wants much better results. Focus on productivity and automations that work.',
-'n2-p1':'Nik — Advanced automations','n2-p2':'Gar — Content at scale','n2-p3':'Rus — Copy & Funnels',
-'n2-period':'per month · unlimited access','n2-btn':'Subscribe →',
-'n3-tag':'Entrepreneur','n3-name':'AI Mentor Academy Pro','n3-desc':'For those who want to implement AI for real in their business. All 7 mentors, 47 frameworks and progress dashboard.',
-'n3-p1':'All 7 mentors','n3-p2':'47 frameworks','n3-p3':'Progress dashboard',
-'n3-period':'per month · or R$ 1,997/year (¥ 59,900)','n3-btn':'Subscribe Pro →',
-'n4-tag':'Advanced digital','n4-name':'AI to Monetize','n4-desc':'Turn your AI knowledge into income. Create products, offer automation services and scale revenue.',
-'n4-p1':'Jef — Launches & Funnels','n4-p2':'Alex — Offers & Scale','n4-p3':'Rus — Copy & Sales',
-'n4-period':'per month · exclusive group','n4-btn':'I want to monetize →',
-'n5-tag':'VIP & Strategic','n5-name':'AI Elite Mastermind','n5-desc':'Future vision, first principles and strategic positioning. For leaders, innovators and those who think at scale.',
-'n5-p1':'Mus — Innovation & First Principles','n5-p2':'San — Future of AI & Startups','n5-p3':'Alex — High-value offers',
-'n5-period':'per month · limited spots','n5-btn':'Join the waitlist →',
-'mt-tag':'Your mentors','mt-title':'Meet your 7 mentors','mt-sub':'Each one is an expert in a specific area. All teach at your pace.',
-'m-nik-spec':'Practical AI, Prompts & Automation',
-'m-nik-desc':'Want to use AI but don\'t know where to start? Nik takes you from zero. Teaches how to create prompts that work, automate repetitive tasks and save hours every week.',
-'m-nik-q':'"From zero to productive with AI."','m-nik-btn':'Chat with Nik →',
-'m-gar-spec':'Organic Content, Social Media & Branding',
-'m-gar-desc':'No time wasted on theory. Teaches how to use AI to create engaging content, build digital presence and turn attention into authority on Instagram, LinkedIn and YouTube.',
-'m-gar-q':'"Attention is the currency. AI is the printer."','m-gar-btn':'Chat with Gar →',
-'m-jef-spec':'Launches, Formula & Digital Funnels',
-'m-jef-desc':'Straight to the point: if you want to sell online, you need structure. Teaches how to build launches with AI, create converting funnels and use the Formula adapted for your product.',
-'m-jef-q':'"A launch isn\'t luck. It\'s method."','m-jef-btn':'Chat with Jef →',
-'m-rus-spec':'Sales Funnels, Storytelling & Copywriting',
-'m-rus-desc':'People buy stories, not products. Teaches how to build sales funnels with AI, write copy that converts and structure your offer from scratch to close.',
-'m-rus-q':'"You\'re one funnel away."','m-rus-btn':'Chat with Rus →',
-'m-alex-spec':'Irresistible Offers, Scale & Growth',
-'m-alex-desc':'Doesn\'t talk theory. Talks numbers. Teaches how to create offers people feel would be a mistake to refuse, how to price for real profit and how to scale without inflating the team.',
-'m-alex-q':'"Build an offer so good it hurts to refuse."','m-alex-btn':'Chat with Alex →',
-'m-san-spec':'Future of AI, Startups & Cutting-Edge Tech',
-'m-san-desc':'Lives in the future. Teaches what\'s coming in AI, how to position your business for the next 2–5 years and how to think at scale from day zero.',
-'m-san-q':'"The future belongs to those who prepare today."','m-san-btn':'Chat with San →',
-'m-mus-spec':'Future Vision, Innovation & First Principles',
-'m-mus-desc':'Doesn\'t teach tactics. Teaches how to think differently. Uses first principles reasoning to help you identify opportunities nobody sees and question your market\'s assumptions.',
-'m-mus-q':'"Think in first principles. Question everything."','m-mus-btn':'Chat with Mus →',
-'db-tag':'Your progress','db-title':'Student dashboard','db-sub':'Track every session, see which frameworks you\'ve mastered and know exactly when you\'re ready for the next level.',
-'db-logo':'🤖 AI Mentor Academy — Student Panel','db-user':'Hi, <span>Silvia</span> &nbsp;·&nbsp; Level 3 — Pro',
-'db-l1':'Total sessions','db-s1':'+3 this week','db-l2':'Frameworks learned','db-s2':'of 47 available','db-l3':'Next level in','db-s3':'estimated sessions',
-'db-active':'⭐ Level 3 — Pro · active','db-next':'Next: <b>Level 4 — AI to Monetize</b> · unlock in 12 sessions','db-prog':'Progress by mentor',
-'dp-tag':'Real results','dp-title':'What past members say','dp-sub':'Results from professionals who decided to learn with AI mentors.',
-'dp-disc':'Results based on beta tester experience. Individual results may vary.',
-'fq-tag':'Questions','fq-title':'Frequently asked questions',
-'cta-urg':'⚡ 850+ professionals already started — your turn now',
-'cta-h1':'You can keep going','cta-h2':'alone. Or have','cta-h3':'7 mentors by your side.',
-'cta-p':'Every day that passes, someone in your market is using AI to produce more, sell more and grow faster. The difference isn\'t talent — it\'s access to the right knowledge, at the right time.',
-'cta-btn1':'Start Free Now →','cta-btn2':'See all plans',
-'cta-note':'7-day unconditional guarantee &nbsp;·&nbsp; Cancel anytime &nbsp;·&nbsp; No commitment',
-'footer':'© 2026 AI Mentor Academy by Silvia Assay. All rights reserved.'
-},
-ja:{
-'nav-1':'レベル','nav-2':'メンター','nav-3':'ダッシュボード','nav-4':'FAQ','nav-cta':'無料で始める',
-'hero-badge':'7人のメンターが今すぐ利用可能・待ち時間なし',
-'hero-h1a':'7人のAIメンター。','hero-h1b':'5つのレベル。コースなし。',
-'hero-sub':'<strong>最高のビジネスフレームワーク</strong>、セールス、コンテンツで訓練されたAIエージェントと対話。あなたのレベルで、あなたのペースで学ぶ — <strong>誰も最後まで見ない録画コースに頼らずに。</strong>',
-'hero-cta1':'レベルを選ぶ — 無料 →','hero-cta2':'メンターを知る',
-'hero-proof':'登録不要 &nbsp;·&nbsp; カード不要 &nbsp;·&nbsp; 10秒で開始',
-'stat-1':'完了セッション','stat-2':'平均評価','stat-3':'影響を受けた専門家','stat-4':'エリートフレームワーク',
-'cf-tag':'仕組み','cf-title':'4ステップ。シンプル。','cf-sub':'最初のクリックからパーソナライズされたメンタリングまで2分以内。',
-'cf-s1t':'到着して会話する','cf-s1d':'コンシェルジュがあなたの職業、活動、AIレベルを理解します — フォームなし、会話だけ。',
-'cf-s2t':'評価を受ける','cf-s2d':'リアルタイムでコンシェルジュがあなたのレベルを特定し、AIが最も役立つビジネス分野を提案します。',
-'cf-s3t':'メンターに会う','cf-s3d':'コンシェルジュが最適な2〜3人のメンターを推薦。選んですぐに開始できます。',
-'cf-s4t':'学んで進化する','cf-s4d':'メンターがあなたの状況に合わせた実践的フレームワークを教えます。成長したら次のレベルへ。',
-'nv-tag':'5つのレベル','nv-title':'今、あなたはどこにいますか？','nv-sub':'各レベルには専用のメンターと、あなたの段階に合わせた学習プランがあります。',
-'n1-tag':'完全な初心者','n1-name':'ゼロからのAI','n1-desc':'AIを使ったことがない、または最初の一歩を踏み出している方。コードなし、複雑さなしで日常的にAIを活用する方法を学びます。',
-'n1-p1':'Nik — プロンプト & 自動化','n1-p2':'Gar — コンテンツ & SNS',
-'n1-price':'無料','n1-alt':'Free · Grátis','n1-period':'20メッセージで開始','n1-btn':'今すぐ始める →',
-'n2-tag':'好奇心旺盛なユーザー','n2-name':'生産的AI','n2-desc':'ChatGPTやClaudeを使っているが、もっと良い結果を求めている方。生産性と実用的な自動化に焦点。',
-'n2-p1':'Nik — 高度な自動化','n2-p2':'Gar — 大規模コンテンツ','n2-p3':'Rus — コピー & ファネル',
-'n2-period':'月額 · 無制限アクセス','n2-btn':'登録する →',
-'n3-tag':'起業家','n3-name':'AI Mentor Academy Pro','n3-desc':'ビジネスに本格的にAIを導入したい方向け。7人全メンター、47フレームワーク、進捗ダッシュボード。',
-'n3-p1':'7人全メンター','n3-p2':'47フレームワーク','n3-p3':'進捗ダッシュボード',
-'n3-period':'月額 · または年額 R$ 1,997 (¥ 59,900)','n3-btn':'Proに登録 →',
-'n4-tag':'上級デジタル','n4-name':'収益化AI','n4-desc':'AIの知識を収入に変えましょう。製品を作り、自動化サービスを提供し、売上を拡大。',
-'n4-p1':'Jef — ローンチ & ファネル','n4-p2':'Alex — オファー & スケール','n4-p3':'Rus — コピー & セールス',
-'n4-period':'月額 · 限定グループ','n4-btn':'収益化したい →',
-'n5-tag':'VIP & 戦略的','n5-name':'AI Elite Mastermind','n5-desc':'未来のビジョン、第一原理、戦略的ポジショニング。リーダー、イノベーター、スケールで考える人向け。',
-'n5-p1':'Mus — イノベーション & 第一原理','n5-p2':'San — AIの未来 & スタートアップ','n5-p3':'Alex — 高価値オファー',
-'n5-period':'月額 · 限定枠','n5-btn':'ウェイトリストに参加 →',
-'mt-tag':'あなたのメンター','mt-title':'7人のメンターに会う','mt-sub':'各メンターは特定分野の専門家。全員があなたのペースで教えます。',
-'m-nik-spec':'実践AI、プロンプト & 自動化',
-'m-nik-desc':'AIを使いたいけどどこから始めればいいか分からない？Nikがゼロから教えます。効果的なプロンプトの作り方、繰り返しタスクの自動化、毎週何時間も節約する方法。',
-'m-nik-q':'「ゼロから生産的なAI活用へ。」','m-nik-btn':'Nikと話す →',
-'m-gar-spec':'オーガニックコンテンツ、SNS & ブランディング',
-'m-gar-desc':'理論に時間を無駄にしません。AIでエンゲージメントの高いコンテンツを作り、デジタルプレゼンスを構築し、Instagram、LinkedIn、YouTubeで注目を権威に変える方法を教えます。',
-'m-gar-q':'「注目は通貨。AIは印刷機。」','m-gar-btn':'Garと話す →',
-'m-jef-spec':'ローンチ、フォーミュラ & デジタルファネル',
-'m-jef-desc':'要点だけ：オンラインで売りたいなら構造が必要。AIでローンチを構築し、コンバージョンするファネルを作り、あなたの製品に合わせたフォーミュラを使う方法を教えます。',
-'m-jef-q':'「ローンチは運ではない。方法論だ。」','m-jef-btn':'Jefと話す →',
-'m-rus-spec':'セールスファネル、ストーリーテリング & コピーライティング',
-'m-rus-desc':'人は商品ではなくストーリーを買います。AIでセールスファネルを構築し、コンバージョンするコピーを書き、ゼロからクロージングまでオファーを構成する方法を教えます。',
-'m-rus-q':'「あなたはファネル一つ分の距離にいる。」','m-rus-btn':'Rusと話す →',
-'m-alex-spec':'抵抗できないオファー、スケール & 成長',
-'m-alex-desc':'理論は語りません。数字を語ります。断ることが間違いだと感じるオファーの作り方、本当に利益を出す価格設定、チームを膨張させずにスケールする方法を教えます。',
-'m-alex-q':'「断ると痛いほど良いオファーを作れ。」','m-alex-btn':'Alexと話す →',
-'m-san-spec':'AIの未来、スタートアップ & 最先端テクノロジー',
-'m-san-desc':'未来に生きています。AIで何が来るか、次の2〜5年に向けてビジネスをどう位置づけるか、初日からスケールで考える方法を教えます。',
-'m-san-q':'「未来は今日準備する者のもの。」','m-san-btn':'Sanと話す →',
-'m-mus-spec':'未来ビジョン、イノベーション & 第一原理',
-'m-mus-desc':'戦術は教えません。異なる考え方を教えます。第一原理思考を使って、誰も見ていない機会を特定し、市場の前提を疑問視する手助けをします。',
-'m-mus-q':'「第一原理で考えよ。すべてを疑え。」','m-mus-btn':'Musと話す →',
-'db-tag':'あなたの進捗','db-title':'生徒ダッシュボード','db-sub':'各セッションを追跡し、習得したフレームワークを確認し、次のレベルへの準備がいつ整うか正確に把握。',
-'db-logo':'🤖 AI Mentor Academy — 生徒パネル','db-user':'こんにちは、<span>Silvia</span> &nbsp;·&nbsp; レベル 3 — Pro',
-'db-l1':'総セッション','db-s1':'+3 今週','db-l2':'習得フレームワーク','db-s2':'47中','db-l3':'次のレベルまで','db-s3':'推定セッション',
-'db-active':'⭐ レベル 3 — Pro · アクティブ','db-next':'次: <b>レベル 4 — 収益化AI</b> · 12セッションで解放','db-prog':'メンター別進捗',
-'dp-tag':'実際の成果','dp-title':'受講者の声','dp-sub':'AIメンターと学ぶことを決めた専門家の成果。',
-'dp-disc':'ベータテスターの経験に基づく結果。個人の結果は異なる場合があります。',
-'fq-tag':'よくある質問','fq-title':'よくある質問',
-'cta-urg':'⚡ 850人以上の専門家がすでに開始 — 次はあなたの番',
-'cta-h1':'一人で続けることも','cta-h2':'できます。それとも','cta-h3':'7人のメンターと共に。',
-'cta-p':'毎日、あなたの市場の誰かがAIを使ってより多く生産し、より多く売り、より速く成長しています。違いは才能ではなく、適切な時に適切な知識にアクセスすること。',
-'cta-btn1':'今すぐ無料で始める →','cta-btn2':'全プランを見る',
-'cta-note':'7日間無条件保証 &nbsp;·&nbsp; いつでもキャンセル &nbsp;·&nbsp; 縛りなし',
-'footer':'© 2026 AI Mentor Academy by Silvia Assay. All rights reserved.'
-}
-};
-const PT={};
-document.querySelectorAll('[data-i18n]').forEach(el=>{PT[el.dataset.i18n]=el.textContent;});
-document.querySelectorAll('[data-i18n-html]').forEach(el=>{PT[el.dataset.i18nHtml]=el.innerHTML;});
-function setLang(l){
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
-  document.documentElement.lang=l==='pt'?'pt-BR':l==='ja'?'ja':l;
-  document.querySelectorAll('[data-i18n]').forEach(el=>{
-    const k=el.dataset.i18n;
-    el.textContent=l==='pt'?PT[k]:(T[l]&&T[l][k])||PT[k];
-  });
-  document.querySelectorAll('[data-i18n-html]').forEach(el=>{
-    const k=el.dataset.i18nHtml;
-    el.innerHTML=l==='pt'?PT[k]:(T[l]&&T[l][k])||PT[k];
-  });
-  document.title=l==='en'?'AI Mentor Academy — 7 AI Mentors. 5 Levels. No Course.'
-    :l==='ja'?'AI Mentor Academy — 7人のAIメンター。5つのレベル。コースなし。'
-    :'AI Mentor Academy — 7 Mentores IA. 5 Níveis. Sem Curso.';
-}
 </script>
 </body>
 </html>
